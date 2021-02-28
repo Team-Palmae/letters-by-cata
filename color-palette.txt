@@ -1,0 +1,5 @@
+Dark Grey - #565656
+Middle Grey - 8A8481
+Misty Rose - #F9E7E4
+Soft Pink - #FDF5F3
+White - #FFFFFF
