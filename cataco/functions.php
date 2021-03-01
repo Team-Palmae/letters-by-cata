@@ -16,6 +16,7 @@ function cataco_setup() {
 add_action( 'wp_enqueue_scripts', 'cataco_load_scripts' );
 
 function cataco_load_scripts() {
+    wp_enqueue_style( 'reset', get_template_directory_uri() . '/assets/css/reset.css', false, '1.0.0', 'all');
     wp_enqueue_style( 'cataco-style', get_stylesheet_uri() );
     wp_enqueue_script( 'jquery' );
 }
