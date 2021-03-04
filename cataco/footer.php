@@ -1,13 +1,16 @@
 			</div>
 			<footer id="footer">
-				<nav id="menu">
-					<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-				</nav>
+				<?php dynamic_sidebar( 'footer_area_top' ); ?>
+				<?php dynamic_sidebar( 'footer_area_bot' ); ?>
 				<div id="copyright">
-					<p>&copy; <?php echo esc_html( date_i18n( __( 'Y', 'cataco' ) ) ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?> | Edmonton, Alberta CA.</p>
+					<p>
+						Letters by Cata Co. | Edmonton, Alberta CA.
+					</p>
 				</div>
+				
 			</footer>
 		</div>
 	<?php wp_footer(); ?>
+		<script type="text/javascript" src="https://apiv2.popupsmart.com/api/Bundle/362474" async></script>
 	</body>
 </html>

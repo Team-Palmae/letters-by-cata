@@ -74,6 +74,48 @@ p {
   margin-top: 1.5rem;
 }
 
+.header > .post-edit-link {
+  display: none;
+}
+
+#footer {
+  background-color: #8a8481;
+}
+
+.footer-area-top {
+  display: inline-flex;
+  width: 100%;
+  background-color: white;
+}
+
+.footer-area-top > .custom-html-widget {
+  width: 100%;
+  height: 15rem;
+}
+
+.footer-area-top img {
+  width: 50%;
+  height: 50%;
+}
+
+.footer-area-top > .custom-html-widget > a {
+  display: inline-flex;
+  width: 150px;
+  height: 150px;
+}
+
+#menu-menu-2 {
+  list-style-type: none;
+  display: inline-flex;
+  padding: 0;
+}
+
+#menu-menu-2 a, #copyright {
+  text-decoration: none;
+  color: white;
+  margin: 1rem;
+}
+
 @media (min-width: 500px) {
   h2 {
     line-height: 3rem;
