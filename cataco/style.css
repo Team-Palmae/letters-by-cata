@@ -140,6 +140,7 @@ p {
 }
 
 header .inner-container {
+  position: relative;
   padding: 0.5rem 1rem;
 }
 
@@ -162,7 +163,7 @@ header .inner-container svg path {
 }
 
 header nav {
-  width: 100vw;
+  width: 100%;
   text-align: center;
   max-height: 0;
   overflow: hidden;
@@ -172,10 +173,6 @@ header nav {
   top: 0;
   left: 0;
   z-index: 999;
-}
-
-.logged-in header nav {
-  top: 46px;
 }
 
 .show-nav {
@@ -196,12 +193,6 @@ header nav {
   h2 {
     line-height: 3rem;
     /*Adjusting the line height so that the baseline stays and fits with the fonts growth*/
-  }
-}
-
-@media (min-width: 783px) {
-  .logged-in header nav {
-    top: 32px;
   }
 }
 
