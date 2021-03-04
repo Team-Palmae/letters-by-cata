@@ -42,7 +42,7 @@ p {
     margin-top: 1.5rem;
 }
 
-@media (min-width: 500px) {
+@mixin h2-line-height() {
     h2 {
         line-height: 3rem; /*Adjusting the line height so that the baseline stays and fits with the fonts growth*/
     }

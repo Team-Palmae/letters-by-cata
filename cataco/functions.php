@@ -19,6 +19,7 @@ function cataco_load_scripts() {
     wp_enqueue_style( 'reset', get_template_directory_uri() . '/assets/css/reset.css', false, '1.0.0', 'all');
     wp_enqueue_style( 'cataco-style', get_stylesheet_uri() );
     wp_enqueue_script( 'jquery' );
+    wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), 1.1, true);
 }
 
 add_action( 'wp_footer', 'cataco_footer_scripts' );
@@ -146,3 +147,70 @@ function cataco_comment_count( $count ) {
 
 // Unenqueues the base styles of wordpress
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
+function register_widget_areash() {
+
+    register_sidebar( array(
+      'name'          => 'Header area',
+      'id'            => 'header_area',
+      'description'   => 'Header menu',
+      'before_widget' => '<section class="header-area">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h4>',
+      'after_title'   => '</h4>',
+    ));
+    
+  }
+  
+  
+  
+  function register_widget_areast() {
+  
+    register_sidebar( array(
+      'name'          => 'Footer area top',
+      'id'            => 'footer_area_top',
+      'description'   => 'For the top of the footer ie: insta, facebook',
+      'before_widget' => '<section class="footer-area-top">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h4>',
+      'after_title'   => '</h4>',
+    ));
+    
+  }
+  
+  add_action( 'widgets_init', 'register_widget_areast' );
+  
+  function register_widget_areasb() {
+  
+    register_sidebar( array(
+      'name'          => 'Footer area bot',
+      'id'            => 'footer_area_bot',
+      'description'   => 'For the bottom footer ie: links',
+      'before_widget' => '<section class="footer-area-bot">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h4>',
+      'after_title'   => '</h4>',
+    ));
+    
+  }
+  
+  add_action( 'widgets_init', 'register_widget_areasb' );
+  
+  // Prevent WP from adding <p> tags on pages
+  function disable_wp_auto_p( $content ) {
+    if ( is_singular( 'page' ) ) {
+      remove_filter( 'the_content', 'wpautop' );
+      remove_filter( 'the_excerpt', 'wpautop' );
+    }
+    return $content;
+  }
+  add_filter( 'the_content', 'disable_wp_auto_p', 0 );
+  
+  /*// Prevent WP from adding <p> tags on all post types
+  function disable_wp_auto_p( $content ) {
+    remove_filter( 'the_content', 'wpautop' );
+    remove_filter( 'the_excerpt', 'wpautop' );
+    return $content;
+  }
+  add_filter( 'the_content', 'disable_wp_auto_p', 0 );
+  If you want to prevent WP from adding <p> tags to any other post type, you can simply replace page in if ( is_singular( 'page' ) ) with your post type of choice.*/
