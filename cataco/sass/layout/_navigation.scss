@@ -1,0 +1,134 @@
+$dark-grey: #565656;
+$middle-grey: #8A8481;
+$misty-rose: #F9E7E4;
+$soft-pink: #FDF5F3;
+$white: #FFFFFF;
+
+.logo {
+    width: 12rem;
+    margin-right: auto;
+}
+
+.cart-icon,
+.toggle-icon-open,
+.toggle-icon-open svg,
+.toggle-icon-close svg {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.toggle-icon-open,
+.cart-mobile {
+    margin-left: 1rem;
+}
+
+.toggle-icon-close {
+    text-align: end;
+    width: 100%;
+}
+
+header .inner-container {
+    padding: 0.5rem 1rem;
+    svg path {
+        fill: $middle-grey;
+    }
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+}
+
+.main-menu a {
+    display: block;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    color: $middle-grey;
+    margin-bottom: 1rem;
+}
+
+header nav {
+    width: 100vw;
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out;
+    background-color: $misty-rose;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+// Solves the admin-bar not sure if it's both the admin bar and login
+.logged-in {
+    header nav {
+        top: 46px;
+    }
+}
+
+.show-nav {
+    max-height: 40rem;
+    padding: 1rem;
+}
+
+.main-menu .current_page_item a,
+.main-menu a:hover {
+    text-decoration: underline;
+}
+
+.cart-desktop {
+    display: none;
+}
+
+@mixin logged-in-fix() {
+    .logged-in {
+        header nav {
+            top: 32px;
+        }
+    }
+}
+
+@mixin navbar-desktop() {
+    .toggle-icon-open,
+    .toggle-icon-close {
+        display: none;
+    }
+
+    .main-menu {
+        li {
+            margin-right: 1rem;
+        }
+        a {
+            margin: 0;
+        }
+    }
+    
+    header nav {
+        position: static;
+        width: auto;
+        max-height: 18rem;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+    }
+
+    .flex,
+    .main-menu {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-top {
+        margin-right: auto;
+    }
+
+    .cart-mobile {
+        display: none;
+    }
+
+    .cart-desktop {
+        display: inline-block;
+    }
+}

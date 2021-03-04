@@ -11,6 +11,14 @@ function cataco_setup() {
 
     if ( ! isset( $content_width ) ) { $content_width = 1920; }
     register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'cataco' ) ) );
+    /** custom logo **/
+    add_theme_support( 'custom-logo', array(
+        'height'      => 100,
+        'width'       => 400,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+    ));
 }
 
 add_action( 'wp_enqueue_scripts', 'cataco_load_scripts' );

@@ -116,9 +116,126 @@ p {
   margin: 1rem;
 }
 
+.logo {
+  width: 12rem;
+  margin-right: auto;
+}
+
+.cart-icon,
+.toggle-icon-open,
+.toggle-icon-open svg,
+.toggle-icon-close svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.toggle-icon-open,
+.cart-mobile {
+  margin-left: 1rem;
+}
+
+.toggle-icon-close {
+  text-align: end;
+  width: 100%;
+}
+
+header .inner-container {
+  padding: 0.5rem 1rem;
+}
+
+header .inner-container svg path {
+  fill: #8A8481;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+}
+
+.main-menu a {
+  display: block;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  color: #8A8481;
+  margin-bottom: 1rem;
+}
+
+header nav {
+  width: 100vw;
+  text-align: center;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.7s ease-in-out;
+  background-color: #F9E7E4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.logged-in header nav {
+  top: 46px;
+}
+
+.show-nav {
+  max-height: 40rem;
+  padding: 1rem;
+}
+
+.main-menu .current_page_item a,
+.main-menu a:hover {
+  text-decoration: underline;
+}
+
+.cart-desktop {
+  display: none;
+}
+
 @media (min-width: 500px) {
   h2 {
     line-height: 3rem;
     /*Adjusting the line height so that the baseline stays and fits with the fonts growth*/
+  }
+}
+
+@media (min-width: 783px) {
+  .logged-in header nav {
+    top: 32px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .toggle-icon-open,
+  .toggle-icon-close {
+    display: none;
+  }
+  .main-menu li {
+    margin-right: 1rem;
+  }
+  .main-menu a {
+    margin: 0;
+  }
+  header nav {
+    position: static;
+    width: auto;
+    max-height: 18rem;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+  }
+  .flex,
+  .main-menu {
+    display: flex;
+    align-items: center;
+  }
+  .header-top {
+    margin-right: auto;
+  }
+  .cart-mobile {
+    display: none;
+  }
+  .cart-desktop {
+    display: inline-block;
   }
 }
