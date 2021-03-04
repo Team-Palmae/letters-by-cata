@@ -2,10 +2,6 @@
     @include h2-line-height();
 }
 
-@media (min-width: 783px) {
-    @include logged-in-fix();
-}
-
 @media (min-width: 1050px) {
     @include navbar-desktop();
 }

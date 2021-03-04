@@ -28,6 +28,7 @@ $white: #FFFFFF;
 }
 
 header .inner-container {
+    position: relative;
     padding: 0.5rem 1rem;
     svg path {
         fill: $middle-grey;
@@ -49,7 +50,7 @@ header .inner-container {
 }
 
 header nav {
-    width: 100vw;
+    width: 100%;
     text-align: center;
     max-height: 0;
     overflow: hidden;
@@ -59,13 +60,6 @@ header nav {
     top: 0;
     left: 0;
     z-index: 999;
-}
-
-// Solves the admin-bar not sure if it's both the admin bar and login
-.logged-in {
-    header nav {
-        top: 46px;
-    }
 }
 
 .show-nav {
@@ -80,14 +74,6 @@ header nav {
 
 .cart-desktop {
     display: none;
-}
-
-@mixin logged-in-fix() {
-    .logged-in {
-        header nav {
-            top: 32px;
-        }
-    }
 }
 
 @mixin navbar-desktop() {
