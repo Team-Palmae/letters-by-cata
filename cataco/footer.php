@@ -1,5 +1,12 @@
 			</div>
 			<footer id="footer">
+				<div class="mailing">
+				    <h2>Mailing List Sign Up</h2>
+
+				    <p>Want to get in on the shop updates, deals, and freebies?</p>
+				    <a href="" id="signup">Sign Up Here</a>
+				</div>
+				
 				<?php dynamic_sidebar( 'footer_area_top' ); ?>
 				<?php dynamic_sidebar( 'footer_area_bot' ); ?>
 				<div id="copyright">
