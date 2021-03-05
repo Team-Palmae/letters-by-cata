@@ -4,6 +4,11 @@ $misty-rose: #F9E7E4;
 $soft-pink: #FDF5F3;
 $white: #FFFFFF;
 
+header .flex{
+    display: flex;
+    align-items: center;
+}
+
 .logo {
     width: 12rem;
     margin-right: auto;
@@ -18,7 +23,7 @@ $white: #FFFFFF;
 }
 
 .toggle-icon-open,
-.cart-mobile {
+.cart {
     margin-left: 1rem;
 }
 
@@ -33,12 +38,6 @@ header .inner-container {
     svg path {
         fill: $middle-grey;
     }
-}
-
-.header-top {
-    display: flex;
-    align-items: center;
-    background-color: transparent;
 }
 
 .main-menu a {
@@ -72,10 +71,6 @@ header nav {
     text-decoration: underline;
 }
 
-.cart-desktop {
-    display: none;
-}
-
 @mixin navbar-desktop() {
     .toggle-icon-open,
     .toggle-icon-close {
@@ -83,6 +78,8 @@ header nav {
     }
 
     .main-menu {
+        display: flex;
+        align-items: center;
         li {
             margin-right: 1rem;
         }
@@ -98,23 +95,5 @@ header nav {
         background-color: transparent;
         display: flex;
         align-items: center;
-    }
-
-    .flex,
-    .main-menu {
-        display: flex;
-        align-items: center;
-    }
-
-    .header-top {
-        margin-right: auto;
-    }
-
-    .cart-mobile {
-        display: none;
-    }
-
-    .cart-desktop {
-        display: inline-block;
     }
 }
