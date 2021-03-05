@@ -139,6 +139,32 @@ header .flex {
   margin-left: 1rem;
 }
 
+.cart {
+  position: relative;
+}
+
+.cart:hover .cart-count {
+  border: 1px solid #8A8481;
+  top: -9px;
+  right: -9px;
+  width: 27px;
+  height: 27px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 0.7rem;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #F9E7E4;
+  color: #8A8481;
+}
+
 .toggle-icon-close {
   text-align: end;
   width: 100%;

@@ -39,7 +39,8 @@
 				); ?>
 			</nav>
 
-			<a class="cart" href="<?php echo esc_url( home_url( '/' ) ); ?>cart">
+			<!-- <a class="cart" href="<?php echo esc_url( home_url( '/' ) ); ?>cart"> -->
+			<a class="cart" href="<?php echo wc_get_cart_url() ?>">
 				<!-- <img class="cart-icon" src="<?php //bloginfo('template_directory'); ?>/assets/img/shopping-bag.svg" alt="cart"> -->
 				<svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 483.1 483.1" style="enable-background:new 0 0 483.1 483.1;" xml:space="preserve">
 					<g>
@@ -50,6 +51,7 @@
 							c0,6.6,5.4,12,12,12s12-5.4,12-12v-42.1h47.6l26.8,301.8C410.25,441.7,389.05,459,363.05,459z"/>
 					</g>
 				</svg>
+				<span class="cart-count"><?php echo $woocommerce->cart->cart_contents_count ?></span>
 			</a>
 
 			<!-- toggle-icon-open -->

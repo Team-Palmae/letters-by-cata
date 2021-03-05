@@ -27,6 +27,34 @@ header .flex{
     margin-left: 1rem;
 }
 
+$cart-count-dimensions: 25px;
+$cart-position-value: -8px;
+
+.cart {
+    position: relative;
+    &:hover .cart-count {
+        border: 1px solid $middle-grey;
+        top: $cart-position-value - 1px;
+        right: $cart-position-value - 1px;
+        width: $cart-count-dimensions + 2;
+        height: $cart-count-dimensions + 2;
+    }
+}
+
+.cart-count {
+    position: absolute;
+    top: $cart-position-value;
+    right: $cart-position-value;
+    width: $cart-count-dimensions;
+    height: $cart-count-dimensions;
+    line-height: $cart-count-dimensions;
+    font-size: 0.7rem;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #F9E7E4;
+    color: #8A8481;
+}
+
 .toggle-icon-close {
     text-align: end;
     width: 100%;
