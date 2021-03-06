@@ -1,8 +1,11 @@
 $dark-grey: #565656;
-$middle-grey: #8A8481;
-$misty-rose: #F9E7E4;
+// $middle-grey: #8A8481;
+// $misty-rose: #F9E7E4;
 $soft-pink: #FDF5F3;
+$off-white: #F5F5F5;
 $white: #FFFFFF;
+
+// Navigation
 
 header .flex{
     display: flex;
@@ -33,7 +36,7 @@ $cart-position-value: -8px;
 .cart {
     position: relative;
     &:hover .cart-count {
-        border: 1px solid $middle-grey;
+        border: 1px solid $dark-grey;
         top: $cart-position-value - 1px;
         right: $cart-position-value - 1px;
         width: $cart-count-dimensions + 2;
@@ -64,7 +67,7 @@ header .inner-container {
     position: relative;
     padding: 0.5rem 1rem;
     svg path {
-        fill: $middle-grey;
+        fill: $dark-grey;
     }
 }
 
@@ -72,7 +75,7 @@ header .inner-container {
     display: block;
     padding: 0.5rem;
     text-transform: uppercase;
-    color: $middle-grey;
+    color: $dark-grey;
     margin-bottom: 1rem;
 }
 

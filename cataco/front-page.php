@@ -3,7 +3,7 @@
 <?php if(have_posts()) : ?>
     <!-- start the loop -->
     <?php while(have_posts()) : the_post(); ?>
-    <section>
+    <section class="container">
         <?php the_content(); ?>
     </section>
     <?php endwhile; ?>
