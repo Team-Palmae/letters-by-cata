@@ -81,6 +81,7 @@ p {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  width: 80%;
 }
 
 .container p {
@@ -88,15 +89,17 @@ p {
   margin: 1.5rem auto 0;
 }
 
+.container .heading-background:first-of-type {
+  margin: 0 auto 2.5rem;
+}
+
 .heading-background {
   background: #FDF5F3;
   padding: 1.75rem 0;
   text-align: center;
-  width: 80%;
-  margin: 2.5rem auto;
 }
 
-.container a {
+.btn {
   display: block;
   width: 144px;
   padding: 0.75rem 0;
@@ -110,7 +113,7 @@ p {
   margin-top: 20px;
 }
 
-.container a:hover {
+.btn:hover {
   background-color: #F5F5F5;
 }
 
@@ -130,9 +133,6 @@ p {
 }
 
 @media (min-width: 600px) {
-  .thumbnail {
-    margin: 0;
-  }
   .container p {
     width: 100%;
     margin: 1.5rem 0 0 0;
@@ -146,6 +146,17 @@ p {
   }
 }
 
+header .inner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding: 1rem;
+}
+
+header .inner-container svg path {
+  fill: #565656;
+}
+
 header .flex {
   display: flex;
   align-items: center;
@@ -153,6 +164,7 @@ header .flex {
 
 .logo {
   width: 12rem;
+  height: 2.5rem;
   margin-right: auto;
 }
 
@@ -162,6 +174,10 @@ header .flex {
 .toggle-icon-close svg {
   width: 2.5rem;
   height: 2.5rem;
+}
+
+.toggle-icon-close svg {
+  margin: 1rem 1rem 0 0;
 }
 
 .toggle-icon-open,
@@ -200,15 +216,6 @@ header .flex {
   width: 100%;
 }
 
-header .inner-container {
-  position: relative;
-  padding: 0.5rem 1rem;
-}
-
-header .inner-container svg path {
-  fill: #565656;
-}
-
 .main-menu a {
   display: block;
   padding: 0.5rem;
@@ -222,7 +229,7 @@ header nav {
   text-align: center;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.7s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
   background-color: #F9E7E4;
   position: absolute;
   top: 0;
@@ -232,12 +239,45 @@ header nav {
 
 .show-nav {
   max-height: 40rem;
-  padding: 1rem;
+  padding: 0 0 1rem;
 }
 
 .main-menu .current_page_item a,
 .main-menu a:hover {
   text-decoration: underline;
+}
+
+.header {
+  padding: 0 0 6rem 0;
+  background: url(/lettersbycata/wp-content/uploads/2021/03/hero-banner.jpg) center;
+  background-size: cover;
+  border-bottom: 6px solid #565656;
+  margin-bottom: 2.5rem;
+}
+
+.header h1 {
+  text-align: center;
+  max-width: 18ch;
+  width: 90%;
+  margin: 4rem auto 0;
+}
+
+@media (min-width: 600px) {
+  .header {
+    padding: 0rem 0 10rem 0;
+  }
+  .header h1 {
+    margin-top: 8rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .header {
+    padding: 0rem 0 14rem 0;
+  }
+  .header h1 {
+    margin-top: 12rem;
+  }
 }
 
 #footer {
@@ -278,6 +318,46 @@ header nav {
   margin: 1rem;
 }
 
+.home-opener p {
+  max-width: 40ch;
+  text-align: center;
+  margin: 1.5rem auto 0;
+}
+
+.home .container .heading-background:first-of-type {
+  margin: 2.5rem auto;
+}
+
+.shopping {
+  margin: 1.25rem 0 0 0;
+  text-align: center;
+}
+
+@media (min-width: 750px) {
+  .placehold {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+  }
+  .placehold p:first-of-type {
+    margin: 0;
+  }
+  .thumbnail {
+    margin: 0;
+  }
+  .home-about-content,
+  .home-services-content,
+  .home-shop-content {
+    width: 40ch;
+  }
+  .home-about-content .btn {
+    margin: 2.5rem 0 0 0;
+  }
+  .home-services img {
+    order: 1;
+  }
+}
+
 @media (min-width: 500px) {
   h2 {
     line-height: 3rem;
@@ -286,6 +366,9 @@ header nav {
 }
 
 @media (min-width: 1050px) {
+  header .inner-container {
+    padding: 1rem 2rem;
+  }
   .toggle-icon-open,
   .toggle-icon-close {
     display: none;

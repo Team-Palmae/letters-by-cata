@@ -7,13 +7,26 @@ $white: #FFFFFF;
 
 // Navigation
 
-header .flex{
-    display: flex;
-    align-items: center;
+header {
+    .inner-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        padding: 1rem;
+        svg path {
+            fill: $dark-grey;
+        }
+    }
+
+    .flex{
+        display: flex;
+        align-items: center;
+    }
 }
 
 .logo {
     width: 12rem;
+    height: 2.5rem;
     margin-right: auto;
 }
 
@@ -23,6 +36,10 @@ header .flex{
 .toggle-icon-close svg {
     width: 2.5rem;
     height: 2.5rem;
+}
+
+.toggle-icon-close svg {
+    margin: 1rem 1rem 0 0;
 }
 
 .toggle-icon-open,
@@ -63,14 +80,6 @@ $cart-position-value: -8px;
     width: 100%;
 }
 
-header .inner-container {
-    position: relative;
-    padding: 0.5rem 1rem;
-    svg path {
-        fill: $dark-grey;
-    }
-}
-
 .main-menu a {
     display: block;
     padding: 0.5rem;
@@ -84,7 +93,7 @@ header nav {
     text-align: center;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.7s ease-in-out;
+    transition: max-height 0.5s ease-in-out;
     background-color: $misty-rose;
     position: absolute;
     top: 0;
@@ -94,7 +103,7 @@ header nav {
 
 .show-nav {
     max-height: 40rem;
-    padding: 1rem;
+    padding: 0 0 1rem;
 }
 
 .main-menu .current_page_item a,
@@ -103,6 +112,10 @@ header nav {
 }
 
 @mixin navbar-desktop() {
+    header .inner-container {
+        padding: 1rem 2rem;
+    }
+
     .toggle-icon-open,
     .toggle-icon-close {
         display: none;

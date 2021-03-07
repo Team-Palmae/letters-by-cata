@@ -1,1 +1,51 @@
-// Dummy Text
+$dark-grey: #565656;
+$soft-pink: #FDF5F3;
+$off-white: #F5F5F5;
+$white: #FFFFFF;
+
+.home-opener {
+    p {
+        max-width: 40ch;
+        text-align: center;
+        margin: 1.5rem auto 0;
+    }
+}
+
+.home .container .heading-background:first-of-type {
+    margin: 2.5rem auto;
+}
+
+.shopping {
+    margin: 1.25rem 0 0 0;
+    text-align: center;
+}
+
+
+@media (min-width: 750px) {
+    .placehold {
+        display: flex;
+        justify-content: space-around;
+        align-items: start;
+        p:first-of-type {
+            margin: 0;
+        }
+    }
+
+    .thumbnail {
+        margin: 0;
+    }
+
+    .home-about-content,
+    .home-services-content,
+    .home-shop-content {
+        width: 40ch;
+    }
+
+    .home-about-content .btn {
+        margin: 2.5rem 0 0 0;
+    }
+
+    .home-services img {
+        order: 1;
+    }
+}

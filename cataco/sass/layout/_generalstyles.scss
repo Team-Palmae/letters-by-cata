@@ -10,9 +10,13 @@ $white: #FFFFFF;
 .container {
     max-width: 1200px; 
     margin: 0 auto;
+    width: 80%;
     p {
         width: 80%;
         margin: 1.5rem auto 0;
+    }
+    .heading-background:first-of-type {
+        margin: 0 auto 2.5rem;
     }
 }
 
@@ -20,11 +24,28 @@ $white: #FFFFFF;
     background: $soft-pink;
     padding: 1.75rem 0;
     text-align: center;
-    width: 80%;
-    margin: 2.5rem auto;
+    // width: 80%;
+    // margin: 2.5rem auto;
 }
 
-.container a {
+// .container a {
+//     display: block;
+//     width: 144px;
+//     padding: 0.75rem 0;
+//     background: $soft-pink;
+//     border: 1px solid $dark-grey;
+//     color: $dark-grey;
+//     text-align: center;
+//     border-radius: 12px;
+//     font-size: 18px;
+//     margin: 0 auto;
+//     margin-top: 20px;
+//     &:hover {
+//         background-color: $off-white;
+//     }
+// }
+
+.btn {
     display: block;
     width: 144px;
     padding: 0.75rem 0;
@@ -56,22 +77,7 @@ $white: #FFFFFF;
     margin: 0 auto;
 }
 
-// .btn {
-//     display: block;
-//     width: 144px;
-//     padding: 1.25rem 0;
-//     border: 1px solid $dark-grey;
-//     color: $dark-grey;
-//     text-align: center;
-//     &:hover {
-//         color: $off-white;
-//     }
-// }
-
 @media (min-width: 600px) {
-    .thumbnail {
-        margin: 0;
-    }
 
     .container p {
         width: 100%;
