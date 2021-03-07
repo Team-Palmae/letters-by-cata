@@ -1,9 +1,4 @@
-$dark-grey: #565656;
-$soft-pink: #FDF5F3;
-$off-white: #F5F5F5;
-$white: #FFFFFF;
-
-// Footer Styles
+/* Footer Styles */
 
 footer {
     background-color: #8a8481;
@@ -40,8 +35,8 @@ footer {
     }
 }
 
-// #menu-menu-1 a, #copyright {
-//     text-decoration: none;
-//     color: white;
-//     margin: 1rem;
-// }
+#menu-menu-1 a, #copyright {
+    text-decoration: none;
+    color: white;
+    margin: 1rem;
+}

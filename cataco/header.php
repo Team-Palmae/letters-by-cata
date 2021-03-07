@@ -61,4 +61,4 @@
 		</div> <!-- End of Inner-container -->
 		<h1>Welcome to Letters by Cata Co.</h1>
 	</header>
-<div id="container">
+<div class="container" id="container">

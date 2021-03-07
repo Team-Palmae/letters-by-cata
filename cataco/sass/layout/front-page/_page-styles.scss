@@ -1,8 +1,3 @@
-$dark-grey: #565656;
-$soft-pink: #FDF5F3;
-$off-white: #F5F5F5;
-$white: #FFFFFF;
-
 .home-opener {
     p {
         max-width: 40ch;
@@ -20,9 +15,16 @@ $white: #FFFFFF;
     text-align: center;
 }
 
+@media (min-width: 700px) {
+    .home-gallery-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+}
 
 @media (min-width: 750px) {
-    .placehold {
+    .home-block {
         display: flex;
         justify-content: space-around;
         align-items: start;
@@ -43,5 +45,13 @@ $white: #FFFFFF;
 
     .home-about-content .btn {
         margin: 2.5rem 0 0 0;
+    }
+}
+
+@media (min-width: 1000px) {
+    .home-about-content,
+    .home-services-content,
+    .home-shop-content {
+        width: 55ch;
     }
 }

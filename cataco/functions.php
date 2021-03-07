@@ -155,6 +155,8 @@ function cataco_comment_count( $count ) {
 
 // Unenqueues the base styles of wordpress
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+// add_filter( 'use_default_gallery_style', '__return_false' );
+add_theme_support('html5', array('gallery', 'caption'));
 
 function register_widget_areash() {
 
