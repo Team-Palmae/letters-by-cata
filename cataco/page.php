@@ -5,23 +5,23 @@
 		<div class="heading-background">
 			<h2 class="entry-title"><?php the_title(); ?></h2> <?php edit_post_link(); ?>
 		</div>
-		<div class="entry-content">
-			<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
-			<?php echo get_post_format(get_the_ID()); ?>
-			<?php //if ( 'Gallery' == get_the_title() ) : ?>
-				<!-- <p>Working</p> -->
-			<?php if ( $gallery = get_post_gallery( get_the_ID(), false ) ) : ?>
-				<p>Working</p>
+		<?php if ( $gallery = get_post_gallery( get_the_ID(), false ) ) : ?>
+			<div class="gallery">
 				<?php foreach ( $gallery['src'] as $src ) { ?>
-					<img src="<?php echo $src; ?>" alt="gallery image">
+					<div class="gallery-image">
+						<img src="<?php echo $src; ?>" alt="gallery image">
+					</div>
 				<?php } ?>
-			<?php else : ?>
+			</div>
+		<?php else : ?>
+			<div class="entry-content">
+			<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
 				<?php the_content(); ?>
 				<!-- <div class="entry-links">
 					<?php //wp_link_pages(); ?>	
 				</div> -->
-			<?php endif; ?>
-		</div>
+			</div>
+		<?php endif; ?>
 	</article>
 	<?php if ( comments_open() && ! post_password_required() ) { comments_template( '', true ); } ?>
 	<?php endwhile; endif; ?>
