@@ -1,0 +1,510 @@
+@charset "UTF-8";
+/*
+Theme Name: cataco
+Author: LettersByCata
+Author URI: http://LettersByCata.com/
+Version: 2021.1
+Text Domain: cataco
+
+cataco WordPress Theme © 2021 LettersByCata
+*/
+/* open-sans-300 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local(""), url("assets/fonts/open-sans/open-sans-v18-latin-300.woff2") format("woff2"), url("assets/fonts/open-sans/open-sans-v18-latin-300.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("assets/fonts/open-sans/open-sans-v18-latin-regular.woff2") format("woff2"), url("assets/fonts/open-sans/open-sans-v18-latin-regular.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* open-sans-700 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("assets/fonts/open-sans/open-sans-v18-latin-700.woff2") format("woff2"), url("assets/fonts/open-sans/open-sans-v18-latin-700.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+html {
+  font-size: 100%;
+}
+
+/*16px*/
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: #FFFFFF;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  line-height: 3rem;
+  margin-top: 0;
+  color: #565656;
+}
+
+h2 {
+  font-size: clamp(1.125rem, 4vw, 2rem);
+  line-height: 1.5rem;
+  color: #565656;
+}
+
+h3 {
+  font-size: 1rem;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  line-height: 1.5rem;
+  color: #565656;
+}
+
+p {
+  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 2.25vw, 1.125rem);
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.header > .post-edit-link {
+  display: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.container p {
+  margin: 1.5rem auto 0;
+}
+
+.container .heading-background:first-of-type {
+  margin: 0 auto 2.5rem;
+}
+
+.heading-background {
+  background: #FDF5F3;
+  padding: 1.75rem 0;
+  text-align: center;
+}
+
+.btn {
+  display: block;
+  width: 144px;
+  padding: 0.75rem 0;
+  background: #FDF5F3;
+  border: 1px solid #565656;
+  color: #565656;
+  text-align: center;
+  border-radius: 12px;
+  font-size: 18px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background-color: #F5F5F5;
+}
+
+.frame-circle {
+  border-radius: 50%;
+  border: 1px solid #565656;
+}
+
+.frame-square {
+  border: 1px solid #565656;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.thumbnail {
+  width: calc(150px + 0.2 * (100vw - 750px));
+  max-width: 250px;
+  height: calc(150px + 0.2 * (100vw - 750px));
+  max-height: 250px;
+  margin: 0 auto;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+  .container p {
+    width: 100%;
+    margin: 1.5rem 0 0 0;
+  }
+}
+
+/* Navigation */
+header .inner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding: 1rem;
+}
+
+header .inner-container svg path {
+  fill: #565656;
+}
+
+header .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo {
+  width: 12rem;
+  height: 2.5rem;
+  margin-right: auto;
+}
+
+.cart-icon,
+.toggle-icon-open,
+.toggle-icon-open svg,
+.toggle-icon-close svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.toggle-icon-close svg {
+  margin: 1rem 1rem 0 0;
+}
+
+.toggle-icon-open,
+.cart {
+  margin-left: 1rem;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart:hover .cart-count {
+  border: 1px solid #565656;
+  top: -9px;
+  right: -9px;
+  width: 27px;
+  height: 27px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 0.7rem;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #F9E7E4;
+  color: #8A8481;
+}
+
+.toggle-icon-close {
+  text-align: end;
+  width: 100%;
+}
+
+.main-menu a {
+  display: block;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  color: #565656;
+  margin-bottom: 1rem;
+}
+
+header nav {
+  width: 100%;
+  text-align: center;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
+  background-color: #F9E7E4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.show-nav {
+  max-height: 40rem;
+  padding: 0 0 1rem;
+}
+
+.main-menu .current_page_item a,
+.main-menu a:hover {
+  text-decoration: underline;
+}
+
+.header {
+  padding: 0 0 6rem 0;
+  background: url(/lettersbycata/wp-content/uploads/2021/03/hero-banner.jpg) center;
+  background-size: cover;
+  border-bottom: 6px solid #565656;
+  margin-bottom: 2.5rem;
+}
+
+.header h1 {
+  text-align: center;
+  max-width: 18ch;
+  width: 90%;
+  margin: 4rem auto 0;
+}
+
+@media (min-width: 600px) {
+  .header {
+    padding: 0rem 0 10rem 0;
+  }
+  .header h1 {
+    margin-top: 8rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .header {
+    padding: 0rem 0 14rem 0;
+  }
+  .header h1 {
+    margin-top: 12rem;
+  }
+}
+
+/* Footer Styles */
+footer {
+  background-color: #8a8481;
+  margin-top: 2.5rem;
+}
+
+.footer-area-top {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  background-color: white;
+}
+
+.footer-area-top > .custom-html-widget {
+  width: 100%;
+  height: 15rem;
+}
+
+.footer-area-top > .custom-html-widget > a {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 150px;
+  height: 150px;
+}
+
+.footer-area-top img {
+  width: 50%;
+  height: 50%;
+}
+
+#menu-menu-1 {
+  list-style-type: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0;
+}
+
+#menu-menu-1, #menu-menu-1 #copyright {
+  text-decoration: none;
+  color: white;
+  margin: 1rem;
+}
+
+#menu-menu-1 a, #copyright {
+  text-decoration: none;
+  color: white;
+  margin: 1rem;
+}
+
+.home-opener p {
+  max-width: 40ch;
+  text-align: center;
+  margin: 1.5rem auto 0;
+}
+
+.home .container .heading-background:first-of-type {
+  margin: 2.5rem auto;
+}
+
+.shopping {
+  margin: 1.25rem 0 0 0;
+  text-align: center;
+}
+
+@media (min-width: 700px) {
+  .home-gallery-content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 750px) {
+  .home-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+  .home-block p:first-of-type {
+    margin: 0;
+  }
+  .thumbnail {
+    margin: 0;
+  }
+  .home-about-content,
+  .home-services-content,
+  .home-shop-content {
+    width: 40ch;
+  }
+  .home-about-content .btn {
+    margin: 2.5rem 0 0 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  .home-about-content,
+  .home-services-content,
+  .home-shop-content {
+    width: 55ch;
+  }
+}
+
+.wpcf7-form {
+  text-align: center;
+}
+
+/* Adaptive - Requires that all of the images have the same height/Or divisible Heights */
+/* Masonry Layout */
+@media (min-width: 700px) {
+  .gallery {
+    -webkit-column-count: 2;
+            column-count: 2;
+    -webkit-column-width: 45%;
+            column-width: 45%;
+    -webkit-column-gap: 4%;
+            column-gap: 4%;
+  }
+  .gallery-image {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .gallery {
+    -webkit-column-count: 3;
+            column-count: 3;
+    -webkit-column-width: 30%;
+            column-width: 30%;
+    -webkit-column-gap: 3%;
+            column-gap: 3%;
+  }
+}
+
+/* Deconstructed Pancake - Doesn't work as hoped */
+.service {
+  margin-top: 2.5rem;
+}
+
+.service h3 {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 750px) {
+  .service {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+  .service h3 {
+    margin-top: 0;
+  }
+  .service p {
+    width: 40ch;
+  }
+}
+
+@media (min-width: 1000px) {
+  .service p {
+    width: 55ch;
+  }
+}
+
+@media (min-width: 500px) {
+  h2 {
+    line-height: 3rem;
+    /*Adjusting the line height so that the baseline stays and fits with the fonts growth*/
+  }
+}
+
+@media (min-width: 1050px) {
+  header .inner-container {
+    padding: 1rem 2rem;
+  }
+  .toggle-icon-open,
+  .toggle-icon-close {
+    display: none;
+  }
+  .main-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main-menu li {
+    margin-right: 1rem;
+  }
+  .main-menu a {
+    margin: 0;
+  }
+  header nav {
+    position: static;
+    width: auto;
+    max-height: 18rem;
+    background-color: transparent;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+/*# sourceMappingURL=style.css.map */
