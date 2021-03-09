@@ -98,7 +98,8 @@ p {
   text-align: center;
 }
 
-.btn {
+.btn,
+.wpcf7-submit {
   display: block;
   width: 144px;
   padding: 0.75rem 0;
@@ -112,7 +113,8 @@ p {
   margin-top: 20px;
 }
 
-.btn:hover {
+.btn:hover,
+.wpcf7-submit:hover {
   background-color: #F5F5F5;
 }
 
@@ -123,9 +125,7 @@ p {
 
 .frame-square {
   border: 1px solid #565656;
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
+  order: 1;
 }
 
 .thumbnail {
@@ -138,6 +138,10 @@ p {
 
 .underline {
   text-decoration: underline;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (min-width: 600px) {
@@ -160,12 +164,8 @@ header .inner-container svg path {
 }
 
 header .flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .logo {
@@ -235,7 +235,6 @@ header nav {
   text-align: center;
   max-height: 0;
   overflow: hidden;
-  -webkit-transition: max-height 0.5s ease-in-out;
   transition: max-height 0.5s ease-in-out;
   background-color: #F9E7E4;
   position: absolute;
@@ -294,8 +293,6 @@ footer {
 }
 
 .footer-area-top {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100%;
   background-color: white;
@@ -307,8 +304,6 @@ footer {
 }
 
 .footer-area-top > .custom-html-widget > a {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 150px;
   height: 150px;
@@ -321,8 +316,6 @@ footer {
 
 #menu-menu-1 {
   list-style-type: none;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   padding: 0;
 }
@@ -356,24 +349,17 @@ footer {
 
 @media (min-width: 700px) {
   .home-gallery-content {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
   }
 }
 
 @media (min-width: 750px) {
   .home-block {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: start;
+    justify-content: space-around;
+    align-items: start;
   }
   .home-block p:first-of-type {
     margin: 0;
@@ -407,12 +393,9 @@ footer {
 /* Masonry Layout */
 @media (min-width: 700px) {
   .gallery {
-    -webkit-column-count: 2;
-            column-count: 2;
-    -webkit-column-width: 45%;
-            column-width: 45%;
-    -webkit-column-gap: 4%;
-            column-gap: 4%;
+    column-count: 2;
+    column-width: 45%;
+    column-gap: 4%;
   }
   .gallery-image {
     margin-bottom: 1.5rem;
@@ -421,12 +404,9 @@ footer {
 
 @media (min-width: 1000px) {
   .gallery {
-    -webkit-column-count: 3;
-            column-count: 3;
-    -webkit-column-width: 30%;
-            column-width: 30%;
-    -webkit-column-gap: 3%;
-            column-gap: 3%;
+    column-count: 3;
+    column-width: 30%;
+    column-gap: 3%;
   }
 }
 
@@ -442,14 +422,9 @@ footer {
 
 @media (min-width: 750px) {
   .service {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: start;
+    justify-content: space-around;
+    align-items: start;
   }
   .service h3 {
     margin-top: 0;
@@ -463,6 +438,12 @@ footer {
   .service p {
     width: 55ch;
   }
+}
+
+.error-content p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 2.5rem auto;
 }
 
 @media (min-width: 500px) {
@@ -481,12 +462,8 @@ footer {
     display: none;
   }
   .main-menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
   }
   .main-menu li {
     margin-right: 1rem;
@@ -499,11 +476,7 @@ footer {
     width: auto;
     max-height: 18rem;
     background-color: transparent;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
   }
 }
