@@ -64,6 +64,10 @@
     text-decoration: underline;
 }
 
+.hidden {
+    display: none;
+}
+
 @media (min-width: 600px) {
 
     .container p {
