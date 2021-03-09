@@ -24,7 +24,7 @@ signup.addEventListener("click", function(evt){
 const other = document.querySelector('span.wpcf7-form-control-wrap.your-subject');
 other.classList.add("hidden");
 
-document.querySelector('.wpcf7-list-item.last').addEventListener("click", function(){
+document.querySelector('span.wpcf7-list-item.last').addEventListener("click", function(){
 	if(other.classList.contains("hidden")){
 		other.classList.remove("hidden");
 	}else{

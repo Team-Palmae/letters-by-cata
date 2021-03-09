@@ -247,6 +247,12 @@ header nav {
   text-decoration: underline;
 }
 
+.products>li{
+	display: inline-flex;
+	flex-wrap: wrap;
+	width: 40%;
+}
+
 .header {
   padding: 0 0 6rem 0;
   background: url(/lettersbycata/wp-content/uploads/2021/03/hero-banner.jpg) center;
