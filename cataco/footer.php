@@ -5,7 +5,7 @@
 				</div>
 
 				<p>Want to get in on the shop updates, deals, and freebies?</p>
-				<a class="btn" href="<?php echo esc_url( home_url( '/' ) ); ?>/contact" id="signup">Sign Up Here</a>
+				<a class="btn popmake-258" href="<?php echo esc_url( home_url( '/' ) ); ?>/contact" id="signup">Sign Up Here</a>
 			</div>
 			<footer id="footer">
 					<?php dynamic_sidebar( 'footer_area_top' ); ?>
