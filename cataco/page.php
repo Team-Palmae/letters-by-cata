@@ -6,7 +6,7 @@
 			<h2 class="entry-title"><?php the_title(); ?></h2> <?php edit_post_link(); ?>
 		</div>
 		<?php if ( $gallery = get_post_gallery( get_the_ID(), false ) ) :
-
+		
 			$gallery_ids = $gallery['ids'];
 			$gallery_ids = explode(',', $gallery_ids);
 		?>
