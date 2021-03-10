@@ -20,7 +20,7 @@
     text-align: center;
 }
 
-.btn,
+.btn, button,
 input[type=submit] {
     display: block;
     width: 144px;
@@ -36,6 +36,10 @@ input[type=submit] {
     &:hover {
         background-color: $off-white;
     }
+}
+input[type=text], input[type=email] {
+    border: 1px solid grey;
+    border-radius: 8px;
 }
 
 .frame-circle {
