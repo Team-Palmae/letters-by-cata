@@ -62,13 +62,12 @@ footer {
 .mailing {
     background-color: $white;
     margin-top: 2.5rem;
-    >p {
-        margin-top: 2.5rem;
+    p {
         text-align: center;
         display: block;
         width: 80%;
         max-width: 1200px;
-        margin: 0 auto;
+        margin: 2.5rem auto 0;
     }
     .heading-background {
         width: 80%;

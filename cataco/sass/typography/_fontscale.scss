@@ -1,9 +1,3 @@
-$dark-grey: #565656;
-$middle-grey: #8A8481;
-$misty-rose: #F9E7E4;
-$soft-pink: #FDF5F3;
-$white: #FFFFFF;
-
 html {font-size: 100%;} /*16px*/
 
 body {
@@ -40,6 +34,8 @@ p {
     font-size: clamp(0.875rem, 2.25vw, 1.125rem);
     line-height: 1.5rem;
     margin-top: 1.5rem;
+    max-width: 75ch;
+    margin: 0 auto;
 }
 
 @mixin h2-line-height() {

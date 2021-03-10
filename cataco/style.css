@@ -72,6 +72,8 @@ p {
   font-size: clamp(0.875rem, 2.25vw, 1.125rem);
   line-height: 1.5rem;
   margin-top: 1.5rem;
+  max-width: 75ch;
+  margin: 0 auto;
 }
 
 .header > .post-edit-link {
@@ -147,7 +149,7 @@ input[type=submit]:hover {
 @media (min-width: 600px) {
   .container p {
     width: 100%;
-    margin: 1.5rem 0 0 0;
+    margin: 1.5rem auto 0 auto;
   }
 }
 
@@ -236,7 +238,7 @@ header nav {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease-in-out;
-  background-color: #F9E7E4;
+  background-color: #FDF5F3;
   position: absolute;
   top: 0;
   left: 0;
@@ -357,13 +359,12 @@ footer {
   margin-top: 2.5rem;
 }
 
-.mailing > p {
-  margin-top: 2.5rem;
+.mailing p {
   text-align: center;
   display: block;
   width: 80%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 2.5rem auto 0;
 }
 
 .mailing .heading-background {
@@ -440,6 +441,35 @@ footer {
   .home-services-content,
   .home-shop-content {
     width: 55ch;
+  }
+}
+
+.about-image {
+  display: block;
+  width: 60%;
+  margin: 1.25rem auto 0;
+}
+
+.click-here {
+  padding: 0.5rem 1rem;
+  color: #565656;
+}
+
+@media (min-width: 800px) {
+  .about-image {
+    width: 100%;
+  }
+  .about-image-main {
+    width: 60%;
+  }
+  .about-image-gallery {
+    margin-top: 1.25rem;
+    column-count: 2;
+    column-gap: 2%;
+    column-width: 46%;
+  }
+  .about-image-gallery .about-image:first-of-type {
+    margin: 0 auto;
   }
 }
 
