@@ -1,3 +1,10 @@
+.gallery span {
+    margin: 0.5rem 0 0 0;
+    font-size: 0.875rem;
+    text-align: center;
+    display: block;
+}
+
 /* Adaptive - Requires that all of the images have the same height/Or divisible Heights */
 
 // @media (min-width: 700px) {
@@ -22,15 +29,15 @@
 
 /* Masonry Layout */
 
+.gallery-image {
+    margin-bottom: 1.5rem;
+}
+
 @media (min-width: 700px) {
     .gallery {
         column-count: 2;
         column-width: 45%;
         column-gap: 4%;
-    }
-
-    .gallery-image {
-        margin-bottom: 1.5rem;
     }
 }
 

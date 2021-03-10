@@ -5,19 +5,25 @@
 		<div class="heading-background">
 			<h2 class="entry-title"><?php the_title(); ?></h2> <?php edit_post_link(); ?>
 		</div>
-		<?php if ( $gallery = get_post_gallery( get_the_ID(), false ) ) : ?>
-			<?php print_r($gallery) ?>
+		<?php if ( $gallery = get_post_gallery( get_the_ID(), false ) ) :
+
+			$gallery_ids = $gallery['ids'];
+			$gallery_ids = explode(',', $gallery_ids);
+		?>
 			<div class="gallery">
-				<?php foreach ( $gallery['src'] as $src ) { 
-					$attachment_meta = wp_get_attachment($src);
-					print_r($attachment_meta);
-				?>
+				<?php //foreach ( $gallery['src'] as $src ) { ?>
 					<!-- <div class="gallery-image">
 						<img loading="lazy" src="<?php echo $src; ?>" alt="gallery image">
 					</div> -->
+				<?php //} ?>
+				<?php foreach ( $gallery_ids as $id ) { 
+					$attachment_meta = wp_get_attachment($id);
+				?>
 					<div class="gallery-image">
-						<img loading="lazy" src="<?php echo $attachment_meta['src'] ?>" alt="gallery image">
-						<p><?php echo $attachment_meta['caption'] ?></p>
+						<img loading="lazy" src="<?php echo $attachment_meta['src'] ?>" alt=" <?php if ($attachment_meta['caption'] != "") { echo $attachment_meta['caption']; } else { ?> Gallery Image <?php } ?> ">
+						<?php if ($attachment_meta['caption'] != "") { ?>
+							<span class="caption"><?php echo $attachment_meta['caption'] ?></span>
+						<?php } ?>
 					</div>
 				<?php } ?>
 			</div>
