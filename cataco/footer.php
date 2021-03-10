@@ -7,14 +7,15 @@
 				    <a href="" id="signup">Sign Up Here</a>
 				</div>
 				
-				<?php dynamic_sidebar( 'footer_area_top' ); ?>
-				<?php dynamic_sidebar( 'footer_area_bot' ); ?>
-				<div id="copyright">
-					<p>
-						Letters by Cata Co. | Edmonton, Alberta CA.
-					</p>
+					<?php dynamic_sidebar( 'footer_area_top' ); ?>
+				<div class="over-bottom">	
+					<?php dynamic_sidebar( 'footer_area_bot' ); ?>
+					<div id="copyright">
+						<p>
+							Letters by Cata Co. | Edmonton, Alberta CA.
+						</p>
+					</div>
 				</div>
-				
 			</footer>
 		</div>
 	<?php wp_footer(); ?>

@@ -125,7 +125,9 @@ input[type=submit]:hover {
 
 .frame-square {
   border: 1px solid #565656;
-  order: 1;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 
 .thumbnail {
@@ -164,8 +166,12 @@ header .inner-container svg path {
 }
 
 header .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .logo {
@@ -235,6 +241,7 @@ header nav {
   text-align: center;
   max-height: 0;
   overflow: hidden;
+  -webkit-transition: max-height 0.5s ease-in-out;
   transition: max-height 0.5s ease-in-out;
   background-color: #F9E7E4;
   position: absolute;
@@ -288,25 +295,32 @@ header nav {
 
 /* Footer Styles */
 footer {
-  background-color: #8a8481;
   margin-top: 2.5rem;
+  text-align: center;
 }
 
 .footer-area-top {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100%;
   background-color: white;
+  margin-top: 3rem;
 }
 
 .footer-area-top > .custom-html-widget {
   width: 100%;
-  height: 15rem;
 }
 
 .footer-area-top > .custom-html-widget > a {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 150px;
   height: 150px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .footer-area-top img {
@@ -314,8 +328,15 @@ footer {
   height: 50%;
 }
 
+.over-bottom {
+  background-color: #565656;
+  padding: 2rem 0 5rem 0;
+}
+
 #menu-menu-1 {
   list-style-type: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   padding: 0;
 }
@@ -330,6 +351,30 @@ footer {
   text-decoration: none;
   color: white;
   margin: 1rem;
+}
+
+#menu-main-menu {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#menu-main-menu > li {
+  margin: 1rem;
+}
+
+#menu-main-menu > li a {
+  color: #FFFFFF;
+}
+
+.mailing {
+  background-color: #FFFFFF;
+}
+
+.mailing > h2 {
+  margin-bottom: 6rem;
 }
 
 .home-opener p {
@@ -349,17 +394,24 @@ footer {
 
 @media (min-width: 700px) {
   .home-gallery-content {
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
   }
 }
 
 @media (min-width: 750px) {
   .home-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
-    align-items: start;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
   }
   .home-block p:first-of-type {
     margin: 0;
@@ -393,9 +445,12 @@ footer {
 /* Masonry Layout */
 @media (min-width: 700px) {
   .gallery {
-    column-count: 2;
-    column-width: 45%;
-    column-gap: 4%;
+    -webkit-column-count: 2;
+            column-count: 2;
+    -webkit-column-width: 45%;
+            column-width: 45%;
+    -webkit-column-gap: 4%;
+            column-gap: 4%;
   }
   .gallery-image {
     margin-bottom: 1.5rem;
@@ -404,9 +459,12 @@ footer {
 
 @media (min-width: 1000px) {
   .gallery {
-    column-count: 3;
-    column-width: 30%;
-    column-gap: 3%;
+    -webkit-column-count: 3;
+            column-count: 3;
+    -webkit-column-width: 30%;
+            column-width: 30%;
+    -webkit-column-gap: 3%;
+            column-gap: 3%;
   }
 }
 
@@ -422,9 +480,14 @@ footer {
 
 @media (min-width: 750px) {
   .service {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
-    align-items: start;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
   }
   .service h3 {
     margin-top: 0;
@@ -462,8 +525,12 @@ footer {
     display: none;
   }
   .main-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .main-menu li {
     margin-right: 1rem;
@@ -476,7 +543,11 @@ footer {
     width: auto;
     max-height: 18rem;
     background-color: transparent;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }

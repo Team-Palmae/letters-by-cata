@@ -1,27 +1,33 @@
 /* Footer Styles */
 
 footer {
-    background-color: #8a8481;
     margin-top: 2.5rem;
+    text-align: center;
 }
 
 .footer-area-top {
     display: inline-flex;
     width: 100%;
     background-color: white;
+    margin-top: 3rem;
     > .custom-html-widget {
         width: 100%;
-        height: 15rem;
         > a {
             display: inline-flex;
             width: 150px;
-            height: 150px;  
+            height: 150px;
+            justify-content: center;
         }
     }
     img {
         width: 50%;
         height: 50%;
     }
+}
+
+.over-bottom{
+    background-color: $dark-grey;
+    padding: 2rem 0 5rem 0;
 }
 
 #menu-menu-1 {
@@ -39,4 +45,21 @@ footer {
     text-decoration: none;
     color: white;
     margin: 1rem;
+}
+#menu-main-menu{
+    display: inline-flex;
+    flex-wrap: wrap;
+    > li {
+        margin: 1rem;
+    }
+    >li a{
+        color: $white;
+    }
+}
+
+.mailing {
+    background-color: $white;
+    > h2 {
+        margin-bottom: 6rem;
+    }
 }
