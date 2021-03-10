@@ -9,7 +9,7 @@
 			<div class="gallery">
 				<?php foreach ( $gallery['src'] as $src ) { ?>
 					<div class="gallery-image">
-						<img src="<?php echo $src; ?>" alt="gallery image">
+						<img loading="lazy" src="<?php echo $src; ?>" alt="gallery image">
 					</div>
 				<?php } ?>
 			</div>

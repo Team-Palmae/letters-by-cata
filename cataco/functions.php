@@ -229,7 +229,11 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'add_to_cart_fragment' );
 
 function add_to_cart_fragment( $fragments ) {
     global $woocommerce;
-
-    $fragments['.cart-count'] = '<span class="cart-count">' . $woocommerce->cart->cart_contents_count . '</span>';
+    
+    if ($woocommerce->cart->cart_contents_count == 0) {
+        $fragments['.cart-count'] = '<span class="cart-count hidden">' . $woocommerce->cart->cart_contents_count . '</span>';
+    } else {
+        $fragments['.cart-count'] = '<span class="cart-count">' . $woocommerce->cart->cart_contents_count . '</span>';
+    }
     return $fragments;
 }
