@@ -229,11 +229,24 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'add_to_cart_fragment' );
 
 function add_to_cart_fragment( $fragments ) {
     global $woocommerce;
-    
+
     if ($woocommerce->cart->cart_contents_count == 0) {
         $fragments['.cart-count'] = '<span class="cart-count hidden">' . $woocommerce->cart->cart_contents_count . '</span>';
     } else {
         $fragments['.cart-count'] = '<span class="cart-count">' . $woocommerce->cart->cart_contents_count . '</span>';
     }
     return $fragments;
+}
+
+function wp_get_attachment( $attachment_id ) {
+
+    $attachment = get_post( $attachment_id );
+    return array(
+        'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+        'caption' => $attachment->post_excerpt,
+        'description' => $attachment->post_content,
+        'href' => get_permalink( $attachment->ID ),
+        'src' => $attachment->guid,
+        'title' => $attachment->post_title
+    );
 }

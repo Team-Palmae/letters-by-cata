@@ -6,10 +6,18 @@
 			<h2 class="entry-title"><?php the_title(); ?></h2> <?php edit_post_link(); ?>
 		</div>
 		<?php if ( $gallery = get_post_gallery( get_the_ID(), false ) ) : ?>
+			<?php print_r($gallery) ?>
 			<div class="gallery">
-				<?php foreach ( $gallery['src'] as $src ) { ?>
-					<div class="gallery-image">
+				<?php foreach ( $gallery['src'] as $src ) { 
+					$attachment_meta = wp_get_attachment($src);
+					print_r($attachment_meta);
+				?>
+					<!-- <div class="gallery-image">
 						<img loading="lazy" src="<?php echo $src; ?>" alt="gallery image">
+					</div> -->
+					<div class="gallery-image">
+						<img loading="lazy" src="<?php echo $attachment_meta['src'] ?>" alt="gallery image">
+						<p><?php echo $attachment_meta['caption'] ?></p>
 					</div>
 				<?php } ?>
 			</div>
