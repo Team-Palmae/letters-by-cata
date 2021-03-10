@@ -238,15 +238,16 @@ function add_to_cart_fragment( $fragments ) {
     return $fragments;
 }
 
-function wp_get_attachment( $attachment_id ) {
+/* Recieves the ID from the Gallery and Returns all the information for that ID - Src for the image src and Caption for the caption and alt tag */
+function get_post_from_id( $gallery_id ) {
 
-    $attachment = get_post( $attachment_id );
+    $post_meta = get_post( $gallery_id );
     return array(
-        'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
-        'caption' => $attachment->post_excerpt,
-        'description' => $attachment->post_content,
-        'href' => get_permalink( $attachment->ID ),
-        'src' => $attachment->guid,
-        'title' => $attachment->post_title
+        'alt' => get_post_meta( $post_meta->ID, '_wp_attachment_image_alt', true ),
+        'caption' => $post_meta->post_excerpt,
+        'description' => $post_meta->post_content,
+        'href' => get_permalink( $post_meta->ID ),
+        'src' => $post_meta->guid,
+        'title' => $post_meta->post_title
     );
 }

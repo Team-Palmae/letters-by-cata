@@ -11,18 +11,13 @@
 			$gallery_ids = explode(',', $gallery_ids);
 		?>
 			<div class="gallery">
-				<?php //foreach ( $gallery['src'] as $src ) { ?>
-					<!-- <div class="gallery-image">
-						<img loading="lazy" src="<?php echo $src; ?>" alt="gallery image">
-					</div> -->
-				<?php //} ?>
 				<?php foreach ( $gallery_ids as $id ) { 
-					$attachment_meta = wp_get_attachment($id);
+					$post_meta = get_post_from_id($id);
 				?>
 					<div class="gallery-image">
-						<img loading="lazy" src="<?php echo $attachment_meta['src'] ?>" alt=" <?php if ($attachment_meta['caption'] != "") { echo $attachment_meta['caption']; } else { ?> Gallery Image <?php } ?> ">
-						<?php if ($attachment_meta['caption'] != "") { ?>
-							<span class="caption"><?php echo $attachment_meta['caption'] ?></span>
+						<img loading="lazy" src="<?php echo $post_meta['src'] ?>" alt=" <?php if ($post_meta['caption'] != "") { echo $post_meta['caption']; } else { ?> Gallery Image <?php } ?> ">
+						<?php if ($post_meta['caption'] != "") { ?>
+							<span class="caption"><?php echo $post_meta['caption'] ?></span>
 						<?php } ?>
 					</div>
 				<?php } ?>
