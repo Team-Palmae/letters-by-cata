@@ -1,1 +1,50 @@
 // Just some Dummy Text
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.25rem;
+}
+
+.product {
+    margin: 0 auto;
+    max-width: 300px;
+    width: 300px;
+    position: relative;
+    h3 {
+
+    }
+
+    .amount {
+        color: $dark-grey;
+        font-size: 1.125rem;
+        margin-left: 0.675rem;
+    }
+
+    img {
+        width: 300px;
+    }
+}
+
+.instock {
+
+}
+
+.sale {
+    
+}
+
+span.onsale {
+    position: absolute;
+    top: -1.5rem;
+    left: -1.5rem;
+    background-color: $soft-pink;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+    color: $dark-grey;
+    border-radius: 50%;
+    line-height: 3rem;
+    text-align: center;
+    border: 1px solid $dark-grey;
+}

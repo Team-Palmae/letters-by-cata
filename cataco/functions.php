@@ -156,25 +156,22 @@ function cataco_comment_count( $count ) {
 // Unenqueues the base styles of wordpress
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 // add_filter( 'use_default_gallery_style', '__return_false' );
-add_theme_support('html5', array('gallery', 'caption'));
+// add_theme_support('html5', array('gallery', 'caption'));
 
 function register_widget_areash() {
 
     register_sidebar( array(
-      'name'          => 'Header area',
-      'id'            => 'header_area',
-      'description'   => 'Header menu',
-      'before_widget' => '<section class="header-area">',
-      'after_widget'  => '</section>',
-      'before_title'  => '<h4>',
-      'after_title'   => '</h4>',
-    ));
-    
-  }
+        'name'          => 'Header area',
+        'id'            => 'header_area',
+        'description'   => 'Header menu',
+        'before_widget' => '<section class="header-area">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4>',
+    )); 
+} 
   
-  
-  
-  function register_widget_areast() {
+function register_widget_areast() {
   
     register_sidebar( array(
       'name'          => 'Footer area top',
@@ -186,11 +183,11 @@ function register_widget_areash() {
       'after_title'   => '</h4>',
     ));
     
-  }
+}
   
-  add_action( 'widgets_init', 'register_widget_areast' );
+add_action( 'widgets_init', 'register_widget_areast' );
   
-  function register_widget_areasb() {
+function register_widget_areasb() {
   
     register_sidebar( array(
       'name'          => 'Footer area bot',
@@ -202,19 +199,19 @@ function register_widget_areash() {
       'after_title'   => '</h4>',
     ));
     
-  }
+}
   
-  add_action( 'widgets_init', 'register_widget_areasb' );
+add_action( 'widgets_init', 'register_widget_areasb' );
   
   // Prevent WP from adding <p> tags on pages
-  function disable_wp_auto_p( $content ) {
+function disable_wp_auto_p( $content ) {
     if ( is_singular( 'page' ) ) {
       remove_filter( 'the_content', 'wpautop' );
       remove_filter( 'the_excerpt', 'wpautop' );
     }
     return $content;
-  }
-  add_filter( 'the_content', 'disable_wp_auto_p', 0 );
+}
+add_filter( 'the_content', 'disable_wp_auto_p', 0 );
   
   /*// Prevent WP from adding <p> tags on all post types
   function disable_wp_auto_p( $content ) {
@@ -251,3 +248,6 @@ function get_post_from_id( $gallery_id ) {
         'title' => $post_meta->post_title
     );
 }
+
+// Woocommerce Hooks
+add_action( 'woocommerce_before_shop_loop', dynamic_sidebar( 'footer_area_bot' ) , 10 );
