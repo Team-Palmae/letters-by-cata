@@ -8,7 +8,22 @@
 				<a class="btn popmake-258" href="<?php echo esc_url( home_url( '/' ) ); ?>/contact" id="signup">Sign Up Here</a>
 			</div>
 			<footer id="footer">
-					<?php dynamic_sidebar( 'footer_area_top' ); ?>
+				<?php //dynamic_sidebar( 'footer_area_top' ); ?>
+				<div class="footer-area-top">
+					<div class="social-links">
+						<a href="https://www.instagram.com/lettersbycataco/?hl=en">
+							<img src="/lettersbycata/wp-content/uploads/2021/03/instagram.svg" alt="Instagram">
+						</a>
+		
+						<a href="https://www.facebook.com/lettersbycataco">
+							<img src="/lettersbycata/wp-content/uploads/2021/03/facebook.svg" alt="Facebook">
+						</a>
+		
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>/contact">
+							<img src="/lettersbycata/wp-content/uploads/2021/03/envelope.svg" alt="Contact">
+						</a>
+					</div>
+				</div>
 				<div class="over-bottom">	
 					<?php dynamic_sidebar( 'footer_area_bot' ); ?>
 					<div id="copyright">
