@@ -90,3 +90,36 @@ input[type=text], input[type=email] {
     text-align: center;
 }
 
+.main-menu .current_page_item a,
+.main-menu a:hover {
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.main-menu .current_page_item a,
+.main-menu a:active {
+  text-decoration: underline;
+  font-weight: 400;
+}
+
+footer ul a:hover {
+    font-weight: bolder;
+    text-decoration: none;
+  }
+
+  footer ul a:active {
+    text-decoration: underline;
+    font-weight: 400;
+  }
+
+  svg.svg-inline--fa.fa-bars.fa-w-14, svg path {
+    cursor: pointer;
+  }
+
+  input.wpcf7-form-control.wpcf7-submit {
+    cursor: pointer;
+  }
+
+  svg.svg-inline--fa.fa-bars.fa-w-14, svg path {
+    cursor: pointer;
+  }
