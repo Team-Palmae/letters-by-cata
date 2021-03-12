@@ -593,6 +593,10 @@ footer ul a:active {
   display: block;
 }
 
+#post-45 > .entry-content {
+  display: none !important;
+}
+
 /* Adaptive - Requires that all of the images have the same height/Or divisible Heights */
 /* Masonry Layout */
 .gallery-image {

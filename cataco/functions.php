@@ -169,7 +169,7 @@ function register_widget_areash() {
         'before_title'  => '<h4>',
         'after_title'   => '</h4>',
     )); 
-} 
+}
   
 function register_widget_areast() {
   
@@ -199,6 +199,20 @@ function register_widget_areasb() {
       'after_title'   => '</h4>',
     ));
     
+}
+add_action( 'widgets_init', 'register_widget_areasS' );
+
+function register_widget_areasS() {
+
+    register_sidebar( array(
+        'name'          => 'Side area',
+        'id'            => 'side_area',
+        'description'   => 'Sidebar menu',
+        'before_widget' => '<section class="side-area">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4>',
+    )); 
 }
   
 add_action( 'widgets_init', 'register_widget_areasb' );
