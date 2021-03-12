@@ -61,6 +61,17 @@ footer {
     }
 }
 
+footer ul a:hover {
+    font-weight: bolder;
+    text-decoration: none;
+  }
+
+  footer ul a:active {
+    text-decoration: underline;
+    font-weight: 400;
+  }
+
+
 .mailing {
     background-color: $white;
     margin-top: 2.5rem;

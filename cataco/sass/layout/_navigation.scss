@@ -23,6 +23,10 @@ header {
     margin-right: auto;
 }
 
+svg.svg-inline--fa.fa-bars.fa-w-14, svg path {
+    cursor: pointer;
+  }
+
 .cart-icon,
 .toggle-icon-open,
 .toggle-icon-open svg,
@@ -103,7 +107,13 @@ header nav {
 .main-menu a:hover,
 .menu .current_page_item a,
 .menu a:hover {
-    text-decoration: underline;
+    font-weight: bolder;
+}
+
+.main-menu .current_page_item a,
+.main-menu a:active {
+  text-decoration: underline;
+  font-weight: 400;
 }
 
 @mixin navbar-desktop() {
