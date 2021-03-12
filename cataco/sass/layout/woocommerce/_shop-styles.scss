@@ -1,28 +1,56 @@
 // Just some Dummy Text
 
 .products {
+    margin: 1.25rem 0 0 0;
     display: grid;
-    grid-gap: 1.25rem;
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .woocommerce-pricing {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    &.sale {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        p {
+            display: inline;
+            margin: 1.5rem 0.5rem 0;
+        }
+    }
     p {
-        display: inline-block;
         text-align: center;
+    }
+    .sale-price {
+        color: limegreen;
+        text-align: left;
+    }
+    
+    .regular-price {
+        text-decoration: line-through;
+        text-align: right;
     }
 }
 
+.short-description {
+    width: 80%;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-align: center;
+    font-size: 0.875rem;
+    width: 90%;
+}
+
+
 .product {
-    margin: 0 auto;
+    margin: 0.5rem auto 0;
     max-width: 300px;
     width: 300px;
     position: relative;
     &-title {
         text-align: center;
-        width: 80%;
+        width: 90%;
         margin: 1.25rem auto 0;
     }
     .amount {
@@ -40,14 +68,6 @@
 
 }
 
-.sale-price {
-    color: green;
-}
-
-.regular-price {
-    text-decoration: line-through;
-}
-
 span.onsale {
     position: absolute;
     top: -1.5rem;
@@ -63,15 +83,15 @@ span.onsale {
     border: 1px solid $dark-grey;
 }
 
-@media(min-width: 650px) {
-    .products {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+// @media(min-width: 650px) {
+//     .products {
+//         grid-template-columns: repeat(2, 1fr);
+//     }
+// }
 
-@media (min-width: 950px) {
-    .products {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
+// @media (min-width: 950px) {
+//     .products {
+//         display: grid;
+//         grid-template-columns: repeat(3, 1fr);
+//     }
+// }

@@ -279,7 +279,7 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'canadian_price', 10 );
 function canadian_price() {
     global $product;
     if ($product->get_sale_price()) {
-        echo '<div class="woocommerce-pricing"><p class="regular-price"><span class="canadian-price">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="canadian-price">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
+        echo '<div class="woocommerce-pricing sale"><p class="regular-price"><span class="canadian-price">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="canadian-price">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
     } else {
         echo '<div class="woocommerce-pricing"><p><span class="canadian-price">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
     }
@@ -291,5 +291,21 @@ add_action( 'woocommerce_after_shop_loop_item', 'short_description', 8 );
 
 function short_description() {
     global $product;
-    echo '<p class="short-description">' . $product->get_short_description() . '</p>';
+    if ($product->get_short_description()) {
+        echo '<p class="short-description">' . $product->get_short_description() . '</p>';
+    }
 }
+
+remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 ); 
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
+
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+add_action( 'woocommerce_after_shop_loop_item', 'link_button', 10 );
+
+function link_button() {
+    global $product;
+    echo '<a href="' . get_permalink( $product->get_id() ) . '" class="button">View Item</a>';
+}
+
+// <a href="http://lettersbycata.web.dmitcapstone.ca/lettersbycata/product/color-changing-cup/" class="button"></a>
+// <a href="?add-to-cart=169" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="169" data-product_sku="" aria-label="Add “Custom Name Decal” to your cart" rel="nofollow">Add to cart</a>

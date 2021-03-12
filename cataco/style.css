@@ -679,30 +679,56 @@ footer ul a:active {
 }
 
 .products {
+  margin: 1.25rem 0 0 0;
   display: -ms-grid;
   display: grid;
-  grid-gap: 1.25rem;
+  grid-gap: 1.5rem;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.woocommerce-pricing {
+.woocommerce-pricing.sale {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+}
+
+.woocommerce-pricing.sale p {
+  display: inline;
+  margin: 1.5rem 0.5rem 0;
 }
 
 .woocommerce-pricing p {
-  display: inline-block;
   text-align: center;
 }
 
+.woocommerce-pricing .sale-price {
+  color: limegreen;
+  text-align: left;
+}
+
+.woocommerce-pricing .regular-price {
+  text-decoration: line-through;
+  text-align: right;
+}
+
+.short-description {
+  width: 80%;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: center;
+  font-size: 0.875rem;
+  width: 90%;
+}
+
 .product {
-  margin: 0 auto;
+  margin: 0.5rem auto 0;
   max-width: 300px;
   width: 300px;
   position: relative;
@@ -710,7 +736,7 @@ footer ul a:active {
 
 .product-title {
   text-align: center;
-  width: 80%;
+  width: 90%;
   margin: 1.25rem auto 0;
 }
 
@@ -722,14 +748,6 @@ footer ul a:active {
 
 .product img {
   width: 300px;
-}
-
-.sale-price {
-  color: green;
-}
-
-.regular-price {
-  text-decoration: line-through;
 }
 
 span.onsale {
@@ -747,22 +765,6 @@ span.onsale {
   border: 1px solid #565656;
 }
 
-@media (min-width: 650px) {
-  .products {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 950px) {
-  .products {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 .error-content p {
   font-size: 1.5rem;
   text-align: center;
@@ -770,7 +772,7 @@ span.onsale {
 }
 
 @media (min-width: 500px) {
-  h2 {
+  h2, h3 {
     line-height: 3rem;
     /*Adjusting the line height so that the baseline stays and fits with the fonts growth*/
   }
