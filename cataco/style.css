@@ -622,6 +622,24 @@ footer ul a:active {
 }
 
 /* Deconstructed Pancake - Doesn't work as hoped */
+/* Custom Instagram Feed Styling */
+#sb_instagram {
+  margin-top: 2.5rem;
+}
+
+#sb_instagram #sbi_load .sbi_follow_btn a {
+  border: 1px solid #565656;
+  border-radius: 12px;
+}
+
+#sb_instagram #sbi_load .sbi_follow_btn a:hover {
+  background: #F5F5F5;
+}
+
+#sb_instagram #sbi_load {
+  margin-top: 1.25rem;
+}
+
 .service {
   margin-top: 2.5rem;
 }
