@@ -34,9 +34,10 @@ input[type=submit],#nf-field-17.ninja-forms-field-nf-element {
     margin: 0 auto;
     margin-top: 20px;
     &:hover {
-        background-color: $off-white;
+        background-color: $darker-pink;
     }
 }
+
 input[type=text], input[type=email] {
     border: 1px solid grey;
     border-radius: 8px;
@@ -90,12 +91,12 @@ input[type=text], input[type=email] {
     text-align: center;
 }
 
-  svg.svg-inline--fa.fa-bars.fa-w-14, svg path {
+svg.svg-inline--fa.fa-bars.fa-w-14, svg path {
     cursor: pointer;
-  }
+}
 
-  input.wpcf7-form-control.wpcf7-submit {
+input.wpcf7-form-control.wpcf7-submit {
     cursor: pointer;
-  }
+}
 
  

@@ -140,7 +140,7 @@ input[type=submit], #nf-field-17.ninja-forms-field-nf-element {
 
 .btn:hover, .button:hover,
 input[type=submit]:hover, #nf-field-17.ninja-forms-field-nf-element:hover {
-  background-color: #F5F5F5;
+  background-color: #fbedea;
 }
 
 input[type=text], input[type=email] {
@@ -316,12 +316,7 @@ header nav {
 .menu .current_page_item a,
 .menu a:hover {
   font-weight: bolder;
-}
-
-.main-menu .current_page_item a,
-.main-menu a:active {
   text-decoration: underline;
-  font-weight: 400;
 }
 
 .header {
@@ -750,10 +745,14 @@ footer ul a:active {
   width: 300px;
 }
 
+.country-abbreviation {
+  font-weight: bold;
+}
+
 span.onsale {
   position: absolute;
-  top: -1.5rem;
-  left: -1.5rem;
+  top: -1rem;
+  left: -1rem;
   background-color: #FDF5F3;
   width: 3rem;
   height: 3rem;

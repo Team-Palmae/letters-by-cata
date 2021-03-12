@@ -279,9 +279,9 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'canadian_price', 10 );
 function canadian_price() {
     global $product;
     if ($product->get_sale_price()) {
-        echo '<div class="woocommerce-pricing sale"><p class="regular-price"><span class="canadian-price">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="canadian-price">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
+        echo '<div class="woocommerce-pricing sale"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
     } else {
-        echo '<div class="woocommerce-pricing"><p><span class="canadian-price">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
+        echo '<div class="woocommerce-pricing"><p><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
     }
 }
 
