@@ -681,9 +681,24 @@ footer ul a:active {
 .products {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
   grid-gap: 1.25rem;
+}
+
+.woocommerce-pricing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.woocommerce-pricing p {
+  display: inline-block;
+  text-align: center;
 }
 
 .product {
@@ -691,6 +706,12 @@ footer ul a:active {
   max-width: 300px;
   width: 300px;
   position: relative;
+}
+
+.product-title {
+  text-align: center;
+  width: 80%;
+  margin: 1.25rem auto 0;
 }
 
 .product .amount {
@@ -701,6 +722,14 @@ footer ul a:active {
 
 .product img {
   width: 300px;
+}
+
+.sale-price {
+  color: green;
+}
+
+.regular-price {
+  text-decoration: line-through;
 }
 
 span.onsale {
@@ -716,6 +745,22 @@ span.onsale {
   line-height: 3rem;
   text-align: center;
   border: 1px solid #565656;
+}
+
+@media (min-width: 650px) {
+  .products {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 950px) {
+  .products {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .error-content p {

@@ -2,8 +2,17 @@
 
 .products {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     grid-gap: 1.25rem;
+}
+
+.woocommerce-pricing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+        display: inline-block;
+        text-align: center;
+    }
 }
 
 .product {
@@ -11,10 +20,11 @@
     max-width: 300px;
     width: 300px;
     position: relative;
-    h3 {
-
+    &-title {
+        text-align: center;
+        width: 80%;
+        margin: 1.25rem auto 0;
     }
-
     .amount {
         color: $dark-grey;
         font-size: 1.125rem;
@@ -30,8 +40,12 @@
 
 }
 
-.sale {
-    
+.sale-price {
+    color: green;
+}
+
+.regular-price {
+    text-decoration: line-through;
 }
 
 span.onsale {
@@ -47,4 +61,17 @@ span.onsale {
     line-height: 3rem;
     text-align: center;
     border: 1px solid $dark-grey;
+}
+
+@media(min-width: 650px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 950px) {
+    .products {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

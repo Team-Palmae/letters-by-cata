@@ -265,3 +265,31 @@ function get_post_from_id( $gallery_id ) {
 
 // Woocommerce Hooks
 add_action( 'woocommerce_before_shop_loop', dynamic_sidebar( 'footer_area_bot' ) , 10 );
+
+remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
+add_action( 'woocommerce_shop_loop_item_title', 'product_title_tags', 10 );
+
+function product_title_tags() {
+    echo '<h3 class="product-title">' . get_the_title() . '</h3>';
+}
+
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+add_action( 'woocommerce_after_shop_loop_item_title', 'canadian_price', 10 );
+
+function canadian_price() {
+    global $product;
+    if ($product->get_sale_price()) {
+        echo '<div class="woocommerce-pricing"><p class="regular-price"><span class="canadian-price">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="canadian-price">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
+    } else {
+        echo '<div class="woocommerce-pricing"><p><span class="canadian-price">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
+    }
+}
+
+// $product->get_sale_price();
+
+add_action( 'woocommerce_after_shop_loop_item', 'short_description', 8 );
+
+function short_description() {
+    global $product;
+    echo '<p class="short-description">' . $product->get_short_description() . '</p>';
+}
