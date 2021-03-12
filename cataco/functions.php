@@ -263,7 +263,7 @@ function get_post_from_id( $gallery_id ) {
     );
 }
 
-// Woocommerce Hooks
+// Woocommerce Shop Hooks
 add_action( 'woocommerce_before_shop_loop', dynamic_sidebar( 'footer_area_bot' ) , 10 );
 
 remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
@@ -285,8 +285,6 @@ function canadian_price() {
     }
 }
 
-// $product->get_sale_price();
-
 add_action( 'woocommerce_after_shop_loop_item', 'short_description', 8 );
 
 function short_description() {
@@ -307,5 +305,4 @@ function link_button() {
     echo '<a href="' . get_permalink( $product->get_id() ) . '" class="button">View Item</a>';
 }
 
-// <a href="http://lettersbycata.web.dmitcapstone.ca/lettersbycata/product/color-changing-cup/" class="button"></a>
-// <a href="?add-to-cart=169" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="169" data-product_sku="" aria-label="Add “Custom Name Decal” to your cart" rel="nofollow">Add to cart</a>
+// Woocommerce Product Hooks

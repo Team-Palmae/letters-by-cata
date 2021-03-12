@@ -682,6 +682,29 @@ footer ul a:active {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
+.products .product {
+  margin: 0.5rem auto 0;
+  max-width: 300px;
+  width: 300px;
+  position: relative;
+}
+
+.products .product-title {
+  text-align: center;
+  width: 90%;
+  margin: 1.25rem auto 0;
+}
+
+.products .product .amount {
+  color: #565656;
+  font-size: 1.125rem;
+  margin-left: 0.675rem;
+}
+
+.products .product img {
+  width: 300px;
+}
+
 .woocommerce-pricing.sale {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -722,29 +745,6 @@ footer ul a:active {
   width: 90%;
 }
 
-.product {
-  margin: 0.5rem auto 0;
-  max-width: 300px;
-  width: 300px;
-  position: relative;
-}
-
-.product-title {
-  text-align: center;
-  width: 90%;
-  margin: 1.25rem auto 0;
-}
-
-.product .amount {
-  color: #565656;
-  font-size: 1.125rem;
-  margin-left: 0.675rem;
-}
-
-.product img {
-  width: 300px;
-}
-
 .country-abbreviation {
   font-weight: bold;
 }
@@ -762,6 +762,29 @@ span.onsale {
   line-height: 3rem;
   text-align: center;
   border: 1px solid #565656;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+  list-style: none;
+  padding: 0 0 0 1em;
+  margin: 0 0 1.618em;
+  overflow: hidden;
+  position: relative;
+}
+
+.woocommerce-tabs ul.tabs::before {
+  content: " ";
+  display: table;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs::before {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #d3ced2;
+  z-index: 1;
 }
 
 .error-content p {

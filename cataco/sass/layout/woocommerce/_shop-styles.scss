@@ -5,6 +5,26 @@
     display: grid;
     grid-gap: 1.5rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    .product {
+        margin: 0.5rem auto 0;
+        max-width: 300px;
+        width: 300px;
+        position: relative;
+        &-title {
+            text-align: center;
+            width: 90%;
+            margin: 1.25rem auto 0;
+        }
+        .amount {
+            color: $dark-grey;
+            font-size: 1.125rem;
+            margin-left: 0.675rem;
+        }
+    
+        img {
+            width: 300px;
+        }
+    }
 }
 
 .woocommerce-pricing {
@@ -40,28 +60,6 @@
     text-align: center;
     font-size: 0.875rem;
     width: 90%;
-}
-
-
-.product {
-    margin: 0.5rem auto 0;
-    max-width: 300px;
-    width: 300px;
-    position: relative;
-    &-title {
-        text-align: center;
-        width: 90%;
-        margin: 1.25rem auto 0;
-    }
-    .amount {
-        color: $dark-grey;
-        font-size: 1.125rem;
-        margin-left: 0.675rem;
-    }
-
-    img {
-        width: 300px;
-    }
 }
 
 .country-abbreviation {

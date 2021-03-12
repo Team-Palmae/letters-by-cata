@@ -1,1 +1,69 @@
-// Just some Dummy Text
+.product .entry-content {
+
+}
+
+.summary.entry-summary {
+    .price {
+
+    }
+    p {
+
+    }
+}
+
+.product .onsale {
+
+}
+
+.flex-control-nav {
+
+}
+
+.flex-viewport {
+
+}
+
+.woocommerce-product-gallery__trigger {
+
+}
+
+.zoomImg {
+
+}
+
+.woocommerce-product-gallery__image .flex-active-slide {
+
+}
+
+.input-text .qty .text {
+
+}
+
+.product-meta {
+
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+    list-style: none;
+    padding: 0 0 0 1em;
+    margin: 0 0 1.618em;
+    overflow: hidden;
+    position: relative;
+}
+
+.woocommerce-tabs ul.tabs::before {
+    content: " ";
+    display: table;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs::before {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid #d3ced2;
+    z-index: 1;
+}
+
+// woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab Description Area
