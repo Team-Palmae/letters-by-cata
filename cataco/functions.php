@@ -314,4 +314,27 @@ function continue_shopping() {
     echo '<a href="' . $url . '" class="button">View Item</a>';
 }
 
-// do_action( 'woocommerce_shop_loop_item_title' );
+// The screen reader label still remains
+add_filter( 'woocommerce_before_quantity_input_field', 'quantity_label' );
+ 
+function quantity_label() {
+ echo '<label class="qty">Quantity: </label>'; 
+}
+
+add_filter( 'woocommerce_get_image_size_gallery_thumbnail', function( $size ) {
+    return array(
+        'width' => 250,
+        'height' => 250,
+        'crop' => 1,
+    );
+} );
+
+add_filter( 'woocommerce_get_image_size_single', function( $size ) {
+    return array(
+        'width' => 500,
+        'height' => 400,
+        'crop' => 0,
+    );
+} );
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );

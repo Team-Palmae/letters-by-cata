@@ -136,6 +136,7 @@ input[type=submit], #nf-field-17.ninja-forms-field-nf-element {
   font-size: 18px;
   margin: 0 auto;
   margin-top: 20px;
+  font-family: 'open-sans', sans-serif;
 }
 
 .btn:hover, .button:hover,
@@ -796,6 +797,7 @@ div.product {
 
 .woocommerce-product-gallery {
   position: relative;
+  max-width: 500px;
 }
 
 .woocommerce-product-gallery__trigger {
@@ -860,15 +862,46 @@ img.emoji {
   grid-column: 1 / span 2;
 }
 
+.quantity input {
+  width: 60px;
+  background-color: #FDF5F3;
+  color: #565656;
+  padding: 0.5rem;
+}
+
 .flex-control-nav.flex-control-thumbs {
+  margin-top: 0.5rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.5rem;
 }
 
 .flex-control-nav.flex-control-thumbs li {
   margin: 0;
+}
+
+.flex-viewport {
+  width: 100%;
+  height: auto;
+}
+
+.wp-post-image {
+  width: 100%;
+  height: auto;
+}
+
+.flex-control-thumbs img {
+  max-width: 150px;
+  max-height: 150px;
+  border: 1px solid #565656;
+  margin: 0 auto;
+  display: block;
+}
+
+.woocommerce-product-gallery__image {
+  height: auto;
 }
 
 .error-content p {
