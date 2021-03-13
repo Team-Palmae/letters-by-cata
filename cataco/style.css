@@ -316,6 +316,7 @@ header nav {
 .menu .current_page_item a,
 .menu a:hover {
   font-weight: bolder;
+  text-decoration: none;
 }
 
 .main-menu .current_page_item a,
@@ -431,6 +432,10 @@ footer {
   display: block;
   padding: 1rem;
   color: #FFFFFF;
+}
+
+footer ul a {
+  text-transform: uppercase;
 }
 
 footer ul a:hover {
