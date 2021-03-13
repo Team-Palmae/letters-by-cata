@@ -307,12 +307,9 @@ function link_button() {
 
 // Woocommerce Product Hooks
 
-// do_action( 'woocommerce_after_add_to_cart_button' );
-// echo '<a href="' . echo esc_url( home_url( '/' ) ) . '/shop" class="button">View Item</a>';
 add_action( 'woocommerce_after_add_to_cart_button', 'continue_shopping', 10 );
 
 function continue_shopping() {
-    // echo '<a href="' . echo get_site_url() . '/shop" class="button">View Item</a>';
     $url = site_url('/shop');
     echo '<a href="' . $url . '" class="button">View Item</a>';
 }
