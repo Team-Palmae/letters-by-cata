@@ -2,28 +2,11 @@
 
 }
 
-.summary.entry-summary {
-    .price {
-
-    }
-    p {
-
-    }
-}
-
 .product .onsale {
 
 }
 
 .flex-control-nav {
-
-}
-
-.flex-viewport {
-
-}
-
-.woocommerce-product-gallery__trigger {
 
 }
 
@@ -67,3 +50,100 @@
 }
 
 // woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab Description Area
+
+div.product {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    // header {
+    //     grid-column: 1 / span 2;
+    // }
+}
+
+.woocommerce-product-gallery {
+    position: relative;
+}  
+
+.woocommerce-product-gallery__trigger {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 2em;
+    z-index: 9;
+    width: 2rem;
+    height: 2rem;
+    background: $off-white;
+    text-indent: -9999px;
+    border-radius: 50%;
+    &::before {
+        content: "";
+        display: block;
+        width: 9px;
+        height: 9px;
+        border: 2px solid #000;
+        border-radius: 100%;
+        position: absolute;
+        top: 7px;
+        left: 7px;
+        box-sizing: content-box;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 2px;
+        height: 8px;
+        background: #000;
+        border-radius: 6px;
+        position: absolute;
+        top: 16px;
+        left: 19px;
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        box-sizing: content-box;
+    }
+}
+
+img.emoji {
+    display: inline;
+    border: none;
+    box-shadow: none;
+    height: 1em;
+    width: 1em;
+    margin: 0 .07em;
+    vertical-align: -0.1em;
+    background: none;
+    padding: 0;
+}
+
+.woocommerce-tabs {
+    grid-column: 1 / span 2;
+}
+
+
+.summary.entry-summary {
+    .price {
+
+    }
+    p {
+
+    }
+}
+
+.quantity {
+    // Quantity Changer
+}
+
+.flex-control-nav.flex-control-thumbs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    li {
+        // width: 25%;
+        margin: 0;
+    }
+}
+
+.flex-viewport {
+
+}

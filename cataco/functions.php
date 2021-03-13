@@ -153,8 +153,7 @@ function cataco_comment_count( $count ) {
     }
 }
 
-// Unenqueues the base styles of wordpress
-add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
 // add_filter( 'use_default_gallery_style', '__return_false' );
 // add_theme_support('html5', array('gallery', 'caption'));
 
@@ -263,6 +262,7 @@ function get_post_from_id( $gallery_id ) {
     );
 }
 
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 // Woocommerce Shop Hooks
 add_action( 'woocommerce_before_shop_loop', dynamic_sidebar( 'footer_area_bot' ) , 10 );
 
@@ -306,3 +306,15 @@ function link_button() {
 }
 
 // Woocommerce Product Hooks
+
+// do_action( 'woocommerce_after_add_to_cart_button' );
+// echo '<a href="' . echo esc_url( home_url( '/' ) ) . '/shop" class="button">View Item</a>';
+add_action( 'woocommerce_after_add_to_cart_button', 'continue_shopping', 10 );
+
+function continue_shopping() {
+    // echo '<a href="' . echo get_site_url() . '/shop" class="button">View Item</a>';
+    $url = site_url('/shop');
+    echo '<a href="' . $url . '" class="button">View Item</a>';
+}
+
+// do_action( 'woocommerce_shop_loop_item_title' );

@@ -316,7 +316,6 @@ header nav {
 .menu .current_page_item a,
 .menu a:hover {
   font-weight: bolder;
-  text-decoration: underline;
 }
 
 .header {
@@ -485,7 +484,7 @@ footer ul a:active {
   }
 }
 
-.home-opener p {
+.home-opener .call-to-action {
   max-width: 40ch;
   text-align: center;
   margin: 1.5rem auto 0;
@@ -785,6 +784,91 @@ span.onsale {
   left: 0;
   border-bottom: 1px solid #d3ced2;
   z-index: 1;
+}
+
+div.product {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.woocommerce-product-gallery {
+  position: relative;
+}
+
+.woocommerce-product-gallery__trigger {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 2em;
+  z-index: 9;
+  width: 2rem;
+  height: 2rem;
+  background: #F5F5F5;
+  text-indent: -9999px;
+  border-radius: 50%;
+}
+
+.woocommerce-product-gallery__trigger::before {
+  content: "";
+  display: block;
+  width: 9px;
+  height: 9px;
+  border: 2px solid #000;
+  border-radius: 100%;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.woocommerce-product-gallery__trigger::after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 8px;
+  background: #000;
+  border-radius: 6px;
+  position: absolute;
+  top: 16px;
+  left: 19px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+img.emoji {
+  display: inline;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  height: 1em;
+  width: 1em;
+  margin: 0 .07em;
+  vertical-align: -0.1em;
+  background: none;
+  padding: 0;
+}
+
+.woocommerce-tabs {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+}
+
+.flex-control-nav.flex-control-thumbs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.flex-control-nav.flex-control-thumbs li {
+  margin: 0;
 }
 
 .error-content p {
