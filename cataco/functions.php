@@ -322,21 +322,21 @@ function quantity_label() {
  echo '<p class="qty">Quantity: </p>'; 
 }
 
-add_filter( 'woocommerce_get_image_size_gallery_thumbnail', function( $size ) {
-    return array(
-        'width' => 300,
-        'height' => 300,
-        'crop' => 1,
-    );
-} );
+// add_filter( 'woocommerce_get_image_size_gallery_thumbnail', function( $size ) {
+//     return array(
+//         'width' => 300,
+//         'height' => 300,
+//         'crop' => 1,
+//     );
+// } );
 
-add_filter( 'woocommerce_get_image_size_single', function( $size ) {
-    return array(
-        'width' => 500,
-        'height' => 500,
-        'crop' => 1,
-    );
-} );
+// add_filter( 'woocommerce_get_image_size_single', function( $size ) {
+//     return array(
+//         'width' => 500,
+//         'height' => 500,
+//         'crop' => 1,
+//     );
+// } );
 
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
 
@@ -353,3 +353,8 @@ function product_single_price() {
         echo '<div><p><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
     }
 }
+
+// Cart
+
+add_action( 'woocommerce_proceed_to_checkout', 'continue_shopping', 30 );
+
