@@ -90,7 +90,8 @@ h3 {
   font-weight: 700;
 }
 
-p {
+p,
+label {
   font-size: 0.875rem;
   font-size: clamp(0.875rem, 2.25vw, 1.125rem);
   line-height: 1.5rem;
@@ -147,6 +148,8 @@ input[type=submit]:hover, #nf-field-17.ninja-forms-field-nf-element:hover {
 input[type=text], input[type=email] {
   border: 1px solid grey;
   border-radius: 8px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: clamp(0.875rem, 2.25vw, 1.125rem);
 }
 
 .frame-circle {
@@ -678,14 +681,14 @@ footer ul a:active {
   display: -ms-grid;
   display: grid;
   grid-gap: 1.5rem;
-  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .products .product {
   margin: 0.5rem auto 0;
   max-width: 300px;
-  width: 300px;
+  width: 250px;
   position: relative;
 }
 
@@ -699,10 +702,6 @@ footer ul a:active {
   color: #565656;
   font-size: 1.125rem;
   margin-left: 0.675rem;
-}
-
-.products .product img {
-  width: 300px;
 }
 
 .shop-pricing.sale {
@@ -881,7 +880,6 @@ img.emoji {
 
 .quantity input {
   width: 60px;
-  background-color: #FDF5F3;
   color: #565656;
   padding: 0.5rem;
   margin: 0 auto;
@@ -999,7 +997,7 @@ img.emoji {
 
 .woocommerce-cart .heading-background {
   max-width: 1200px;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -1007,28 +1005,36 @@ img.emoji {
   margin: 0;
 }
 
-.cart-container,
-.cart-collaterals {
-  width: 90%;
-  margin: 0 auto;
+.woocommerce-cart .quantity {
+  margin-left: auto;
 }
 
-.quantity input.input-text {
+.woocommerce-cart .quantity input.input-text {
   width: 40px;
-  background-color: #FDF5F3;
   color: #565656;
   padding: 0.2rem;
   margin: 0 auto;
   display: block;
 }
 
+.woocommerce-cart .attachment-woocommerce_thumbnail {
+  border: 1px solid #565656;
+  height: auto;
+  margin: 0 0.5rem 0 0;
+  max-width: 150px;
+}
+
+.cart-container,
+.cart-collaterals {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
 .cart_item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1052,13 +1058,17 @@ img.emoji {
 .product-remove a {
   font-size: 1.5rem;
   line-height: 2rem;
-  width: 2rem;
+  padding: 0 0.6rem;
   height: 2rem;
 }
 
-.attachment-woocommerce_thumbnail {
-  border: 1px solid #565656;
-  height: auto;
+.coupon label {
+  display: block;
+}
+
+.coupon input.input-text {
+  width: 100%;
+  padding: 0.5rem;
 }
 
 .cart-information {
@@ -1066,6 +1076,7 @@ img.emoji {
   line-height: 1.5rem;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+  margin-left: 0.5rem;
 }
 
 .product-name {
@@ -1073,8 +1084,67 @@ img.emoji {
   margin-bottom: 1rem;
 }
 
+.cart-container {
+  max-width: 500px;
+}
+
+.cart-collaterals {
+  margin-top: 1.25rem;
+  max-width: 400px;
+}
+
+.pricing-background {
+  background: #FDF5F3;
+  padding: 1rem;
+  margin-top: 1.25rem;
+}
+
+.pricing-background h2 {
+  margin-bottom: 0.5rem;
+}
+
+.pricing-background table {
+  width: 100%;
+}
+
+.pricing-background table tbody {
+  margin-top: 1.5rem;
+}
+
+.pricing-background table tr {
+  margin-top: 0.5rem;
+}
+
+.pricing-background table th {
+  margin-left: 0.5rem;
+}
+
+.pricing-background table td {
+  text-align: right;
+  margin-right: 0.5rem;
+  padding: 0.3rem 0;
+}
+
+.pricing-background table .order-total {
+  border-top: 1px solid #565656;
+}
+
+div.woocommerce-notices-wrapper {
+  width: 80%;
+  max-width: 800px;
+  background-color: #FDF5F3;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #565656;
+}
+
+div.woocommerce-notices-wrapper div {
+  padding: 1rem;
+}
+
 @media (min-width: 800px) {
-  .woocommerce-cart .woocommerce {
+  .woocommerce-cart .inner-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1082,14 +1152,25 @@ img.emoji {
         -ms-flex-align: start;
             align-items: start;
     max-width: 1200px;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding: 0 1.5rem;
   }
   .cart-container,
   .cart-collaterals {
-    max-width: none;
-    width: 100%;
     margin: 0;
+  }
+  .cart-container {
+    width: 400px;
+    margin-right: 1.25rem;
+  }
+}
+
+@media (min-width: 1300px) {
+  .cart-container {
+    width: 500px;
   }
 }
 
