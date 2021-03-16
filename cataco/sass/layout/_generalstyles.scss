@@ -39,11 +39,19 @@ input[type=submit],#nf-field-17.ninja-forms-field-nf-element {
     }
 }
 
-input[type=text], input[type=email] {
-    border: 1px solid grey;
+input[type=text], input[type=email], input[type=tel] {
+    border: 1px solid #888;
+    outline: none;
     border-radius: 8px;
     font-family: 'Open Sans', sans-serif;
     font-size: clamp(0.875rem, 2.25vw, 1.125rem);
+    &:focus {
+        border: 1px solid #777;
+    }
+}
+
+textarea {
+    resize: none;
 }
 
 .frame-circle {

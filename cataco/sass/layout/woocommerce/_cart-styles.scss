@@ -39,22 +39,22 @@
         margin: 0 0.5rem 0 0;
         max-width: 150px;
     }
+
+    .cart_item {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 0.5rem;
+        border-top: 1px solid $dark-grey;
+        &:first-of-type {
+            border-top: none;
+        }
+    }
 }
 
 .cart-container,
 .cart-collaterals {
     @include container();
-}
-
-.cart_item {
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 0.5rem;
-    border-top: 1px solid $dark-grey;
-    &:first-of-type {
-        border-top: none;
-    }
 }
 
 .product-remove {
@@ -147,7 +147,7 @@ div.woocommerce-notices-wrapper {
 }
 
 @media (min-width: 800px) {
-    .woocommerce-cart {
+    .woocommerce-cart .entry-content {
         .inner-container {
             display: flex;
             align-items: start;

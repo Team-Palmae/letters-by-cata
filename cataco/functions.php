@@ -311,7 +311,7 @@ add_action( 'woocommerce_after_add_to_cart_button', 'continue_shopping', 10 );
 
 function continue_shopping() {
     $url = site_url('/shop');
-    echo '<a href="' . $url . '" class="button">View Item</a>';
+    echo '<a href="' . $url . '" class="button">Continue Shopping</a>';
 }
 
 // The screen reader label still remains
@@ -357,4 +357,3 @@ function product_single_price() {
 // Cart
 
 add_action( 'woocommerce_proceed_to_checkout', 'continue_shopping', 30 );
-
