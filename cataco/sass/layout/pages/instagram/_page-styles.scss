@@ -1,1 +1,16 @@
-// Dummy Text
+/* Custom Instagram Feed Styling */
+#sb_instagram {
+    margin-top: 2.5rem;
+}
+
+#sb_instagram #sbi_load .sbi_follow_btn a {
+    border: 1px solid $dark-grey;
+    border-radius: 12px;
+    &:hover {
+        background: $off-white;
+    }
+}
+
+#sb_instagram #sbi_load {
+    margin-top: 1.25rem;
+}

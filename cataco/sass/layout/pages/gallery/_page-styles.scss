@@ -5,6 +5,10 @@
     display: block;
 }
 
+#post-45>.entry-content {
+    display: none !important;
+}
+
 /* Adaptive - Requires that all of the images have the same height/Or divisible Heights */
 
 // @media (min-width: 700px) {

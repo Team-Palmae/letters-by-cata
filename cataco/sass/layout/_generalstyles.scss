@@ -20,9 +20,11 @@
     text-align: center;
 }
 
+
 .btn, .button,
 input[type=submit],#nf-field-17.ninja-forms-field-nf-element {
     display: block;
+    cursor: pointer;
     width: 144px;
     padding: 0.75rem 0;
     background: $soft-pink;
@@ -33,13 +35,25 @@ input[type=submit],#nf-field-17.ninja-forms-field-nf-element {
     font-size: 18px;
     margin: 0 auto;
     margin-top: 20px;
+    font-family: 'Open Sans', sans-serif;
     &:hover {
-        background-color: $off-white;
+        background-color: $darker-pink;
     }
 }
-input[type=text], input[type=email] {
-    border: 1px solid grey;
+
+input[type=text], input[type=email], input[type=tel] {
+    border: 1px solid #888;
+    outline: none;
     border-radius: 8px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: clamp(0.875rem, 2.25vw, 1.125rem);
+    &:focus {
+        border: 1px solid #777;
+    }
+}
+
+textarea {
+    resize: none;
 }
 
 .frame-circle {
@@ -90,12 +104,12 @@ input[type=text], input[type=email] {
     text-align: center;
 }
 
-  svg.svg-inline--fa.fa-bars.fa-w-14, svg path {
+svg.svg-inline--fa.fa-bars.fa-w-14, svg path {
     cursor: pointer;
-  }
+}
 
-  input.wpcf7-form-control.wpcf7-submit {
+input.wpcf7-form-control.wpcf7-submit {
     cursor: pointer;
-  }
+}
 
  

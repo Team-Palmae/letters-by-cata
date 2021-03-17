@@ -1,43 +1,76 @@
 // Just some Dummy Text
 
 .products {
+    margin: 1.25rem 0 0 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1.25rem;
-}
-
-.product {
-    margin: 0 auto;
-    max-width: 300px;
-    width: 300px;
-    position: relative;
-    h3 {
-
-    }
-
-    .amount {
-        color: $dark-grey;
-        font-size: 1.125rem;
-        margin-left: 0.675rem;
-    }
-
-    img {
-        width: 300px;
-    }
-}
-
-.instock {
-
-}
-
-.sale {
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .product {
+        margin: 0.5rem auto 0;
+        margin-bottom: 5rem;
+        max-width: 300px;
+        width: 250px;
+        position: relative;
+        &-title {
+            text-align: center;
+            width: 90%;
+            margin: 1.25rem auto 0;
+        }
+        .amount {
+            color: $dark-grey;
+            font-size: 1.125rem;
+            margin-left: 0.675rem;
+        }
     
+        img {
+            // width: 300px;
+        }
+    }
+}
+
+.shop-pricing {
+    &.sale {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        p {
+            display: inline;
+            margin: 1.5rem 0.5rem 0;
+        }
+    }
+    p {
+        text-align: center;
+    }
+    .sale-price {
+        color: limegreen;
+        text-align: left;
+    }
+    
+    .regular-price {
+        text-decoration: line-through;
+        text-align: right;
+    }
+}
+
+.short-description {
+    width: 80%;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-align: center;
+    font-size: 0.875rem;
+    width: 90%;
+}
+
+.country-abbreviation {
+    font-weight: bold;
 }
 
 span.onsale {
     position: absolute;
-    top: -1.5rem;
-    left: -1.5rem;
+    top: -1rem;
+    left: -1rem;
     background-color: $soft-pink;
     width: 3rem;
     height: 3rem;
@@ -48,3 +81,16 @@ span.onsale {
     text-align: center;
     border: 1px solid $dark-grey;
 }
+
+// @media(min-width: 650px) {
+//     .products {
+//         grid-template-columns: repeat(2, 1fr);
+//     }
+// }
+
+// @media (min-width: 950px) {
+//     .products {
+//         display: grid;
+//         grid-template-columns: repeat(3, 1fr);
+//     }
+// }

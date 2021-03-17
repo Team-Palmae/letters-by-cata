@@ -61,10 +61,6 @@ footer {
     }
 }
 
-footer ul a{
-    text-transform: uppercase;
-}
-
 footer ul a:hover {
     font-weight: bolder;
     text-decoration: none;
@@ -75,6 +71,9 @@ footer ul a:hover {
     font-weight: 400;
   }
 
+ footer ul a{
+     text-transform: uppercase;
+ }
 
 .mailing {
     background-color: $white;
