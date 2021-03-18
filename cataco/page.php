@@ -6,14 +6,13 @@
 			<h2 class="entry-title"><?php the_title(); ?></h2> <?php edit_post_link(); ?>
 		</div>
 		<div class="entry-content">
-			<?php dynamic_sidebar( 'side_area' ); ?>
+			
 			<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
 				
-				<?php the_content(); ?>
+			<?php the_content(); ?>
 				<!-- <div class="entry-links">
 					<?php //wp_link_pages(); ?>	
-				</div> -->
-				
+				</div> -->		
 		</div>
 		<?php if ( $gallery = get_post_gallery( get_the_ID(), false ) ) :
 		

@@ -262,8 +262,43 @@ function get_post_from_id( $gallery_id ) {
     );
 }
 
+// Checks if the page is the shop page
+function shop_page() {
+    if(is_shop()){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// This would go on page.php
+// if ( $shop = shop_page() ) : 
+//     if ( is_active_sidebar( 'side_area' ) ) :
+//         dynamic_sidebar( 'side_area' );
+//     endif;
+// endif; 
+
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 // Woocommerce Shop Hooks
+
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+add_action( 'woocommerce_before_shop_loop', 'before_shop_loop_sidebar_container_start', 19);
+add_action( 'woocommerce_before_shop_loop', 'before_shop_loop_sidebar', 20);
+add_action( 'woocommerce_before_shop_loop', 'before_shop_loop_sidebar_container_end', 21);
+
+function before_shop_loop_sidebar_container_start() {
+    echo '<div class="filter-sidebar">';
+}
+
+function before_shop_loop_sidebar() {
+    dynamic_sidebar( 'side_area' );
+}
+
+function before_shop_loop_sidebar_container_end() {
+    echo '</div>';
+}
+
 add_action( 'woocommerce_before_shop_loop', dynamic_sidebar( 'footer_area_bot' ) , 10 );
 
 remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );

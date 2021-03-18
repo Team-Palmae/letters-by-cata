@@ -20,10 +20,6 @@
             font-size: 1.125rem;
             margin-left: 0.675rem;
         }
-    
-        img {
-            // width: 300px;
-        }
     }
 }
 
@@ -79,6 +75,32 @@ span.onsale {
     line-height: 3rem;
     text-align: center;
     border: 1px solid $dark-grey;
+}
+
+// Categories
+.cat-items-15 {
+    display: none;
+}
+
+@media (min-width: 1200px) {
+    div.woocommerce.columns-3,
+    div.woocommerce.columns-4,
+    div.woocommerce.columns-5 {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+    }
+    .woocommerce-notices-wrapper {
+        grid-column: 1 / -1;
+        grid-row: 1 / 1;
+    }
+    // .filter-sidebar {
+    //     grid-column: 1 / span 1;
+    //     grid-row: 2 / -1;
+    // }
+    // .products {
+    //     grid-column: span 1 / -1;
+    //     grid-row: 2 / -1;
+    // }
 }
 
 // @media(min-width: 650px) {
