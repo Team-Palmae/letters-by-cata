@@ -9,7 +9,13 @@
         max-width: 16ch;
         width: 90%;
         margin: 4rem auto 0;
+        position: relative;
+        bottom: 3rem;
     }
+}
+
+header#header.header{
+padding-bottom: 1rem;
 }
 
 @media (min-width: 600px) {

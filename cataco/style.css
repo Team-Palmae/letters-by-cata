@@ -124,6 +124,10 @@ label {
   text-align: center;
 }
 
+h2 {
+  text-transform: uppercase;
+}
+
 .btn, .button,
 input[type=submit], #nf-field-17.ninja-forms-field-nf-element {
   display: block;
@@ -353,6 +357,12 @@ header nav {
   max-width: 16ch;
   width: 90%;
   margin: 4rem auto 0;
+  position: relative;
+  bottom: 3rem;
+}
+
+header#header.header {
+  padding-bottom: 1rem;
 }
 
 @media (min-width: 600px) {
@@ -609,7 +619,7 @@ footer ul a {
 
 input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required {
   width: 75%;
-  padding-left: 1%;
+  padding: 0.5%;
   text-align: center;
 }
 
