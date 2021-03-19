@@ -21,13 +21,8 @@
     z-index: 1;
 }
 
-// woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab Description Area
-
 div.product {
-    // display: grid;
-    // grid-template-columns: 1fr;
-    margin: 1.25 auto 0;
-    // gap: 1.5rem;
+    margin: 1.25rem auto 0;
 }
 
 .woocommerce-product-gallery {
@@ -154,7 +149,6 @@ img.emoji {
     input {
         // Quantity Changer
         width: 60px;
-        // background-color: $soft-pink;
         color: $dark-grey;
         padding: 0.5rem;
         margin: 0 auto;

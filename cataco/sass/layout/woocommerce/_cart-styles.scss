@@ -90,7 +90,7 @@
 }
 
 .product-name {
-    overflow: ellipsis;
+    text-overflow: ellipsis;
     margin-bottom: 1rem;
 }
 
@@ -162,17 +162,12 @@ div.woocommerce-notices-wrapper {
 
     .cart-container,
     .cart-collaterals {
-        // width: 100%;
         margin: 0;
     }
 
     .cart-container {
         width: 400px;
         margin-right: 1.25rem;
-    }
-
-    .woocommerce-cart-form {
-
     }
 }
 

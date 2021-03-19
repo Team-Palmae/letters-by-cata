@@ -65,7 +65,6 @@
 
 .woocommerce-input-wrapper .input-text {
     padding: 0.5rem;
-    // border: 1px solid $dark-grey;
     width: 100%;
     border-radius: 0.25rem;
     color: $dark-grey;
@@ -119,16 +118,6 @@ abbr {
 
 .optional {
     font-size: 0.875rem;
-}
-
-// First Name
-#billing_first_name_field {
-
-}
-
-// Last Name
-#billing_last_name_field {
-
 }
 
 // Company Name
@@ -245,9 +234,6 @@ abbr {
     img {
         margin-top: 1rem;
         width: 14rem;
-    }
-    label {
-        
     }
 }
 

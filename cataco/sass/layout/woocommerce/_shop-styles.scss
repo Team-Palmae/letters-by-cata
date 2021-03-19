@@ -1,5 +1,3 @@
-// Just some Dummy Text
-
 .products {
     margin: 1.25rem 0 0 0;
     display: grid;
@@ -163,35 +161,11 @@ span.onsale {
     font-size: clamp(0.875rem, 2.25vw, 1.125rem);
 }
 
-@media (min-width: 1000px) {
-    .filter-sidebar {
-        padding: 0;
-    }
-
-    .filter-flex {
-        display: none;
-    }
-
-    .filters {
-        max-height: 30rem;
-        margin-left: 0;
-    }
-    div.woocommerce.columns-3,
-    div.woocommerce.columns-4,
-    div.woocommerce.columns-5 {
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-        gap: 2rem;
-    }
-    .woocommerce-notices-wrapper {
-        grid-column: 1 / -1;
-        grid-row: 1 / 1;
-    }
-}
+// Price Filter Styles
 
 .woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content {
     border-radius: 1em;
-    background-color: #462940;
+    background-color: $darker-pink;
     border: 0;
 }
 
@@ -218,7 +192,7 @@ span.onsale {
     display: block;
     border: 0;
     border-radius: 1em;
-    background-color: #a46497;
+    background-color: $soft-pink;
 }
 
 .woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
@@ -226,10 +200,36 @@ span.onsale {
     z-index: 2;
     width: 1em;
     height: 1em;
-    background-color: #a46497;
+    background-color: $soft-pink;
     border-radius: 1em;
     cursor: ew-resize;
     outline: 0;
     top: -.3em;
     margin-left: -.5em;
+}
+
+@media (min-width: 1000px) {
+    .filter-sidebar {
+        padding: 0;
+    }
+
+    .filter-flex {
+        display: none;
+    }
+
+    .filters {
+        max-height: 30rem;
+        margin-left: 0;
+    }
+    div.woocommerce.columns-3,
+    div.woocommerce.columns-4,
+    div.woocommerce.columns-5 {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 2rem;
+    }
+    .woocommerce-notices-wrapper {
+        grid-column: 1 / -1;
+        grid-row: 1 / 1;
+    }
 }
