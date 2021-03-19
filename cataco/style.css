@@ -598,11 +598,8 @@ footer ul a:active {
   .about-image-gallery {
     margin-top: 1.25rem;
     -webkit-column-count: 2;
-            column-count: 2;
     -webkit-column-gap: 2%;
-            column-gap: 2%;
     -webkit-column-width: 46%;
-            column-width: 46%;
   }
   .about-image-gallery .about-image:first-of-type {
     margin: 0 auto;
@@ -633,22 +630,16 @@ footer ul a:active {
 @media (min-width: 700px) {
   .gallery {
     -webkit-column-count: 2;
-            column-count: 2;
     -webkit-column-width: 45%;
-            column-width: 45%;
     -webkit-column-gap: 4%;
-            column-gap: 4%;
   }
 }
 
 @media (min-width: 1000px) {
   .gallery {
     -webkit-column-count: 3;
-            column-count: 3;
     -webkit-column-width: 30%;
-            column-width: 30%;
     -webkit-column-gap: 3%;
-            column-gap: 3%;
   }
 }
 
@@ -989,7 +980,7 @@ span.onsale {
 }
 
 div.product {
-  margin: 1.25 auto 0;
+  margin: 1.25rem auto 0;
 }
 
 .woocommerce-product-gallery {
@@ -1324,7 +1315,7 @@ img.emoji {
 }
 
 .product-name {
-  overflow: ellipsis;
+  text-overflow: ellipsis;
   margin-bottom: 1rem;
 }
 
