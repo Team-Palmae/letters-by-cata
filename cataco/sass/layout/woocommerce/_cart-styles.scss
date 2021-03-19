@@ -136,14 +136,17 @@ div.woocommerce-notices-wrapper {
     width: 80%;
     max-width: 800px;
     background-color: $soft-pink;
-    // border: 1px solid $dark-grey;
-    margin: 0 auto 1.5rem;
+    margin: 1.5rem auto;
     text-align: center;
     font-size: 1rem;
     color: $dark-grey;
     div {
         padding: 1rem;
     }
+}
+
+.cart-empty {
+    text-align: center;
 }
 
 @media (min-width: 800px) {

@@ -143,8 +143,8 @@ img.emoji {
     .sale-price {
         color: limegreen;
     }
-    
-    .regular-price {
+
+    .regular-price.sale {
         text-decoration: line-through;
     }
 }
@@ -229,6 +229,10 @@ img.emoji {
     textarea {
         width: 100%;
     }
+}
+
+.wc-forward {
+    margin-bottom: 0.5rem;
 }
 
 @media (min-width:900px) {

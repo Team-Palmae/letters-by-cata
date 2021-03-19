@@ -10,6 +10,18 @@ closeNav.addEventListener('click', () => {
     document.querySelector('nav').classList.toggle('show-nav');
 });
 
+// Filter Toggle
+const filterToggle = document.querySelector('.filter-toggle');
+const filtersContainer = document.querySelector('.filters');
+const horSpan = document.querySelector('.horizontal-filter');
+const vertSpan = document.querySelector('.vertical-filter');
+
+filterToggle.addEventListener('click', () => {
+    horSpan.classList.toggle('open');
+    vertSpan.classList.toggle('open');
+    filtersContainer.classList.toggle('showfilters');
+});
+
 // Mailing List Popup
 window.onload = function () {
     var signup = document.getElementById("signup");

@@ -209,8 +209,8 @@ function register_widget_areasS() {
         'description'   => 'Sidebar menu',
         'before_widget' => '<section class="side-area">',
         'after_widget'  => '</section>',
-        'before_title'  => '<h4>',
-        'after_title'   => '</h4>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>',
     )); 
 }
   
@@ -288,7 +288,7 @@ add_action( 'woocommerce_before_shop_loop', 'before_shop_loop_sidebar', 20);
 add_action( 'woocommerce_before_shop_loop', 'before_shop_loop_sidebar_container_end', 21);
 
 function before_shop_loop_sidebar_container_start() {
-    echo '<div class="filter-sidebar">';
+    echo '<div class="filter-sidebar"><div class="filter-flex"><div class="filter-toggle"><span class="vertical-filter"></span><span class="horizontal-filter"></span></div><p class="filter-text">Filters</p></div><div class="filters">';
 }
 
 function before_shop_loop_sidebar() {
@@ -296,7 +296,7 @@ function before_shop_loop_sidebar() {
 }
 
 function before_shop_loop_sidebar_container_end() {
-    echo '</div>';
+    echo '</div></div>';
 }
 
 add_action( 'woocommerce_before_shop_loop', dynamic_sidebar( 'footer_area_bot' ) , 10 );
@@ -383,9 +383,9 @@ add_filter( 'woocommerce_single_product_summary', 'product_single_price', 10 );
 function product_single_price() {
     global $product;
     if ($product->get_sale_price()) {
-        echo '<div class="product-single"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
+        echo '<div class="product-single"><p class="regular-price sale"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
     } else {
-        echo '<div><p><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
+        echo '<div class="product-single"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
     }
 }
 
