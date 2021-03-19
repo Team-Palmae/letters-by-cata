@@ -11,5 +11,10 @@ input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required{
     width: 75%;
     padding: 0.5%;
     text-align: center;
+    border: 1px solid $dark-grey;
+}
+
+label.contact-label{
+    text-align: left;
 }
 
