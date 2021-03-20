@@ -1173,6 +1173,41 @@ img.emoji {
   margin-top: 1.5rem;
 }
 
+.comment-respond label {
+  color: #565656;
+}
+
+.comment-respond input[type=text] {
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 0.25rem;
+  color: #565656;
+}
+
+.comment-respond .comment-form-comment textarea {
+  width: 100%;
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 0.25rem;
+  color: #565656;
+}
+
+.comment-respond .comment-form-comment label,
+.comment-respond .comment-form-author label,
+.comment-respond .comment-form-email label,
+.comment-respond .comment-form-url label {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.comment-respond .comment-form-author,
+.comment-respond .comment-form-email,
+.comment-respond .comment-form-url {
+  margin: 1rem auto 0;
+  width: 100%;
+  max-width: 15.3125rem;
+}
+
 .woocommerce-tabs {
   margin-top: 1.5rem;
 }
@@ -1287,17 +1322,6 @@ img.emoji {
   margin-top: 0.5rem;
   font-size: 1rem;
   max-width: 771.89px;
-}
-
-.comment-form-comment {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-}
-
-.comment-form-comment textarea {
-  width: 100%;
 }
 
 .wc-forward {

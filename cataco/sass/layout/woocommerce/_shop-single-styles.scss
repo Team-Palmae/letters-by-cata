@@ -176,6 +176,39 @@ img.emoji {
 
 .comment-respond {
     margin-top: 1.5rem;
+    label {
+        color: $dark-grey;
+    }
+    input[type=text] {
+        padding: 0.5rem;
+        width: 100%;
+        border-radius: 0.25rem;
+        color: #565656;
+    }
+    .comment-form-comment textarea {
+        width: 100%;
+        padding: 0.5rem;
+        width: 100%;
+        border-radius: 0.25rem;
+        color: #565656;
+    }
+    .comment-form-comment,
+    .comment-form-author,
+    .comment-form-email,
+    .comment-form-url {
+        label {
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+    }
+
+    .comment-form-author,
+    .comment-form-email,
+    .comment-form-url {
+        margin: 1rem auto 0;
+        width: 100%;
+        max-width: 15.3125rem;
+    }
 }
 
 .woocommerce-tabs {
@@ -287,14 +320,6 @@ img.emoji {
     margin-top: 0.5rem;
     font-size: 1rem;
     max-width: 771.89px; // Width of 75ch on all the paragraphs
-}
-
-.comment-form-comment {
-    display: grid;
-    grid-template-columns: 1fr;
-    textarea {
-        width: 100%;
-    }
 }
 
 .wc-forward {
