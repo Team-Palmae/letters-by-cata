@@ -1,3 +1,25 @@
+/* Notices wrapper for Woo Pages */
+
+div.woocommerce-notices-wrapper {
+    width: 80%;
+    max-width: 800px;
+    background-color: $soft-pink;
+    margin: 1.5rem auto;
+    text-align: center;
+    font-size: 1rem;
+    color: $dark-grey;
+    div {
+        padding: 1rem;
+        a {
+            margin-top: 0;
+        } 
+    }
+    .cart-empty {
+        margin: 0;
+        padding-bottom: 1rem;
+    }   
+}
+
 ul.products {
     margin: 1.25rem 0 0 0;
     display: grid;
@@ -28,14 +50,15 @@ ul.products {
         align-items: center;
         p {
             display: inline;
-            margin: 1.5rem 0.5rem 0;
+            margin: 1rem 0.5rem 0;
         }
     }
     p {
+        color: $dark-grey;
         text-align: center;
     }
     .sale-price {
-        color: limegreen;
+        color: #21880C;
         text-align: left;
     }
     

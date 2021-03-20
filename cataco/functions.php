@@ -400,3 +400,6 @@ function product_single_price() {
 // Cart
 
 add_action( 'woocommerce_proceed_to_checkout', 'continue_shopping', 30 );
+
+remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+add_action( 'woocommerce_after_cart', 'woocommerce_cross_sell_display' );
