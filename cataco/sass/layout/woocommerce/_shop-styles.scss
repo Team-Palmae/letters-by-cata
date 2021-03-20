@@ -1,4 +1,4 @@
-.products {
+ul.products {
     margin: 1.25rem 0 0 0;
     display: grid;
     grid-gap: 1.5rem;
@@ -76,8 +76,12 @@ span.onsale {
 }
 
 // Categories
-.cat-item-15 {
-    display: none;
+// .cat-item-15 {
+//     display: none;
+// }
+
+.cat-item {
+    margin: 0 0 0.5rem;
 }
 
 .filter-flex {
@@ -140,7 +144,7 @@ span.onsale {
 
 .filters {
     max-height: 0rem;
-    margin-left: 1rem;
+    margin: 0.5rem 0 0 0.5rem;
     overflow: hidden;
     transition: max-height 0.5s ease-in-out;
 }

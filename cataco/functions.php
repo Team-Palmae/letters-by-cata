@@ -271,6 +271,14 @@ function shop_page() {
     }
 }
 
+function product_page() {
+    if (is_product()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 // This would go on page.php
 // if ( $shop = shop_page() ) : 
 //     if ( is_active_sidebar( 'side_area' ) ) :

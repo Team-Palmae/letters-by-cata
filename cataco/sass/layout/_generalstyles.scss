@@ -29,10 +29,9 @@ button[type=submit] {
     border: 1px solid #565656;
     color: #565656;
     text-align: center;
-    border-radius: 12px;
-    font-size: 18px;
-    margin: 0.5rem 0;
-    margin-top: 20px;
+    border-radius: 0.75rem;
+    font-size: 1.125rem;
+    margin: 0.5rem 0 1rem;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -49,10 +48,9 @@ input[type=submit],#nf-field-17.ninja-forms-field-nf-element {
     border: 1px solid $dark-grey;
     color: $dark-grey;
     text-align: center;
-    border-radius: 12px;
-    font-size: 18px;
-    margin: 0 auto;
-    margin-top: 20px;
+    border-radius: 0.75rem;
+    font-size: 1.125rem;
+    margin: 1.25rem auto 0;
     font-family: 'Open Sans', sans-serif;
     &:hover {
         background-color: $darker-pink;
