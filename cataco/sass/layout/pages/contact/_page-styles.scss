@@ -6,3 +6,24 @@
 .wpcf7-form>.wpcf7-form-control.wpcf7-submit{
     
 }
+
+input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required{
+    width: 75%;
+    padding: 0.5%;
+    text-align: center;
+    border: 1px solid $dark-grey;
+}
+
+label.contact-label{
+    text-align: left;
+}
+
+// Error Messages
+
+span.wpcf7-not-valid-tip{
+    margin-top: 0.5rem;
+}
+
+div.wpcf7-response-output{
+    border: 1px solid $white;
+}
