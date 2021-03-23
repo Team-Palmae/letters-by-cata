@@ -221,7 +221,7 @@ div#container.container.lazyloaded>main{
     text-align: center;
 }
 
-div#container.container.lazyloaded>main>article{
+body.search.search-results.wp-custom-logo.theme-cataco.woocommerce-js>div#wrapper.hfeed.lazyloaded>div#container.container.lazyloaded>main>article{
     width: 40%;
     display: inline-block;
     vertical-align: top;
@@ -237,7 +237,7 @@ div.entry-summary.lazyloaded>p{
 }
 
 @media (max-width: 1000px) {
-    div#container.container.lazyloaded>main>article {
+    body.search.search-results.wp-custom-logo.theme-cataco.woocommerce-js>div#wrapper.hfeed.lazyloaded>div#container.container.lazyloaded>main>article {
         display: block;
         width: 90%;
     }
