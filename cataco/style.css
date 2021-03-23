@@ -428,12 +428,6 @@ header nav {
   text-decoration: none;
 }
 
-.main-menu .current_page_item a,
-.main-menu a:active {
-  text-decoration: underline;
-  font-weight: 400;
-}
-
 .header {
   padding: 0 0 4rem 0;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.4) 100%), url(/lettersbycata/wp-content/uploads/2021/03/hero-banner-small.jpg) center;

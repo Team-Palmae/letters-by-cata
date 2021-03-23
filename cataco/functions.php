@@ -153,8 +153,7 @@ function cataco_comment_count( $count ) {
     }
 }
 
-// Unenqueues the base styles of wordpress
-add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
 // add_filter( 'use_default_gallery_style', '__return_false' );
 // add_theme_support('html5', array('gallery', 'caption'));
 
@@ -169,7 +168,7 @@ function register_widget_areash() {
         'before_title'  => '<h4>',
         'after_title'   => '</h4>',
     )); 
-} 
+}
   
 function register_widget_areast() {
   
@@ -199,6 +198,20 @@ function register_widget_areasb() {
       'after_title'   => '</h4>',
     ));
     
+}
+add_action( 'widgets_init', 'register_widget_areasS' );
+
+function register_widget_areasS() {
+
+    register_sidebar( array(
+        'name'          => 'Side area',
+        'id'            => 'side_area',
+        'description'   => 'Sidebar menu',
+        'before_widget' => '<section class="side-area">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>',
+    )); 
 }
   
 add_action( 'widgets_init', 'register_widget_areasb' );
@@ -249,5 +262,144 @@ function get_post_from_id( $gallery_id ) {
     );
 }
 
-// Woocommerce Hooks
+// Checks if the page is the shop page
+function shop_page() {
+    if(is_shop()){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function product_page() {
+    if (is_product()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// This would go on page.php
+// if ( $shop = shop_page() ) : 
+//     if ( is_active_sidebar( 'side_area' ) ) :
+//         dynamic_sidebar( 'side_area' );
+//     endif;
+// endif; 
+
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+// Woocommerce Shop Hooks
+
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+add_action( 'woocommerce_before_shop_loop', 'before_shop_loop_sidebar_container_start', 19);
+add_action( 'woocommerce_before_shop_loop', 'before_shop_loop_sidebar', 20);
+add_action( 'woocommerce_before_shop_loop', 'before_shop_loop_sidebar_container_end', 21);
+
+function before_shop_loop_sidebar_container_start() {
+    echo '<div class="filter-sidebar"><div class="filter-flex"><div class="filter-toggle"><span class="vertical-filter"></span><span class="horizontal-filter"></span></div><p class="filter-text">Filters</p></div><div class="filters">';
+}
+
+function before_shop_loop_sidebar() {
+    dynamic_sidebar( 'side_area' );
+}
+
+function before_shop_loop_sidebar_container_end() {
+    echo '</div></div>';
+}
+
 add_action( 'woocommerce_before_shop_loop', dynamic_sidebar( 'footer_area_bot' ) , 10 );
+
+remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
+add_action( 'woocommerce_shop_loop_item_title', 'product_title_tags', 10 );
+
+function product_title_tags() {
+    echo '<h3 class="product-title">' . get_the_title() . '</h3>';
+}
+
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+add_action( 'woocommerce_after_shop_loop_item_title', 'shop_price', 10 );
+
+function shop_price() {
+    global $product;
+    if ($product->get_sale_price()) {
+        echo '<div class="shop-pricing sale"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
+    } else {
+        echo '<div class="shop-pricing"><p><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
+    }
+}
+
+add_action( 'woocommerce_after_shop_loop_item', 'short_description', 8 );
+
+function short_description() {
+    global $product;
+    if ($product->get_short_description()) {
+        echo '<p class="short-description">' . $product->get_short_description() . '</p>';
+    }
+}
+
+remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 ); 
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
+
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+add_action( 'woocommerce_after_shop_loop_item', 'link_button', 10 );
+
+function link_button() {
+    global $product;
+    echo '<a href="' . get_permalink( $product->get_id() ) . '" class="button">View Item</a>';
+}
+
+// Woocommerce Product Hooks
+
+add_action( 'woocommerce_after_add_to_cart_button', 'continue_shopping', 10 );
+
+function continue_shopping() {
+    $url = site_url('/shop');
+    echo '<a href="' . $url . '" class="button">Continue Shopping</a>';
+}
+
+// The screen reader label still remains
+// add_filter( 'woocommerce_before_quantity_input_field', 'quantity_label' );
+add_action( 'woocommerce_before_add_to_cart_quantity', 'quantity_label' ); 
+
+function quantity_label() {
+ echo '<p class="qty">Quantity: </p>'; 
+}
+
+// add_filter( 'woocommerce_get_image_size_gallery_thumbnail', function( $size ) {
+//     return array(
+//         'width' => 300,
+//         'height' => 300,
+//         'crop' => 1,
+//     );
+// } );
+
+// add_filter( 'woocommerce_get_image_size_single', function( $size ) {
+//     return array(
+//         'width' => 500,
+//         'height' => 500,
+//         'crop' => 1,
+//     );
+// } );
+
+remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+add_filter( 'woocommerce_single_product_summary', 'product_single_price', 10 );
+
+function product_single_price() {
+    global $product;
+    if ($product->get_sale_price()) {
+        echo '<div class="product-single"><p class="regular-price sale"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
+    } else {
+        echo '<div class="product-single"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
+    }
+}
+
+// Cart
+
+add_action( 'woocommerce_proceed_to_checkout', 'continue_shopping', 30 );
+
+remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+add_action( 'woocommerce_after_cart', 'woocommerce_cross_sell_display' );
