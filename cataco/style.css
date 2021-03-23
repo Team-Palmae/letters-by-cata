@@ -314,6 +314,14 @@ div.entry-summary {
   margin-bottom: 10%;
 }
 
+div.entry-summary p {
+  width: 30%;
+}
+
+.search-title {
+  text-align: center;
+}
+
 /* Navigation */
 header .inner-container {
   max-width: 1200px;
@@ -428,6 +436,12 @@ header nav {
   text-decoration: none;
 }
 
+.main-menu .current_page_item a,
+.main-menu a:active {
+  text-decoration: underline;
+  font-weight: 400;
+}
+
 .header {
   padding: 0 0 4rem 0;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.4) 100%), url(/lettersbycata/wp-content/uploads/2021/03/hero-banner-small.jpg) center;
@@ -440,7 +454,7 @@ header nav {
   text-align: center;
   max-width: 16ch;
   width: 90%;
-  margin: 2rem auto 0;
+  margin: 4rem auto 0;
   position: relative;
   bottom: 3rem;
 }
@@ -558,11 +572,6 @@ footer ul a:hover {
   text-decoration: none;
 }
 
-footer ul a:active {
-  text-decoration: underline;
-  font-weight: 400;
-}
-
 footer ul a:hover {
   font-weight: bolder;
   text-decoration: none;
@@ -570,7 +579,6 @@ footer ul a:hover {
 
 footer ul a:active {
   text-decoration: underline;
-  font-weight: 400;
 }
 
 .mailing {
@@ -725,6 +733,14 @@ label.contact-label {
   text-align: left;
 }
 
+span.wpcf7-not-valid-tip {
+  margin-top: 0.5rem;
+}
+
+div.wpcf7-response-output {
+  border: 1px solid #FFFFFF;
+}
+
 .gallery span {
   margin: 0.5rem 0 0 0;
   font-size: 0.875rem;
@@ -834,6 +850,10 @@ div.woocommerce-notices-wrapper div a {
 div.woocommerce-notices-wrapper .cart-empty {
   margin: 0;
   padding-bottom: 1rem;
+}
+
+div.woocommerce-message {
+  background-color: #FFFFFF;
 }
 
 ul.products {
