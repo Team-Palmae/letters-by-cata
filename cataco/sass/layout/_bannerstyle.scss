@@ -1,6 +1,6 @@
 .header {
-    padding: 0 0 6rem 0;
-    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.4) 100%), url(/lettersbycata/wp-content/uploads/2021/03/hero-banner.jpg) center;
+    padding: 0 0 4rem 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.4) 100%), url(/lettersbycata/wp-content/uploads/2021/03/hero-banner-small.jpg) center;
     background-size: cover;
     border-bottom: 6px solid $dark-grey;
     margin-bottom: 2.5rem;
@@ -8,30 +8,36 @@
         text-align: center;
         max-width: 16ch;
         width: 90%;
-        margin: 4rem auto 0;
+        margin: 2rem auto 0;
         position: relative;
         bottom: 3rem;
     }
 }
 
 header#header.header{
-padding-bottom: 1rem;
-}
+    padding-bottom: 1rem;
+    }
 
 @media (min-width: 600px) {
     .header {
-        padding: 0rem 0 10rem 0;
+        padding: 0rem 0 7rem 0;
         h1 {
-            margin-top: 8rem;
+            margin-top: 5rem;
         }
     }  
 }
 
+@media (min-width: 800px) {
+    .header {
+        background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.4) 100%), url(/lettersbycata/wp-content/uploads/2021/03/hero-banner.jpg) center;
+    }
+}
+
 @media (min-width: 1000px) {
     .header {
-        padding: 0rem 0 14rem 0;
+        padding: 0rem 0 10rem 0;
         h1 {
-            margin-top: 12rem;
+            margin-top: 8rem;
         }
     }
 }

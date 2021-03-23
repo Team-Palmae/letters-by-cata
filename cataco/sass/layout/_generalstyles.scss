@@ -24,21 +24,37 @@ h2{
     text-transform: uppercase;
 }
 
-
-.btn, .button,
-input[type=submit],#nf-field-17.ninja-forms-field-nf-element {
+button[type=submit] {
     display: block;
     cursor: pointer;
+    width: 144px;
+    padding: 0.75rem 0;
+    background: #FDF5F3;
+    border: 1px solid #565656;
+    color: #565656;
+    text-align: center;
+    border-radius: 0.75rem;
+    font-size: 1.125rem;
+    margin: 0.5rem 0 1rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+button[type=submit].button {
+    margin: 1.25rem auto 0;
+}
+
+.btn, .button, .about_paypal,
+input[type=submit],#nf-field-17.ninja-forms-field-nf-element {
+    display: block;
     width: 144px;
     padding: 0.75rem 0;
     background: $soft-pink;
     border: 1px solid $dark-grey;
     color: $dark-grey;
     text-align: center;
-    border-radius: 12px;
-    font-size: 18px;
-    margin: 0 auto;
-    margin-top: 20px;
+    border-radius: 0.75rem;
+    font-size: 1.125rem;
+    margin: 1.25rem auto 0;
     font-family: 'Open Sans', sans-serif;
     &:hover {
         background-color: $darker-pink;
@@ -104,7 +120,19 @@ textarea {
 #nf-form-title-2>h3{
     text-align: center;
 }
-div.nf-form-content,div.nf-form-fields-required{
+.nf-form-content,.nf-form-fields-required{
+    text-align: center;
+}
+
+svg.svg-inline--fa.fa-bars.fa-w-14, svg path {
+    cursor: pointer;
+}
+
+input.wpcf7-form-control.wpcf7-submit {
+    cursor: pointer;
+}
+
+iv.nf-form-content,div.nf-form-fields-required{
     text-align: center;
     display: block;
 }
@@ -120,14 +148,6 @@ div#nf-field-7-container.nf-field-container.firstname-container.label-above.one-
 
 div#nf-field-9-container.nf-field-container.email-container.label-above.one-half.first {
     margin-bottom: 2rem;
-}
-
-svg.svg-inline--fa.fa-bars.fa-w-14, svg path {
-    cursor: pointer;
-}
-
-input.wpcf7-form-control.wpcf7-submit {
-    cursor: pointer;
 }
 
 input#nf-field-17.ninja-forms-field.nf-element{
@@ -176,6 +196,7 @@ div.nf-error-msg.nf-error-field-errors{
     text-align: center;
 }
 
+
 // Search Page
 
 img.attachment-post-thumbnail.size-post-thumbnail.wp-post-image{
@@ -189,3 +210,5 @@ div.entry-summary{
 }
 
 
+
+ 

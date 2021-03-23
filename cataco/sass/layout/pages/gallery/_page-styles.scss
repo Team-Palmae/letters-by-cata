@@ -40,7 +40,6 @@
 @media (min-width: 700px) {
     .gallery {
         column-count: 2;
-        column-width: 45%;
         column-gap: 4%;
     }
 }
@@ -48,22 +47,6 @@
 @media (min-width: 1000px) {
     .gallery {
         column-count: 3;
-        column-width: 30%;
         column-gap: 3%;
     }
 }
-
-/* Deconstructed Pancake - Doesn't work as hoped */
-
-// @media (min-width: 700px) {
-//     .gallery {
-//         display: flex;
-//         justify-content: center;
-//         flex-wrap: wrap;
-//     }
-
-//     .gallery-image {
-//         padding: 1rem;
-//         flex: 1 1 350px;
-//     }
-// }
