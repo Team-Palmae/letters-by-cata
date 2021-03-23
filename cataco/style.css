@@ -310,7 +310,7 @@ img.attachment-post-thumbnail.size-post-thumbnail.wp-post-image {
   margin: 0 auto;
 }
 
-div.entry-summary {
+div.entry-summary, div.search-heading.lazyloaded {
   margin-bottom: 10%;
 }
 
@@ -320,6 +320,32 @@ div.entry-summary p {
 
 .search-title {
   text-align: center;
+}
+
+div#container.container.lazyloaded > main {
+  text-align: center;
+}
+
+div#container.container.lazyloaded > main > article {
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 2% 2%;
+}
+
+div.entry-summary.lazyloaded > p {
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  width: 80%;
+  line-clamp: 1;
+  text-align: left;
+}
+
+@media (max-width: 1000px) {
+  div#container.container.lazyloaded > main > article {
+    display: block;
+    width: 90%;
+  }
 }
 
 /* Navigation */
