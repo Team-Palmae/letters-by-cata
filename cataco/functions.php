@@ -357,6 +357,11 @@ function continue_shopping() {
     echo '<a href="' . $url . '" class="button">Continue Shopping</a>';
 }
 
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'add_to_cart_text' ); 
+function add_to_cart_text() {
+    return __( 'Add to Cart', 'woocommerce' ); 
+}
+
 // The screen reader label still remains
 // add_filter( 'woocommerce_before_quantity_input_field', 'quantity_label' );
 add_action( 'woocommerce_before_add_to_cart_quantity', 'quantity_label' ); 

@@ -201,23 +201,23 @@ div.nf-error-msg.nf-error-field-errors{
 // Search Page
 
 img.attachment-post-thumbnail.size-post-thumbnail.wp-post-image{
-    height: 40%;
     width: 40%;
     margin: 0 auto;
 }
 
 div.entry-summary, div.search-heading.lazyloaded{
-    margin-bottom: 10%;
+    margin-bottom: 1.5rem;
 }
 
-div.entry-summary p{
-    width: 30%;
-}
+// div.entry-summary p{
+//     width: 30%;
+// }
 
 .search-title{
     text-align: center;
 }
-div#container.container.lazyloaded>main{
+
+body.search.search-results div#container.container.lazyloaded>main{
     text-align: center;
 }
 
@@ -229,11 +229,14 @@ body.search.search-results.wp-custom-logo.theme-cataco.woocommerce-js>div#wrappe
 }
 
 div.entry-summary.lazyloaded>p{
-    overflow: hidden !important;
+    // overflow: hidden !important;
+    overflow: hidden;
     text-overflow: ellipsis;
     width: 80%;
-    line-clamp: 1;
     text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 @media (max-width: 1000px) {

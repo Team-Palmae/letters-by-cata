@@ -1,5 +1,5 @@
 .header {
-    padding: 0 0 4rem 0;
+    padding: 0;
     background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.4) 100%), url(/lettersbycata/wp-content/uploads/2021/03/hero-banner-small.jpg) center;
     background-size: cover;
     border-bottom: 6px solid $dark-grey;
@@ -14,13 +14,9 @@
     }
 }
 
-header#header.header{
-    padding-bottom: 1rem;
-    }
-
 @media (min-width: 600px) {
     .header {
-        padding: 0rem 0 7rem 0;
+        padding: 0rem 0 3rem 0;
         h1 {
             margin-top: 5rem;
         }
@@ -30,12 +26,13 @@ header#header.header{
 @media (min-width: 800px) {
     .header {
         background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.4) 100%), url(/lettersbycata/wp-content/uploads/2021/03/hero-banner.jpg) center;
+        background-size: cover;
     }
 }
 
 @media (min-width: 1000px) {
     .header {
-        padding: 0rem 0 10rem 0;
+        padding: 0rem 0 6rem 0;
         h1 {
             margin-top: 8rem;
         }
