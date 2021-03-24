@@ -287,6 +287,7 @@ function product_page() {
 // endif; 
 
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+add_filter( 'ppom_bootstrap_css', '__return_empty_array' );
 // Woocommerce Shop Hooks
 
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
