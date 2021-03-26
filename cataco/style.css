@@ -179,6 +179,11 @@ input[type=text]:focus, input[type=email]:focus, input[type=tel]:focus {
   border: 1px solid #777;
 }
 
+label {
+  color: #565656;
+  margin-bottom: 0.4rem;
+}
+
 textarea {
   resize: none;
 }
@@ -1859,6 +1864,10 @@ dl.variation dd.variation-AdditionalInformation p {
   /* Hidden as there are no accounts at the moment */
 }
 
+.woocommerce-checkout label {
+  display: block;
+}
+
 .woocommerce_checkout_coupon {
   width: 80%;
   max-width: 800px;
@@ -1900,9 +1909,14 @@ dl.variation dd.variation-AdditionalInformation p {
 .woocommerce-additional-fields label,
 .wpmc-step-payment p,
 .wpmc-step-payment label {
-  margin: 0;
   max-width: none;
   width: auto;
+}
+
+.woocommerce-billing-fields p,
+.woocommerce-additional-fields p,
+.wpmc-step-payment p {
+  margin: 0;
 }
 
 .woocommerce-billing-fields__field-wrapper {
@@ -1914,18 +1928,6 @@ dl.variation dd.variation-AdditionalInformation p {
       grid-template-columns: repeat(2, 1fr);
   max-width: 800px;
   margin: 1.5rem auto 0;
-}
-
-.woocommerce-billing-fields__field-wrapper label {
-  color: #565656;
-  display: block;
-  margin-bottom: 0.4rem;
-}
-
-.woocommerce-additional-fields__field-wrapper label {
-  color: #565656;
-  display: block;
-  margin-bottom: 0.4rem;
 }
 
 .woocommerce-input-wrapper .input-text {
@@ -2024,6 +2026,26 @@ abbr {
   grid-column: 1 / -1;
 }
 
+.woocommerce-shipping-fields {
+  max-width: 771.89px;
+  margin: 0 auto;
+}
+
+.woocommerce-input-wrapper select {
+  height: 2.625rem;
+  width: 100%;
+  font-size: clamp(0.875rem, 2.25vw, 1.125rem);
+  color: #565656;
+  border: 1px solid #565656;
+  border-radius: 0.25rem;
+  outline: none;
+}
+
+.woocommerce-input-wrapper select option {
+  font-size: clamp(0.875rem, 2.25vw, 1.125rem);
+  color: #565656;
+}
+
 #order_comments {
   outline: none;
   width: 100%;
@@ -2039,6 +2061,7 @@ abbr {
 
 .woocommerce-checkout-review-order-table {
   width: 100%;
+  color: #565656;
 }
 
 .woocommerce-checkout-review-order-table .product-total {
@@ -2058,11 +2081,17 @@ abbr {
   padding: 0.5rem;
 }
 
+.woocommerce-checkout-review-order-table .tax-total td,
+.woocommerce-checkout-review-order-table .order-total td {
+  text-align: right;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+}
+
 .woocommerce-checkout-review-order-table .order-total {
   border-top: 1px solid #565656;
 }
 
-.woocommerce-checkout-review-order-table .order-total td {
+.woocommerce-checkout-review-order-table .woocommerce-shipping-methods label {
   text-align: right;
   padding: 0.5rem 0.5rem 0 0.5rem;
 }
@@ -2073,6 +2102,16 @@ abbr {
   margin: 1.5rem auto;
 }
 
+.woocommerce-terms-and-conditions-wrapper {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.woocommerce-privacy-policy-text,
+.woocommerce-terms-and-conditions {
+  margin-bottom: 0.5rem;
+}
+
 .payment_method_paypal img {
   margin-top: 1rem;
   width: 14rem;
@@ -2080,6 +2119,10 @@ abbr {
 
 .about_paypal {
   margin: 1rem 0;
+}
+
+.payment_method_stripe label {
+  display: inline;
 }
 
 .payment_method_stripe label #text {

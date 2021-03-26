@@ -72,6 +72,11 @@ input[type=text], input[type=email], input[type=tel] {
     }
 }
 
+label {
+    color: $dark-grey;
+    margin-bottom: 0.4rem;
+} 
+
 textarea {
     resize: none;
 }
