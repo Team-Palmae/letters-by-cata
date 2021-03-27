@@ -20,10 +20,6 @@
     text-align: center;
 }
 
-h2{
-    text-transform: uppercase;
-}
-
 button[type=submit] {
     display: block;
     cursor: pointer;
@@ -36,7 +32,8 @@ button[type=submit] {
     border-radius: 0.75rem;
     font-size: 1.125rem;
     margin: 0.5rem 0 1rem;
-    font-family: 'Open Sans', sans-serif;
+    // font-family: 'Open Sans', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 button[type=submit].button {
@@ -55,7 +52,8 @@ input[type=submit],#nf-field-17.ninja-forms-field-nf-element {
     border-radius: 0.75rem;
     font-size: 1.125rem;
     margin: 1.25rem auto 0;
-    font-family: 'Open Sans', sans-serif;
+    // font-family: 'Open Sans', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     &:hover {
         background-color: $darker-pink;
     }
@@ -65,11 +63,25 @@ input[type=text], input[type=email], input[type=tel] {
     border: 1px solid #888;
     outline: none;
     border-radius: 8px;
-    font-family: 'Open Sans', sans-serif;
+    // font-family: 'Open Sans', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(0.875rem, 2.25vw, 1.125rem);
     &:focus {
         border: 1px solid #777;
     }
+}
+
+.ppom-wrapper .form-control {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    line-height: 1.5;
+    color: $dark-grey;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid $dark-grey;
+    border-radius: 0.25rem;
 }
 
 label {
@@ -78,7 +90,7 @@ label {
 } 
 
 textarea {
-    resize: none;
+    resize: vertical;
 }
 
 .frame-circle {
@@ -138,7 +150,7 @@ input.wpcf7-form-control.wpcf7-submit {
     cursor: pointer;
 }
 
-iv.nf-form-content,div.nf-form-fields-required{
+div.nf-form-content,div.nf-form-fields-required{
     text-align: center;
     display: block;
 }

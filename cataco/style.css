@@ -8,57 +8,13 @@ Text Domain: cataco
 
 cataco WordPress Theme © 2021 LettersByCata
 */
-/* Font load - Merriweather & Open Sans */
-/* open-sans-300 - latin */
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 300;
-  src: local(""), url("assets/fonts/open-sans/open-sans-v18-latin-300.woff2") format("woff2"), url("assets/fonts/open-sans/open-sans-v18-latin-300.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* open-sans-regular - latin */
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local(""), url("assets/fonts/open-sans/open-sans-v18-latin-regular.woff2") format("woff2"), url("assets/fonts/open-sans/open-sans-v18-latin-regular.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* open-sans-700 - latin */
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local(""), url("assets/fonts/open-sans/open-sans-v18-latin-700.woff2") format("woff2"), url("assets/fonts/open-sans/open-sans-v18-latin-700.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* merriweather-regular - latin */
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 400;
-  src: local(""), url("assets/fonts/merriweather/merriweather-v22-latin-regular.woff2") format("woff2"), url("assets/fonts/merriweather/merriweather-v22-latin-regular.woff") format("woff");
-}
-
-/* merriweather-700 - latin */
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 700;
-  src: local(""), url("assets/fonts/merriweather/merriweather-v22-latin-700.woff2") format("woff2"), url("assets/fonts/merriweather/merriweather-v22-latin-700.woff") format("woff");
-}
-
 html {
   font-size: 100%;
 }
 
 /*16px*/
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   line-height: 1.5;
   background-color: #FFFFFF;
@@ -75,6 +31,7 @@ h2 {
   font-size: clamp(1.125rem, 4vw, 2rem);
   line-height: 1.5rem;
   color: #565656;
+  text-transform: uppercase;
 }
 
 h3 {
@@ -98,6 +55,7 @@ label {
   margin-top: 1.5rem;
   max-width: 75ch;
   margin: 0 auto;
+  color: #565656;
 }
 
 .header > .post-edit-link {
@@ -124,10 +82,6 @@ label {
   text-align: center;
 }
 
-h2 {
-  text-transform: uppercase;
-}
-
 button[type=submit] {
   display: block;
   cursor: pointer;
@@ -140,7 +94,7 @@ button[type=submit] {
   border-radius: 0.75rem;
   font-size: 1.125rem;
   margin: 0.5rem 0 1rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 button[type=submit].button {
@@ -159,7 +113,7 @@ input[type=submit], #nf-field-17.ninja-forms-field-nf-element {
   border-radius: 0.75rem;
   font-size: 1.125rem;
   margin: 1.25rem auto 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .btn:hover, .button:hover, .about_paypal:hover,
@@ -171,12 +125,25 @@ input[type=text], input[type=email], input[type=tel] {
   border: 1px solid #888;
   outline: none;
   border-radius: 8px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(0.875rem, 2.25vw, 1.125rem);
 }
 
 input[type=text]:focus, input[type=email]:focus, input[type=tel]:focus {
   border: 1px solid #777;
+}
+
+.ppom-wrapper .form-control {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  line-height: 1.5;
+  color: #565656;
+  background-color: #fff;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid #565656;
+  border-radius: 0.25rem;
 }
 
 label {
@@ -185,7 +152,7 @@ label {
 }
 
 textarea {
-  resize: none;
+  resize: vertical;
 }
 
 .frame-circle {
@@ -245,7 +212,7 @@ input.wpcf7-form-control.wpcf7-submit {
   cursor: pointer;
 }
 
-iv.nf-form-content, div.nf-form-fields-required {
+div.nf-form-content, div.nf-form-fields-required {
   text-align: center;
   display: block;
 }
@@ -923,7 +890,7 @@ ul.products .product .amount {
 
 .shop-pricing.sale p {
   display: inline;
-  margin: 1rem 0.5rem 0;
+  margin: 1.5rem 0.5rem 0;
 }
 
 .shop-pricing p {
@@ -1312,36 +1279,35 @@ table.variations .value select option {
   text-decoration: underline;
 }
 
-.ppom-wrapper .form-control {
-  display: block;
-  width: 100%;
-  padding: 0.375rem 0.75rem;
-  line-height: 1.5;
-  color: #495057;
-  background-color: #fff;
-  background-image: none;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
-  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
-  transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+.woocommerce-variation-description,
+.woocommerce-variation-availability {
+  text-align: center;
 }
 
-.ppom-wrapper label {
-  display: inline-block;
-  margin-bottom: .5rem;
+.woocommerce-variation-description p,
+.woocommerce-variation-availability p {
+  margin: 0 0 0.5rem 0;
 }
 
 .woocommerce-variation-price {
   text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 .woocommerce-variation-price bdi {
   text-align: center;
   margin: 0.5rem 0 0 0;
   font-size: 1.25rem;
+}
+
+.woocommerce-variation-availability p {
+  font-weight: 700;
+  font-style: 1.25rem;
+  text-transform: uppercase;
+}
+
+.ppom-field-wrapper {
+  margin-top: 0.5rem;
 }
 
 .quantity {

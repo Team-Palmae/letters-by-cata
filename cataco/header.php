@@ -4,6 +4,12 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width" />
 		<?php wp_head(); ?>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" />
+		<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+		<noscript>
+			<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+		</noscript>
 	</head>
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">

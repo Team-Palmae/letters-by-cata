@@ -1,7 +1,7 @@
 html {font-size: 100%;} /*16px*/
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
 	line-height: 1.5;
     background-color: $white;
@@ -44,6 +44,7 @@ label {
     margin-top: 1.5rem;
     max-width: 75ch;
     margin: 0 auto;
+    color: $dark-grey;
 }
 
 @mixin h2-line-height() {

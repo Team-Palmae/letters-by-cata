@@ -288,6 +288,8 @@ function product_page() {
 
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 add_filter( 'ppom_bootstrap_css', '__return_empty_array' );
+// removes the admin bar from the live site
+add_filter('show_admin_bar', '__return_false');
 // Woocommerce Shop Hooks
 
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
@@ -322,10 +324,24 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'shop_price', 10 );
 
 function shop_price() {
     global $product;
-    if ($product->get_sale_price()) {
-        echo '<div class="shop-pricing sale"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
+    if ($product->is_type('simple')) {
+        if ($product->get_sale_price()) {
+            echo '<div class="shop-pricing sale"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
+        } else {
+            echo '<div class="shop-pricing"><p><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
+        }
+    } elseif ($product->is_type('variable')) {
+        if ($product->get_sale_price()) {
+            echo '<div class="shop-pricing sale"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '+</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '+</p></div>';
+        } else {
+            echo '<div class="shop-pricing"><p><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '+</p></div>';
+        }
     } else {
-        echo '<div class="shop-pricing"><p><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
+        if ($product->get_sale_price()) {
+            echo '<div class="shop-pricing sale"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
+        } else {
+            echo '<div class="shop-pricing"><p><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
+        }
     }
 }
 
@@ -396,10 +412,24 @@ add_filter( 'woocommerce_single_product_summary', 'product_single_price', 10 );
 
 function product_single_price() {
     global $product;
-    if ($product->get_sale_price()) {
-        echo '<div class="product-single"><p class="regular-price sale"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
+    if ($product->is_type('simple')) {
+        if ($product->get_sale_price()) {
+            echo '<div class="product-single"><p class="regular-price sale"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
+        } else {
+            echo '<div class="product-single"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
+        }
+    } elseif ($product->is_type('variable')) {
+        if ($product->get_sale_price()) {
+            echo '<div class="product-single"><p class="regular-price sale"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '+</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '+</p></div>';
+        } else {
+            echo '<div class="product-single"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '+</p></div>';
+        }
     } else {
-        echo '<div class="product-single"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
+        if ($product->get_sale_price()) {
+            echo '<div class="product-single"><p class="regular-price sale"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
+        } else {
+            echo '<div class="product-single"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
+        }
     }
 }
 
