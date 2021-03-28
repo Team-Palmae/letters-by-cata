@@ -262,6 +262,33 @@ function get_post_from_id( $gallery_id ) {
     );
 }
 
+// ACF for image selection on the home page
+// function image_select() {
+//     $
+// }
+// acf_add_local_field_group(array(
+// 	'key' => 'group_1',
+// 	'title' => 'My Group',
+// 	'fields' => array (),
+// 	'location' => array (
+// 		array (
+// 			array (
+// 				'param' => 'post_type',
+// 				'operator' => '==',
+// 				'value' => 'post',
+// 			),
+// 		),
+// 	),
+// ));
+
+// acf_add_local_field(array(
+// 	'key' => 'field_1',
+// 	'label' => 'Sub Title',
+// 	'name' => 'sub_title',
+// 	'type' => 'text',
+// 	'parent' => 'group_1'
+// ));
+
 // Checks if the page is the shop page
 function shop_page() {
     if(is_shop()){
@@ -336,6 +363,22 @@ function shop_price() {
         } else {
             echo '<div class="shop-pricing"><p><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '+</p></div>';
         }
+    } elseif ($product->is_type('grouped')) {
+        $children = $product->get_children();
+        $lowestprice = 9999999;
+        $highestprice = 0;
+        foreach ($children as $key => $value) {
+            $_product = wc_get_product($value);
+            $price = $_product->get_price();
+            if ($price < $lowestprice) {
+                $lowestprice = $price;
+            }
+
+            if ($price > $highestprice) {
+                $highestprice = $price;
+            }
+        }
+        echo '<div class="shop-pricing"><p><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $lowestprice . ' - <span class="currency-symbol">$</span>' . $highestprice . '</p></div>';
     } else {
         if ($product->get_sale_price()) {
             echo '<div class="shop-pricing sale"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
@@ -384,7 +427,7 @@ function add_to_cart_text() {
 add_action( 'woocommerce_before_add_to_cart_quantity', 'quantity_label' ); 
 
 function quantity_label() {
- echo '<p class="qty">Quantity: </p>'; 
+    echo '<p class="qty">Quantity: </p>';
 }
 
 // add_filter( 'woocommerce_get_image_size_gallery_thumbnail', function( $size ) {
@@ -412,6 +455,25 @@ add_filter( 'woocommerce_single_product_summary', 'product_single_price', 10 );
 
 function product_single_price() {
     global $product;
+
+    // if ($product->is_type('grouped')) {
+    //     $children = $product->get_children();
+    //     $lowestprice = 9999999;
+    //     $highestprice = 0;
+    //     foreach ($children as $key => $value) {
+    //         $_product = wc_get_product($value);
+    //         $price = $_product->get_price();
+    //         if ($price < $lowestprice) {
+    //             $lowestprice = $price;
+    //         }
+
+    //         if ($price > $highestprice) {
+    //             $highestprice = $price;
+    //         }
+    //     }
+    //     echo '<div class="shop-pricing"><p><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $lowestprice . ' - <span class="currency-symbol">$</span>' . $highestprice . '</p></div>';
+    // }
+
     if ($product->is_type('simple')) {
         if ($product->get_sale_price()) {
             echo '<div class="product-single"><p class="regular-price sale"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
@@ -424,6 +486,22 @@ function product_single_price() {
         } else {
             echo '<div class="product-single"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '+</p></div>';
         }
+    } elseif ($product->is_type('grouped')) {
+        $children = $product->get_children();
+        $lowestprice = 9999999;
+        $highestprice = 0;
+        foreach ($children as $key => $value) {
+            $_product = wc_get_product($value);
+            $price = $_product->get_price();
+            if ($price < $lowestprice) {
+                $lowestprice = $price;
+            }
+
+            if ($price > $highestprice) {
+                $highestprice = $price;
+            }
+        }
+        echo '<div class="shop-pricing"><p><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $lowestprice . ' - <span class="currency-symbol">$</span>' . $highestprice . '</p></div>';
     } else {
         if ($product->get_sale_price()) {
             echo '<div class="product-single"><p class="regular-price sale"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
