@@ -100,6 +100,16 @@ img.emoji {
     padding: 0;
 }
 
+.shop-pricing {
+    p {
+        font-size: 1.25rem;
+    }
+}
+
+.sale-label {
+    text-align: center;
+}
+
 /* Pricing Area of Product Single Page */
 
 .product-single {
@@ -122,7 +132,33 @@ img.emoji {
 /* Styles for Grouped Products */
 
 .woocommerce-grouped-product-list {
-    
+    padding: 0 0.5rem;
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: separate;
+    border-spacing: 0.5rem;
+    tr {
+        line-height: 2rem;
+    }
+}
+
+.woocommerce-grouped-product-list-item__quantity {
+    p.qty {
+        display: none;
+    }
+}
+
+.woocommerce-grouped-product-list-item__price {
+    text-align: right;
+    del bdi {
+        color: $dark-grey;
+    }
+    ins bdi {
+        color: #21880C;
+    }
+    bdi {
+        color: $dark-grey;
+    }
 }
 
 /* Styles for Variable Products  */

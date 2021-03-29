@@ -317,6 +317,7 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 add_filter( 'ppom_bootstrap_css', '__return_empty_array' );
 // removes the admin bar from the live site
 add_filter('show_admin_bar', '__return_false');
+
 // Woocommerce Shop Hooks
 
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
@@ -410,6 +411,12 @@ function link_button() {
 
 // Woocommerce Product Hooks
 
+// function h($price, $product) {
+//     global $product;
+//     return '<p>' . $product->get_price() . '</p>';
+// }
+// add_filter( 'woocommerce_product_variation_get_price', 'h', 10, 2);
+
 add_action( 'woocommerce_after_add_to_cart_button', 'continue_shopping', 10 );
 
 function continue_shopping() {
@@ -420,6 +427,28 @@ function continue_shopping() {
 add_filter( 'woocommerce_product_single_add_to_cart_text', 'add_to_cart_text' ); 
 function add_to_cart_text() {
     return __( 'Add to Cart', 'woocommerce' ); 
+}
+
+add_action( 'woocommerce_single_product_summary', 'sale_tag', 2 );
+
+function sale_tag() {
+    global $product;
+    if ($product->get_sale_price()) {
+        echo '<h3 class="sale-label">On Sale</h3>';
+    } elseif ($product->is_type('grouped')) {
+        $children = $product->get_children();
+        $bool = false;
+        foreach ($children as $key => $value) {
+            $_product = wc_get_product($value);
+            $sale_price = $_product->get_sale_price();
+            if ($bool == false && $sale_price != false) {
+                $bool = true;
+            }
+        }
+        if ($bool) {
+            echo '<h3 class="sale-label">On Sale</h3>';
+        }
+    }
 }
 
 // The screen reader label still remains
@@ -455,25 +484,6 @@ add_filter( 'woocommerce_single_product_summary', 'product_single_price', 10 );
 
 function product_single_price() {
     global $product;
-
-    // if ($product->is_type('grouped')) {
-    //     $children = $product->get_children();
-    //     $lowestprice = 9999999;
-    //     $highestprice = 0;
-    //     foreach ($children as $key => $value) {
-    //         $_product = wc_get_product($value);
-    //         $price = $_product->get_price();
-    //         if ($price < $lowestprice) {
-    //             $lowestprice = $price;
-    //         }
-
-    //         if ($price > $highestprice) {
-    //             $highestprice = $price;
-    //         }
-    //     }
-    //     echo '<div class="shop-pricing"><p><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $lowestprice . ' - <span class="currency-symbol">$</span>' . $highestprice . '</p></div>';
-    // }
-
     if ($product->is_type('simple')) {
         if ($product->get_sale_price()) {
             echo '<div class="product-single"><p class="regular-price sale"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
@@ -517,3 +527,54 @@ add_action( 'woocommerce_proceed_to_checkout', 'continue_shopping', 30 );
 
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 add_action( 'woocommerce_after_cart', 'woocommerce_cross_sell_display' );
+
+function sale_price_check($subtotal, $cart_item, $cart_item_key) {
+    
+    $product = $cart_item['data'];
+	$quantity = $cart_item['quantity'];
+
+	if ( ! $product ) {
+		return $subtotal;
+	}
+
+	$regular_price = $sale_price = $suffix = '';
+
+	if ( $product->is_taxable() ) {
+
+		if ( 'excl' === WC()->cart->tax_display_cart ) {
+
+			$regular_price = wc_get_price_excluding_tax( $product, array( 'price' => $product->get_regular_price(), 'qty' => $quantity ) );
+			$sale_price    = wc_get_price_excluding_tax( $product, array( 'price' => $product->get_sale_price(), 'qty' => $quantity ) );
+
+			if ( WC()->cart->prices_include_tax && WC()->cart->tax_total > 0 ) {
+				$suffix .= ' <small class="tax_label">' . WC()->countries->ex_tax_or_vat() . '</small>';
+			}
+		} else {
+
+			$regular_price = wc_get_price_including_tax( $product, array( 'price' => $product->get_regular_price(), 'qty' => $quantity ) );
+			$sale_price = wc_get_price_including_tax( $product, array( 'price' => $product->get_sale_price(), 'qty' => $quantity ) );
+
+			if ( ! WC()->cart->prices_include_tax && WC()->cart->tax_total > 0 ) {
+				$suffix .= ' <small class="tax_label">' . WC()->countries->inc_tax_or_vat() . '</small>';
+			}
+		}
+	} else {
+		$regular_price    = $product->get_price() * $quantity;
+		$sale_price       = $product->get_sale_price() * $quantity;
+	}
+
+	if ( $product->is_on_sale() && ! empty( $sale_price ) ) {
+		$price = wc_format_sale_price(
+            wc_get_price_to_display( $product, array( 'price' => $product->get_regular_price(), 'qty' => $quantity ) ),
+            wc_get_price_to_display( $product, array( 'qty' => $quantity ) )
+        ) . $product->get_price_suffix();
+	} else {
+		$price = wc_price( $regular_price ) . $product->get_price_suffix();
+	}
+
+	// VAT suffix
+	$price = $price . $suffix;
+
+	return $price;
+}
+add_filter('woocommerce_cart_item_price', 'sale_price_check', 10, 3);

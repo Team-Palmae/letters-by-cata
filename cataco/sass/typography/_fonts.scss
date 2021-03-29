@@ -37,7 +37,8 @@ h3 {
 }
 
 p,
-label {
+label,
+bdi {
     font-size: 0.875rem;
     font-size: clamp(0.875rem, 2.25vw, 1.125rem);
     line-height: 1.5rem;
