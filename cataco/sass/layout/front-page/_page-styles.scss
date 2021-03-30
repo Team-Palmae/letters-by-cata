@@ -25,26 +25,37 @@
 
 @media (min-width: 750px) {
     .home-block {
-        display: flex;
-        justify-content: space-around;
-        align-items: start;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
         p:first-of-type {
             margin: 0;
         }
-    }
-
-    .thumbnail {
-        margin: 0;
+        .thumbnail {
+            margin: 0 auto;
+        }
     }
 
     .home-about-content,
     .home-services-content,
     .home-shop-content {
-        width: 40ch;
+        max-width: 40ch;
     }
 
     .home-about-content .btn {
         margin: 2.5rem 0 0 0;
+    }
+
+    .home-services-content {
+        margin: 0 0 0 auto;
+        .btn {
+            margin:  2.5rem 0 0 auto;
+        }
+    } 
+
+    .services-para {
+        text-align: right;
     }
 }
 

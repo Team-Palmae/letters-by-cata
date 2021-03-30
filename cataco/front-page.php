@@ -22,5 +22,6 @@
     <!-- end while loop -->
     <?php else : ?>
 <?php endif; ?>
+</div>
 
 <?php get_footer();?>

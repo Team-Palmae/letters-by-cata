@@ -196,7 +196,7 @@ span.onsale {
 
 .woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content {
     border-radius: 1em;
-    background-color: $darker-pink;
+    background-color: darken($soft-pink, 5);
     border: 0;
 }
 

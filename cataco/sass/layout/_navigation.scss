@@ -50,7 +50,7 @@ $cart-position-value: -8px;
 .cart {
     position: relative;
     &:hover .cart-count {
-        border: 1px solid $dark-grey;
+        background-color: darken($soft-pink, 5);
         top: $cart-position-value - 1px;
         right: $cart-position-value - 1px;
         width: $cart-count-dimensions + 2;
@@ -68,8 +68,8 @@ $cart-position-value: -8px;
     font-size: 0.7rem;
     text-align: center;
     border-radius: 50%;
-    background-color: #F9E7E4;
-    color: #8A8481;
+    background-color: $soft-pink;
+    color: $dark-grey;
 }
 
 .toggle-icon-close {

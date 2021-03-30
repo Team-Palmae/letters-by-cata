@@ -27,6 +27,13 @@ footer {
     }
 }
 
+.footer-icon {
+    fill: $dark-grey;
+    &:hover {
+        fill: darken($dark-grey, 15);
+    }
+}
+
 .over-bottom{
     background-color: $dark-grey;
     padding: 2rem 0 5rem 0;
@@ -68,16 +75,11 @@ footer ul a{
 footer ul a:hover {
     font-weight: bolder;
     text-decoration: none;
-  }
+}
 
-  footer ul a:hover {
-    font-weight: bolder;
-    text-decoration: none;
-  }
-
-  footer ul a:active {
+footer ul a:active {
     text-decoration: underline;
-  }
+}
 
 .mailing {
     background-color: $white;
