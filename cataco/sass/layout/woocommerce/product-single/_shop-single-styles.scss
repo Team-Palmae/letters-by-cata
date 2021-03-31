@@ -134,11 +134,18 @@ img.emoji {
 .woocommerce-grouped-product-list {
     padding: 0 0.5rem;
     width: 100%;
-    margin-top: 1rem;
+    max-width: 25rem;
+    margin: 1rem auto 0;
     border-collapse: separate;
     border-spacing: 0.5rem;
+    .woocommerce-grouped-product-list-item__quantity {
+        width: 60px;
+    }
     tr {
         line-height: 2rem;
+    }
+    .quantity input {
+        margin: 0;
     }
 }
 

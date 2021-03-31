@@ -4,7 +4,7 @@ div.woocommerce-notices-wrapper {
     width: 80%;
     max-width: 800px;
     background-color: $soft-pink;
-    margin: 1.5rem auto;
+    margin: 1.5rem auto 0;
     text-align: center;
     font-size: 1rem;
     color: $dark-grey;
@@ -49,26 +49,16 @@ ul.products {
 
 .shop-pricing {
     &.sale {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        p {
-            display: inline;
-            margin: 1.5rem 0.5rem 0;
+        .regular-price {
+            text-decoration: line-through;
+        }
+        .sale-price {
+            color: #21880C;
         }
     }
     p {
-        color: $dark-grey;
+        margin: 0.5rem 0 0 0;
         text-align: center;
-    }
-    .sale-price {
-        color: #21880C;
-        text-align: left;
-    }
-    
-    .regular-price {
-        text-decoration: line-through;
-        text-align: right;
     }
 }
 
@@ -91,7 +81,7 @@ span.onsale {
     position: absolute;
     top: -1rem;
     left: -1rem;
-    background-color: $soft-pink;
+    background-color: darken($soft-pink, 5);
     width: 3rem;
     height: 3rem;
     font-size: 1rem;
@@ -99,7 +89,6 @@ span.onsale {
     border-radius: 50%;
     line-height: 3rem;
     text-align: center;
-    border: 1px solid $dark-grey;
 }
 
 // Categories

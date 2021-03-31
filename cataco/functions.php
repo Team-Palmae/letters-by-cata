@@ -318,6 +318,71 @@ add_filter( 'ppom_bootstrap_css', '__return_empty_array' );
 // removes the admin bar from the live site
 add_filter('show_admin_bar', '__return_false');
 
+// Function for checking the prices of the Products and if they're on sale or not
+function product_prices() {
+    global $product;
+    if ($product->is_type('simple')) {
+        if ($product->get_sale_price()) {
+            echo '<div class="shop-pricing sale"><p class="regular-price"><strong>CA </strong><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><strong>CA </strong><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
+        } else {
+            echo '<div class="shop-pricing"><p><strong>CA </strong><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
+        }
+    } elseif ($product->is_type('variable')) {
+        if ($product->get_sale_price()) {
+            echo '<div class="shop-pricing sale"><p class="regular-price"><strong>CA </strong><span class="currency-symbol">$</span>' . $product->get_regular_price() . '<strong>+</strong></p><p class="sale-price"><strong>CA </strong><span class="currency-symbol">$</span>' . $product->get_sale_price() . '<strong>+</strong></p></div>';
+        } else {
+            echo '<div class="shop-pricing"><p><strong>CA </strong><span class="currency-symbol">$</span>' . $product->get_price() . '<strong>+</strong></p></div>';
+        }
+    } elseif ($product->is_type('grouped')) {
+        $children = $product->get_children();
+        // Current Prices of the Products | Highest and Lowest Values
+        $lowest_price = 9999999;
+        $highest_price = 0;
+        // Regular price if the product is on sale | Highest and Lowest Values
+        $lowest_regular_price = 9999999;
+        $highest_regular_price = 0;
+        // Bool for if any of the Children are on sale
+        $is_on_sale = false;
+        foreach ($children as $key => $value) {
+            $_product = wc_get_product($value);
+            $price = $_product->get_price(); // Current Price of Child
+            $regular_price = $_product->get_regular_price(); // Regular price of Child incase it's on sale
+            $sale = $_product->get_sale_price(); // Check if the Child is on sale
+
+            if ($price < $lowest_price) {
+                $lowest_price = $price;
+            }
+
+            if ($regular_price < $lowest_regular_price) {
+                $lowest_regular_price = $regular_price;
+            }
+
+            if ($price > $highest_price) {
+                $highest_price = $price;
+            }
+
+            if ($regular_price > $highest_regular_price) {
+                $highest_regular_price = $regular_price;
+            }
+
+            if ($sale) {
+                $is_on_sale = true;
+            }
+        }
+        if ($is_on_sale) {
+            echo '<div class="shop-pricing sale"><p class="regular-price"><strong>CA </strong><span class="currency-symbol">$</span>' . $lowest_regular_price . ' - <span class="currency-symbol">$</span>' . $highest_regular_price . '</p><p class="sale-price"><strong>CA </strong><span class="currency-symbol">$</span>' . $lowest_price . ' - <span class="currency-symbol">$</span>' . $highest_price . '</p></div>';
+        } else {
+            echo '<div class="shop-pricing"><p><strong>CA </strong><span class="currency-symbol">$</span>' . $lowest_price . ' - <span class="currency-symbol">$</span>' . $highest_price . '</p></div>';
+        }
+    } else {
+        if ($product->get_sale_price()) {
+            echo '<div class="shop-pricing sale"><p class="regular-price"><strong>CA </strong><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><strong>CA </strong><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
+        } else {
+            echo '<div class="shop-pricing"><p><strong>CA </strong><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
+        }
+    }
+}
+
 // Woocommerce Shop Hooks
 
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
@@ -348,46 +413,7 @@ function product_title_tags() {
 }
 
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
-add_action( 'woocommerce_after_shop_loop_item_title', 'shop_price', 10 );
-
-function shop_price() {
-    global $product;
-    if ($product->is_type('simple')) {
-        if ($product->get_sale_price()) {
-            echo '<div class="shop-pricing sale"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
-        } else {
-            echo '<div class="shop-pricing"><p><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
-        }
-    } elseif ($product->is_type('variable')) {
-        if ($product->get_sale_price()) {
-            echo '<div class="shop-pricing sale"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '+</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '+</p></div>';
-        } else {
-            echo '<div class="shop-pricing"><p><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '+</p></div>';
-        }
-    } elseif ($product->is_type('grouped')) {
-        $children = $product->get_children();
-        $lowestprice = 9999999;
-        $highestprice = 0;
-        foreach ($children as $key => $value) {
-            $_product = wc_get_product($value);
-            $price = $_product->get_price();
-            if ($price < $lowestprice) {
-                $lowestprice = $price;
-            }
-
-            if ($price > $highestprice) {
-                $highestprice = $price;
-            }
-        }
-        echo '<div class="shop-pricing"><p><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $lowestprice . ' - <span class="currency-symbol">$</span>' . $highestprice . '</p></div>';
-    } else {
-        if ($product->get_sale_price()) {
-            echo '<div class="shop-pricing sale"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
-        } else {
-            echo '<div class="shop-pricing"><p><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
-        }
-    }
-}
+add_action( 'woocommerce_after_shop_loop_item_title', 'product_prices', 10 );
 
 add_action( 'woocommerce_after_shop_loop_item', 'short_description', 8 );
 
@@ -421,7 +447,7 @@ add_action( 'woocommerce_after_add_to_cart_button', 'continue_shopping', 10 );
 
 function continue_shopping() {
     $url = site_url('/shop');
-    echo '<a href="' . $url . '" class="button">Continue Shopping</a>';
+    echo '<a class="continue-shopping button" href="' . $url . '">Continue Shopping</a>';
 }
 
 add_filter( 'woocommerce_product_single_add_to_cart_text', 'add_to_cart_text' ); 
@@ -480,46 +506,7 @@ remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_pr
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-add_filter( 'woocommerce_single_product_summary', 'product_single_price', 10 );
-
-function product_single_price() {
-    global $product;
-    if ($product->is_type('simple')) {
-        if ($product->get_sale_price()) {
-            echo '<div class="product-single"><p class="regular-price sale"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
-        } else {
-            echo '<div class="product-single"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
-        }
-    } elseif ($product->is_type('variable')) {
-        if ($product->get_sale_price()) {
-            echo '<div class="product-single"><p class="regular-price sale"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '+</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '+</p></div>';
-        } else {
-            echo '<div class="product-single"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '+</p></div>';
-        }
-    } elseif ($product->is_type('grouped')) {
-        $children = $product->get_children();
-        $lowestprice = 9999999;
-        $highestprice = 0;
-        foreach ($children as $key => $value) {
-            $_product = wc_get_product($value);
-            $price = $_product->get_price();
-            if ($price < $lowestprice) {
-                $lowestprice = $price;
-            }
-
-            if ($price > $highestprice) {
-                $highestprice = $price;
-            }
-        }
-        echo '<div class="shop-pricing"><p><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $lowestprice . ' - <span class="currency-symbol">$</span>' . $highestprice . '</p></div>';
-    } else {
-        if ($product->get_sale_price()) {
-            echo '<div class="product-single"><p class="regular-price sale"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_regular_price() . '</p><p class="sale-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_sale_price() . '</p></div>';
-        } else {
-            echo '<div class="product-single"><p class="regular-price"><span class="country-abbreviation">CA </span><span class="currency-symbol">$</span>' . $product->get_price() . '</p></div>';
-        }
-    }
-}
+add_filter( 'woocommerce_single_product_summary', 'product_prices', 10 );
 
 // Cart
 

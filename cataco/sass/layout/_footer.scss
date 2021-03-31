@@ -101,7 +101,7 @@ footer ul a:active {
     }
 }
 
-@media (min-width: 650px) {
+@media (min-width: 700px) {
     #menu-main-menu{
         display: inline-flex;
         flex-wrap: wrap;
@@ -112,13 +112,5 @@ footer ul a:active {
             display: inline;
             padding: 0.5rem;
         }
-    }
-}
-
-@media (min-width: 800px) {
-
-    .footer-area-top > .custom-html-widget > a {
-        width: 80px;
-        height: 80px;
     }
 }

@@ -59,11 +59,16 @@
 }
 
 .woocommerce-input-wrapper .input-text {
-    padding: 0.5rem;
     width: 100%;
-    border-radius: 0.25rem;
-    color: $dark-grey;
 }
+
+.select2-container--default .select2-selection--single {
+    border: 1px solid $dark-grey;
+    &:hover {
+        border: 1px solid darken($dark-grey, 10);
+    }
+}
+
 
 .selection {
     >span {

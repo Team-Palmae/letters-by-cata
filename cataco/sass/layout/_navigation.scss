@@ -6,9 +6,6 @@ header {
         margin: 0 auto;
         position: relative;
         padding: 1rem;
-        svg path {
-            fill: $dark-grey;
-        }
     }
 
     .flex{
@@ -25,7 +22,7 @@ header {
 
 svg.svg-inline--fa.fa-bars.fa-w-14, svg path {
     cursor: pointer;
-  }
+}
 
 .cart-icon,
 .toggle-icon-open,
@@ -33,6 +30,15 @@ svg.svg-inline--fa.fa-bars.fa-w-14, svg path {
 .toggle-icon-close svg {
     width: 2.5rem;
     height: 2.5rem;
+}
+
+.cart-icon,
+.toggle-icon-open,
+.toggle-icon-close {
+    fill: $dark-grey;
+    &:hover {
+        fill: darken($dark-grey, 10);
+    }
 }
 
 .toggle-icon-close svg {
