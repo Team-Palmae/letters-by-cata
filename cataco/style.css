@@ -463,7 +463,7 @@ header nav {
 
 .header {
   padding: 0;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.4) 100%), url(/lettersbycata/wp-content/uploads/2021/03/hero-banner-small.jpg) center;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.4) 100%), url(/lettersbycata/wp-content/uploads/2021/04/hero-banner-small.jpg) center;
   background-size: cover;
   border-bottom: 6px solid #565656;
   margin-bottom: 2.5rem;
@@ -502,7 +502,7 @@ header nav {
 
 @media (min-width: 800px) {
   .header {
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.4) 100%), url(/lettersbycata/wp-content/uploads/2021/03/hero-banner.jpg) center;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.4) 100%), url(/lettersbycata/wp-content/uploads/2021/04/hero-banner.jpg) center;
     background-size: cover;
   }
 }
@@ -659,7 +659,7 @@ footer ul a:active {
   margin: 1.5rem auto 0;
 }
 
-.home .container .heading-background:first-of-type {
+.home .container .heading-background {
   margin: 1.5rem auto;
 }
 
@@ -678,7 +678,7 @@ footer ul a:active {
   padding: 0 1.5rem;
 }
 
-.shopping {
+.home-shop-content p {
   margin: 1.5rem 0 0 0;
   text-align: center;
 }
@@ -708,7 +708,7 @@ footer ul a:active {
   .home-services-content .btn {
     margin: 1.5rem 0 0 auto;
   }
-  .services-para {
+  .home-services-content p {
     text-align: right;
   }
 }

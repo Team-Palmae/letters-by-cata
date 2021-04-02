@@ -6,7 +6,7 @@
     }
 }
 
-.home .container .heading-background:first-of-type {
+.home .container .heading-background {
     margin: 1.5rem auto;
 }
 
@@ -23,7 +23,7 @@
     padding: 0 1.5rem;
 }
 
-.shopping {
+.home-shop-content p {
     margin: 1.5rem 0 0 0;
     text-align: center;
 }
@@ -55,7 +55,7 @@
         }
     } 
 
-    .services-para {
+    .home-services-content p {
         text-align: right;
     }
 }

@@ -12,7 +12,7 @@
 				<div class="footer-area-top">
 					<div class="social-links">
 						<a href="https://www.instagram.com/lettersbycataco/?hl=en">
-							<svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 448 512">
+							<svg class="footer-icon" aria-label="instagram" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 448 512">
 								<path d="M224.1,141c-63.6,0-114.9,51.3-114.9,114.9s51.3,114.9,114.9,114.9S339,319.5,339,255.9S287.7,141,224.1,141z
 								M224.1,330.6c-41.1,0-74.7-33.5-74.7-74.7s33.5-74.7,74.7-74.7s74.7,33.5,74.7,74.7S265.2,330.6,224.1,330.6L224.1,330.6z
 								M370.5,136.3c0,14.9-12,26.8-26.8,26.8c-14.9,0-26.8-12-26.8-26.8s12-26.8,26.8-26.8S370.5,121.5,370.5,136.3z M446.6,163.5
@@ -26,14 +26,14 @@
 						</a>
 		
 						<a href="https://www.facebook.com/lettersbycataco">
-							<svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 320 512">
+							<svg class="footer-icon" aria-label="facebook" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 320 512">
 								<path class="st0" d="M279.1,288l14.2-92.7h-88.9v-60.1c0-25.3,12.4-50.1,52.2-50.1h40.4V6.3c0,0-36.7-6.3-71.7-6.3
 								c-73.2,0-121.1,44.4-121.1,124.7v70.6H22.9V288h81.4v224h100.2V288H279.1z"/>
 							</svg>
 						</a>
 		
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>contact">
-							<svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512">
+							<svg class="footer-icon" aria-label="email" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512">
 								<path d="M502.3,190.8c3.9-3.1,9.7-0.2,9.7,4.7V400c0,26.5-21.5,48-48,48H48c-26.5,0-48-21.5-48-48V195.6
 								c0-5,5.7-7.8,9.7-4.7c22.4,17.4,52.1,39.5,154.1,113.6c21.1,15.4,56.7,47.8,92.2,47.6c35.7,0.3,72-32.8,92.3-47.6
 								C450.3,230.4,479.9,208.2,502.3,190.8z M256,320c23.2,0.4,56.6-29.2,73.4-41.4c132.7-96.3,142.8-104.7,173.4-128.7
