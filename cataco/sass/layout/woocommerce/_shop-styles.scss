@@ -1,4 +1,12 @@
+.etsy-plug p {
+    text-align: center;
+}
+
 /* Notices wrapper for Woo Pages */
+
+.woocommerce-breadcrumb {
+    margin-bottom: 0.5rem;
+}
 
 div.woocommerce-notices-wrapper {
     width: 80%;
@@ -181,31 +189,62 @@ span.onsale {
     font-size: clamp(0.875rem, 2.25vw, 1.125rem);
 }
 
+// Pagination
+
+.woocommerce-pagination {
+    width: 100%;
+    ul.page-numbers {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        li {
+            margin: 0 0.5rem;
+            // background-color: #f9e3dd;
+            width: 3rem;
+            height: 3rem;
+            line-height: 3rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 50%;
+            text-align: center;
+            a {
+                width: 3rem;
+                height: 3rem;
+                display: block;
+                color: lighten($dark-grey, 15);
+            }
+        }
+        .current {
+            color: darken($soft-pink, 20);
+        }
+    }
+}
+
 // Price Filter Styles
 
-.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content {
+.woocommerce .price_slider_wrapper .ui-widget-content {
     border-radius: 1em;
-    background-color: darken($soft-pink, 5);
+    background-color: darken($soft-pink, 10);
     border: 0;
 }
 
-.woocommerce .widget_price_filter .ui-slider-horizontal {
+.woocommerce .ui-slider-horizontal {
     height: .5em;
 }
-.woocommerce .widget_price_filter .ui-slider {
+.woocommerce .ui-slider {
     position: relative;
     text-align: left;
     margin-left: .5em;
     margin-right: .5em;
 }
-.woocommerce .widget_price_filter .price_slider {
+.woocommerce .price_slider {
     margin-bottom: 1em;
 }
-.woocommerce .widget_price_filter .ui-slider-horizontal .ui-slider-range {
+.woocommerce .ui-slider-horizontal .ui-slider-range {
     top: 0;
     height: 100%;
 }
-.woocommerce .widget_price_filter .ui-slider .ui-slider-range {
+.woocommerce .ui-slider .ui-slider-range {
     position: absolute;
     z-index: 1;
     font-size: .7em;
@@ -215,12 +254,12 @@ span.onsale {
     background-color: $soft-pink;
 }
 
-.woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
+.woocommerce .ui-slider .ui-slider-handle {
     position: absolute;
     z-index: 2;
     width: 1em;
     height: 1em;
-    background-color: $soft-pink;
+    background-color: darken($soft-pink, 10);
     border-radius: 1em;
     cursor: ew-resize;
     outline: 0;
@@ -238,15 +277,16 @@ span.onsale {
     }
 
     .filters {
-        max-height: 30rem;
+        max-height: 100rem;
         margin-left: 0;
     }
-    div.woocommerce.columns-3,
-    div.woocommerce.columns-4,
-    div.woocommerce.columns-5 {
+    .shop-container {
         display: grid;
         grid-template-columns: 1fr 3fr;
-        gap: 2rem;
+        gap: 1.5rem;
+    }
+    .woocommerce-pagination {
+        grid-column: span 1 / -1;
     }
     .woocommerce-notices-wrapper {
         grid-column: 1 / -1;

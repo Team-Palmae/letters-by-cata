@@ -25,14 +25,14 @@
             <h2><?php echo $home_shop['shop_header_text']; ?></h2>
         </div>
         <div class="home-block">
-            <img class="frame-circle thumbnail" src="<?php echo esc_url( $home_shop['shop_image']['url'] ); ?>" alt="<?php echo esc_attr( $home_shop['about_image']['alt'] ); ?>" />
+            <img class="frame-circle thumbnail" src="<?php echo esc_url( $home_shop['shop_image']['url'] ); ?>" alt="<?php echo esc_attr( $home_shop['shop_image']['alt'] ); ?>" />
             <div class="home-shop-content">
                 <?php print_r($shop_text); ?>
-                <a class="btn" href="<?php echo esc_url( home_url( '/' ) ); ?>about">
+                <a class="btn" href="<?php echo esc_url( home_url( '/' ) ); ?>shop">
                     <?php print_r($shop_button_text); ?>
                 </a>
                 <?php echo $home_shop['shop_etsy_text']; ?>
-                <a class="btn" href="<?php echo esc_url( home_url( '/' ) ); ?>about">
+                <a class="btn" href="https://www.etsy.com/ca/shop/LettersByCataCo">
                     <?php echo $home_shop['shop_etsy_button_label']; ?>
                 </a>
             </div>
@@ -43,10 +43,10 @@
             <h2><?php echo $home_services['services_header_text']; ?></h2>
         </div>
         <div class="home-block">
-            <img class="frame-square thumbnail" src="<?php echo esc_url( $home_services['services_image']['url'] ); ?>" alt="<?php echo esc_attr( $home_services['about_image']['alt'] ); ?>" />
+            <img class="frame-square thumbnail" src="<?php echo esc_url( $home_services['services_image']['url'] ); ?>" alt="<?php echo esc_attr( $home_services['services_image']['alt'] ); ?>" />
             <div class="home-services-content">
                 <?php print_r($services_text); ?>
-                <a class="btn" href="<?php echo esc_url( home_url( '/' ) ); ?>about">
+                <a class="btn" href="<?php echo esc_url( home_url( '/' ) ); ?>services">
                     <?php print_r($services_button_text); ?>
                 </a>
             </div>
@@ -60,8 +60,8 @@
             <img class="frame-circle thumbnail" src="<?php echo esc_url( $home_about['about_image']['url'] ); ?>" alt="<?php echo esc_attr( $home_about['about_image']['alt'] ); ?>" />
             <div class="home-about-content">
                 <?php print_r($about_text); ?>
-                <a class="btn" href="<?php echo esc_url( home_url( '/' ) ); ?>services">
-                    <?php print_r($services_button_text); ?>
+                <a class="btn" href="<?php echo esc_url( home_url( '/' ) ); ?>about">
+                    <?php print_r($about_button_text); ?>
                 </a>
             </div>
         </div>

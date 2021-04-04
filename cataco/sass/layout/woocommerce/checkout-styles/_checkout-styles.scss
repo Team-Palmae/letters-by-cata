@@ -3,7 +3,7 @@
     /* Hidden as there are no accounts at the moment */
 }
 
-.woocommerce-checkout {
+.woocommerce-checkout .woocommerce {
     label {
         display: block;
     }
@@ -113,7 +113,6 @@ abbr {
 
 .required {
     color: #FF9494;
-    margin-left: 0.2rem;
 }
 
 .optional {

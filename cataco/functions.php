@@ -7,6 +7,7 @@ function cataco_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'html5', array( 'search-form' ) );
+    add_theme_support( 'woocommerce' );
 	global $content_width;
 
 	if ( ! isset( $content_width ) ) { $content_width = 1920; }
@@ -153,10 +154,6 @@ function cataco_comment_count( $count ) {
     }
 }
 
-
-// add_filter( 'use_default_gallery_style', '__return_false' );
-// add_theme_support('html5', array('gallery', 'caption'));
-
 function register_widget_areash() {
 
     register_sidebar( array(
@@ -261,33 +258,6 @@ function get_post_from_id( $gallery_id ) {
         'title' => $post_meta->post_title
     );
 }
-
-// ACF for image selection on the home page
-// function image_select() {
-//     $
-// }
-// acf_add_local_field_group(array(
-// 	'key' => 'group_1',
-// 	'title' => 'My Group',
-// 	'fields' => array (),
-// 	'location' => array (
-// 		array (
-// 			array (
-// 				'param' => 'post_type',
-// 				'operator' => '==',
-// 				'value' => 'post',
-// 			),
-// 		),
-// 	),
-// ));
-
-// acf_add_local_field(array(
-// 	'key' => 'field_1',
-// 	'label' => 'Sub Title',
-// 	'name' => 'sub_title',
-// 	'type' => 'text',
-// 	'parent' => 'group_1'
-// ));
 
 // Checks if the page is the shop page
 function shop_page() {
@@ -405,6 +375,36 @@ function product_prices() {
 
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+
+add_filter( 'loop_shop_per_page', 'products_per_page', 9999 );
+ 
+function products_per_page( $per_page ) {
+  $per_page = 18;
+  return $per_page;
+}
+
+// Shop Container
+add_action( 'woocommerce_before_shop_loop', 'shop_container_start', 18);
+add_action( 'woocommerce_after_shop_loop', 'shop_container_end', 11 );
+
+function shop_container_start() {
+    echo '<div class="shop-container">';
+}
+
+function shop_container_end() {
+    echo '</div>';
+}
+
+// Pagination
+add_filter( 'woocommerce_pagination_args', 	'woocommerce_pagination_arrow_change' );
+
+function woocommerce_pagination_arrow_change( $args ) {
+	$args['prev_text'] = '<';
+	$args['next_text'] = '>';
+	return $args;
+}
+
+// Sidebar
 add_action( 'woocommerce_before_shop_loop', 'before_shop_loop_sidebar_container_start', 19);
 add_action( 'woocommerce_before_shop_loop', 'before_shop_loop_sidebar', 20);
 add_action( 'woocommerce_before_shop_loop', 'before_shop_loop_sidebar_container_end', 21);
@@ -460,6 +460,14 @@ function link_button() {
 //     return '<p>' . $product->get_price() . '</p>';
 // }
 // add_filter( 'woocommerce_product_variation_get_price', 'h', 10, 2);
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+add_action('woocommerce_before_single_product', 'product_name_new_position', 5);
+
+function product_name_new_position() {
+    global $product;
+    echo '<div class="heading-background"><h2>' . $product->get_name() . '</h2></div>';
+}
 
 add_action( 'woocommerce_after_add_to_cart_button', 'continue_shopping', 10 );
 

@@ -1,0 +1,47 @@
+// Search Page
+
+img.attachment-post-thumbnail.size-post-thumbnail.wp-post-image{
+    width: 40%;
+    margin: 0 auto;
+}
+
+div.entry-summary, div.search-heading{
+    margin-bottom: 1.5rem;
+}
+
+// div.entry-summary p{
+//     width: 30%;
+// }
+
+.search-title{
+    text-align: center;
+}
+
+body.search.search-results div#container.container>main{
+    text-align: center;
+}
+
+body.search.search-results.wp-custom-logo.theme-cataco.woocommerce-js>div#wrapper.hfeed>div#container.container>main>article{
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 2% 2%;
+}
+
+div.entry-summary>p{
+    // overflow: hidden !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80%;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+@media (max-width: 1000px) {
+    body.search.search-results.wp-custom-logo.theme-cataco.woocommerce-js>div#wrapper.hfeed>div#container.container>main>article {
+        display: block;
+        width: 90%;
+    }
+}

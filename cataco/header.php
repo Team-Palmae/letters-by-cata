@@ -3,6 +3,8 @@
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content="Calligraphy, Watercolor, Cricut. We have all your handmade designs covered. Find great handmade products right here!">
+		<meta name="keywords" content="Calligraphy Watercolor Cricut Edmonton Local Art Design Lettering">
 		<?php wp_head(); ?>
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
 		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" />

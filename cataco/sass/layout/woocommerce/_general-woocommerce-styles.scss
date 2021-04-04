@@ -1,3 +1,190 @@
 .continue-shopping {
     width: 18rem;
 }
+
+.attachment-woocommerce_thumbnail {
+    border-radius: 0.25rem;
+}
+
+.woocommerce-Reviews {
+    p {
+        color: $dark-grey;
+    }
+    .meta {
+        margin: 0;
+    }
+    .comment-reply-title {
+        color: $dark-grey;
+        display: block;
+    }
+    p,
+    .comment-reply-title,
+    .comment-form {
+        margin: 1.5rem 0 0 0;
+    }
+    .description p {
+        margin: 0.5rem 0 0 0;
+    }
+}
+
+.comment_container {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 1.5rem;
+}
+
+.commentlist {
+    margin: 1.5rem 0 0 0;
+}
+
+.avatar {
+    width: 4rem;
+    height: 4rem;
+}
+
+/**
+* Star ratings
+*/
+.star-rating {
+    float: right;
+    overflow: hidden;
+    position: relative;
+    height: 1rem;
+    line-height: 1;
+    font-size: 1rem;
+    width: 4.1rem;
+
+    &::before {
+        content: "☆☆☆☆☆";
+        color: $dark-grey;
+        float: left;
+        top: 0;
+        left: 0;
+        position: absolute;
+    }
+
+    span {
+        overflow: hidden;
+        float: left;
+        top: 0;
+        left: 0;
+        position: absolute;
+        padding-top: 1.5rem;
+    }
+
+    span::before {
+        content: "★★★★★";
+        color: $dark-grey;
+        top: 0;
+        position: absolute;
+        left: 0;
+    }
+}
+
+.woocommerce-product-rating {
+    line-height: 2;
+    display: block;
+    display: flex;
+    align-items: center;
+
+    .star-rating {
+        margin: 0 0.5rem 0 auto;
+    }
+
+    .woocommerce-review-link {
+        margin: 0 auto 0 0.5rem;
+    }
+}
+
+.products .star-rating {
+    display: block;
+    margin: 0 0 0.5rem;
+    float: none;
+}
+
+.hreview-aggregate .star-rating {
+    margin: 0.625rem 0 0;
+}
+
+#review_form #respond {
+    position: static;
+    margin: 0;
+    width: auto;
+    padding: 0;
+    background: transparent none;
+    border: 0;
+
+    p {
+        margin: 0 0 10px;
+    }
+
+    .form-submit input {
+        left: auto;
+    }
+
+    textarea {
+        box-sizing: border-box;
+        width: 100%;
+    }
+}
+
+p.stars {
+
+    a {
+        position: relative;
+        height: 1.5rem;
+        width: 1.5rem;
+        font-size: 1.5rem;
+        text-indent: -999em;
+        display: inline-block;
+        text-decoration: none;
+        color: $dark-grey;
+
+        &::before {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            line-height: 1;
+            content: "☆";
+            text-indent: 0;
+        }
+
+        &:hover ~ a::before {
+            content: "☆";
+        }
+    }
+
+    &:hover a::before {
+        content: "★";
+    }
+
+    &.selected {
+
+        a.active {
+
+            &::before {
+                content: "★";
+            }
+
+            ~ a::before {
+                content: "☆";
+            }
+        }
+
+        a:not(.active)::before {
+            content: "★";
+        }
+    }
+}
+
+.widget_rating_filter ul {
+    li {
+        .star-rating {
+            float: none;
+            display: inline-block;
+        }
+    }
+}

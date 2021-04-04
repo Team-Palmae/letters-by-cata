@@ -1,35 +1,55 @@
-// Dummy Text
-.wpcf7-form{
-    text-align: center;
-}
-// Got the button styles working from general styles :)
-.wpcf7-form>.wpcf7-form-control.wpcf7-submit{
+.contact-form{
+    max-width: 40rem;
+    margin: 0 auto;
+    p {
+        width: 75%;
+        max-width: 25rem;
+    }
+
+    .contact-input {
+        width: 100%;
+    }
+
     
+    .other-input {
+        // display: none;
+    }
+
+    .contact-reason {
+        .wpcf7-list-item {
+            text-align: center;
+            display: block;
+        }
+    }
+    
+    .other-input.selected {
+        display: block;
+    }
+    
+    label.contact-label{
+        display: inline-block;
+    }
+    
+    // Error Messages
+    
+    span.wpcf7-not-valid-tip{
+        margin-top: 0.5rem;
+        color: darken($soft-pink, 5);
+    }
+    
+    .wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output {
+        border: 1px solid darken($soft-pink, 5);
+        padding: 0.5rem;
+        color: darken($soft-pink, 5);
+    }
 }
 
-input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required{
-    width: 75%;
-    max-width: 25rem;
-}
-
-.other-input {
-    display: none;
-}
-
-.other-input.selected {
-    display: block;
-}
-
-label.contact-label{
-    text-align: left;
-}
-
-// Error Messages
-
-span.wpcf7-not-valid-tip{
-    margin-top: 0.5rem;
-}
-
-div.wpcf7-response-output{
-    border: 1px solid $white;
+@media(min-width: 500px) {
+    .contact-form {
+        .contact-reason {
+            .wpcf7-list-item {
+                display: inline-block;
+            }
+        }
+    }
 }
