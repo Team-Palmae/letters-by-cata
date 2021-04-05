@@ -224,7 +224,7 @@ span.onsale {
 
 .woocommerce .price_slider_wrapper .ui-widget-content {
     border-radius: 1em;
-    background-color: darken($soft-pink, 10);
+    background-color: $soft-pink;
     border: 0;
 }
 
@@ -251,7 +251,7 @@ span.onsale {
     display: block;
     border: 0;
     border-radius: 1em;
-    background-color: $soft-pink;
+    background-color: darken($soft-pink, 10);
 }
 
 .woocommerce .ui-slider .ui-slider-handle {

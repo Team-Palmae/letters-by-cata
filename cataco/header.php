@@ -12,6 +12,17 @@
 		<noscript>
 			<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 		</noscript>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<!-- Don't Edit -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DY59KGYYT"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-2DY59KGYYT');
+		</script>
 	</head>
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">

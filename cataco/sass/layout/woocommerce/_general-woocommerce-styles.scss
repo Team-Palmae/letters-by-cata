@@ -4,6 +4,8 @@
 
 .attachment-woocommerce_thumbnail {
     border-radius: 0.25rem;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .woocommerce-Reviews {
@@ -74,7 +76,7 @@
 
     span::before {
         content: "★★★★★";
-        color: $dark-grey;
+        color: #FECF0A;
         top: 0;
         position: absolute;
         left: 0;
@@ -98,7 +100,7 @@
 
 .products .star-rating {
     display: block;
-    margin: 0 0 0.5rem;
+    margin: 0 auto;
     float: none;
 }
 

@@ -4,7 +4,7 @@
 }
 
 .woocommerce-checkout .woocommerce {
-    label {
+    .woocommerce-shipping-methods label {
         display: block;
     }
 }
@@ -353,13 +353,6 @@ abbr {
 .woocommerce-checkout #payment ul.payment_methods li img.stripe-icon {
     display: inline;
     margin: 0.5rem 0.5rem -0.5rem 0.5rem;
-    &:first-of-type {
-        &::before {
-            content: "\a";
-            white-space: pre;
-        }
-    }
-    
 }
 
 .wc-credit-card-form {

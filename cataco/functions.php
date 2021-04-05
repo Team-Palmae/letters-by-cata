@@ -373,6 +373,12 @@ function product_prices() {
 
 // Woocommerce Shop Hooks
 
+add_filter('woocommerce_show_page_title', 'shop_heading');
+
+function shop_heading() {
+    echo '<h2 class="entry-title">Shop</h2>';
+}
+
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 
@@ -534,12 +540,42 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 add_filter( 'woocommerce_single_product_summary', 'product_prices', 10 );
 
+/*
+ Changes Related Products Maximum number of displayed Products
+*/
+// function related_products_limit( $args ) {
+//     // global $product;
+//     $args['posts_per_page'] = 3; // 4 related products
+//     return $args;
+// }
+
+function woo_related_products_limit() {
+    global $product;
+      
+      $args['posts_per_page'] = 6;
+      return $args;
+  }
+  add_filter( 'woocommerce_output_related_products_args', 'jk_related_products_args', 20 );
+    function jk_related_products_args( $args ) {
+      $args['posts_per_page'] = 4; // 4 related products
+      $args['columns'] = 2; // arranged in 2 columns
+      return $args;
+  }
+
+// add_fislter( 'woocommerce_output_related_products_args', 'related_products_limit' );
+
 // Cart
 
 add_action( 'woocommerce_proceed_to_checkout', 'continue_shopping', 30 );
 
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 add_action( 'woocommerce_after_cart', 'woocommerce_cross_sell_display' );
+
+// add_filter( 'woocommerce_cross_sells_total', 'cross_sells_limit' );
+  
+// function cross_sells_limit( $columns ) {
+//     return 3;
+// }
 
 function sale_price_check($subtotal, $cart_item, $cart_item_key) {
     
