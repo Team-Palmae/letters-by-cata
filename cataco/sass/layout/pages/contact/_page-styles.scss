@@ -10,11 +10,6 @@
         width: 100%;
     }
 
-    
-    .other-input {
-        // display: none;
-    }
-
     .contact-reason {
         .wpcf7-list-item {
             text-align: center;
@@ -44,7 +39,7 @@
     }
 }
 
-@media(min-width: 500px) {
+@mixin checkbox-inline() {
     .contact-form {
         .contact-reason {
             .wpcf7-list-item {

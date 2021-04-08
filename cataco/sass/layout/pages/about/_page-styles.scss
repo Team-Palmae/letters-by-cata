@@ -1,11 +1,12 @@
-.about-page {
-    padding: 0 1.5rem;
-}
-
 .about-image {
     display: block;
     width: 60%;
     margin: 1.25rem auto 0;
+}
+
+.about-image-gallery {
+    width: calc(100% - 3rem);
+    margin: 0 auto;
 }
 
 .click-here {
@@ -13,7 +14,7 @@
     color: $dark-grey;
 }
 
-@media (min-width: 800px) {
+@mixin about-gallery-adjustments() {
 
     .about-image {
         width: 100%;

@@ -371,6 +371,27 @@ function product_prices() {
     }
 }
 
+add_action('init', 'init_remove_support',100);
+function init_remove_support(){
+    $post_type = 'product';
+    remove_post_type_support( $post_type, 'editor');
+}
+
+/**
+ * Customize product data tabs
+ */
+add_filter( 'woocommerce_product_tabs', 'woo_custom_description_tab', 98 );
+function woo_custom_description_tab( $tabs ) {
+	$tabs['description']['callback'] = 'woo_custom_description_tab_content';	// Custom description callback
+	return $tabs;
+}
+
+function woo_custom_description_tab_content() {
+	echo '<h2>Description</h2>';
+    $desc = get_field('product_description');
+	echo $desc;
+}
+
 // Woocommerce Shop Hooks
 
 add_filter('woocommerce_show_page_title', 'shop_heading');
@@ -442,9 +463,17 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'product_prices', 10 );
 add_action( 'woocommerce_after_shop_loop_item', 'short_description', 8 );
 
 function short_description() {
-    global $product;
-    if ($product->get_short_description()) {
-        echo '<p class="short-description">' . $product->get_short_description() . '</p>';
+    // global $product;
+    $short_description = get_field('short_description');
+    
+    // if ($product->get_short_description()) {
+    //     echo '<p class="short-description">' . $product->get_short_description() . '</p>';
+    // }
+    if ($short_description != "") {
+        echo '<div class="short-description">' . $short_description . '</div>';
+    } else {
+        $desc = get_field('product_description');
+        echo '<div class="short-description">' . $desc . '</div>';
     }
 }
 

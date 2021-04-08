@@ -5,19 +5,11 @@
 		<div class="heading-background">
 			<h2 class="entry-title"><?php the_title(); ?></h2> <?php edit_post_link(); ?>
 		</div>
-		<div class="entry-content">
-			
-			<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
-				
-			<?php the_content(); ?>
-				<!-- <div class="entry-links">
-					<?php //wp_link_pages(); ?>	
-				</div> -->		
-		</div>
 		<?php if ( $gallery = get_post_gallery( get_the_ID(), false ) ) :
 		
 			$gallery_ids = $gallery['ids'];
 			$gallery_ids = explode(',', $gallery_ids);
+			// remove_shortcode('gallery', 'gallery_shortcode');
 		?>
 			<div class="gallery">
 				<?php foreach ( $gallery_ids as $id ) { 
@@ -32,7 +24,15 @@
 				<?php } ?>
 			</div>
 		<?php else : ?>
-
+			<div class="entry-content">
+			
+				<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+					
+				<?php the_content(); ?>
+					<!-- <div class="entry-links">
+						<?php //wp_link_pages(); ?>	
+					</div> -->		
+			</div>
 		<?php endif; ?>
 	</article>
 	<?php if ( comments_open() && ! post_password_required() ) { comments_template( '', true ); } ?>

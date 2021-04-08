@@ -101,7 +101,7 @@ footer ul a:active {
     }
 }
 
-@media (min-width: 700px) {
+@mixin horizontal-footer() {
     #menu-main-menu{
         display: inline-flex;
         flex-wrap: wrap;

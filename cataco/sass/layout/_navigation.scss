@@ -113,14 +113,13 @@ header nav {
 .main-menu a:hover,
 .menu .current_page_item a,
 .menu a:hover {
-    font-weight: bolder;
+    font-weight: 700;
     text-decoration: none;
 }
 
 .main-menu .current_page_item a,
 .main-menu a:active {
-  text-decoration: underline;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 @mixin navbar-desktop() {

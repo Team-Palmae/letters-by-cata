@@ -1,3 +1,4 @@
+/* Checkout */
 .woocommerce-SavedPaymentMethods-saveNew {
     display: none;
     /* Hidden as there are no accounts at the moment */
@@ -119,52 +120,56 @@ abbr {
     font-size: 0.875rem;
 }
 
-// Company Name
+/* Checkout Input Fields */
+
+/* Billing */
+
+/* Company Name */
 #billing_company_field {
     grid-column: 1 / -1;
 }
 
-// Country/Region
+/* Country/Region */
 #billing_country_field {
     grid-column: 1 / -1;
 }
 
-// Street Address Part 1
+/* Street Address Part 1 */
 #billing_address_1_field {
     grid-column: 1 / -1;
 }
 
-// Street Address Part 2
+/* Street Address Part 2 */
 #billing_address_2_field {
     grid-column: 1 / -1;
 }
 
-// Town/City
+/* Town/City */
 #billing_city_field {
     grid-column: 1 / -1;
 }
 
-// Province
+/* Province */
 #billing_state_field {
     grid-column: 1 / -1;
 }
 
-// Postal Code
+/* Postal Code */
 #billing_postcode_field {
     grid-column: 1 / -1;
 }
 
-// Phone
+/* Phone */
 #billing_phone_field {
     grid-column: 1 / -1;
 }
 
-// Email Address
+/* Email Address */
 #billing_email_field {
     grid-column: 1 / -1;
 }
 
-// Shipping Address
+/* Shipping Address */
 .woocommerce-shipping-fields {
     max-width: 771.89px;
     margin: 0 auto;
@@ -179,57 +184,57 @@ abbr {
     }
 }
 
-// Shipping Address First Name
+/* Shipping Address First Name */
 #shipping_first_name_field {
     grid-column: 1 / -1;
 }
 
-// Shipping Address Last Name
+/* Shipping Address Last Name */
 #shipping_last_name_field {
     grid-column: 1 / -1;
 }
 
-// Shipping Address Company Name
+/* Shipping Address Company Name */
 #shipping_company_field {
     grid-column: 1 / -1;
 }
 
-// Shipping Address Country Name
+/* Shipping Address Country Name */
 #shipping_country_field {
     grid-column: 1 / -1;
 }
 
-// Shipping Address Street Address One
+/* Shipping Address Street Address One */
 #shipping_address_1_field {
     grid-column: 1 / -1;
 }
 
-// Shipping Address Street Address Two
+/* Shipping Address Street Address Two */
 #shipping_address_2_field {
     grid-column: 1 / -1;
 }
 
-// Shipping Address City Field
+/* Shipping Address City Field */
 #shipping_city_field {
     grid-column: 1 / -1;
 }
 
-// Shipping Address State
+/* Shipping Address State/Province */
 #shipping_state_field {
     grid-column: 1 / -1;
 }
 
-// Shipping Address PostCode
+/* Shipping Address PostCode */
 #shipping_postcode_field {
     grid-column: 1 / -1;
 }
 
-// Shipping Address Phone
+/* Shipping Address Phone */
 #shipping_phone_field {
     grid-column: 1 / -1;
 }
 
-// Shipping Address Phone
+/* Shipping Address Phone */
 #order_comments_field {
     grid-column: 1 / -1;
 }
@@ -248,14 +253,14 @@ abbr {
     }
 }
 
-// Order Comments / Notes
+/* Order Comments / Notes */
 #order_comments {
     outline: none;
     width: 100%;
     height: 14rem;
 }
 
-// Order & Payment
+/* Order & Payment */
 // Order Cost and Items in Cart
 
 #order_review {
@@ -339,6 +344,10 @@ abbr {
 // What is PayPal? Button
 .about_paypal {
     margin: 1rem 0;
+    &:hover {
+        font-weight: 700;
+        background: $soft-pink;
+    }
 }
 
 // Stripe Payment
@@ -350,6 +359,10 @@ abbr {
     }
 } 
 
+.woocommerce-privacy-policy-link {
+    color: darken($dark-grey, 10);
+}
+
 .woocommerce-checkout #payment ul.payment_methods li img.stripe-icon {
     display: inline;
     margin: 0.5rem 0.5rem -0.5rem 0.5rem;
@@ -359,7 +372,7 @@ abbr {
     margin-top: 1rem;
 }
 
-@media (min-width: 575px) {
+@mixin checkout-buttons() {
     button#wpmc-back-to-cart {
         margin: 0 auto 0 0;
         flex: 0 0 144px; /* flex-grow, flex-shrink, flex-basis */
@@ -370,7 +383,7 @@ abbr {
     }
 }
 
-@media (min-width: 850px) {
+@mixin fields-grid-layout() {
    // Company Name
     #billing_company_field {
         grid-column: 1 / span 1;

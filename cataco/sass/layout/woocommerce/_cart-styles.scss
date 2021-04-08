@@ -80,8 +80,8 @@
 }
 
 .product-meta {
-    margin: 0;
-    width: 100%;
+    margin: 0 auto;
+    width: calc(100% - 1rem);
 }
 
 .cart-container,
@@ -211,13 +211,13 @@ dl.variation {
     text-align: center;
 }
 
-@media (min-width: 500px) {
+@mixin variation-margin() {
     dl.variation {
         margin: 0;
     }
 }
 
-@media (min-width: 800px) {
+@mixin cart-grid-layout() {
     .woocommerce-cart .entry-content {
         .inner-container {
             display: grid;
@@ -244,7 +244,7 @@ dl.variation {
     }
 }
 
-@media (min-width: 1300px) {
+@mixin cart-container-width() {
     .cart-container {
         width: 500px;
     }

@@ -1,4 +1,4 @@
-// Search Page
+/* Search */
 
 img.attachment-post-thumbnail.size-post-thumbnail.wp-post-image{
     width: 40%;
@@ -8,10 +8,6 @@ img.attachment-post-thumbnail.size-post-thumbnail.wp-post-image{
 div.entry-summary, div.search-heading{
     margin-bottom: 1.5rem;
 }
-
-// div.entry-summary p{
-//     width: 30%;
-// }
 
 .search-title{
     text-align: center;
@@ -29,7 +25,6 @@ body.search.search-results.wp-custom-logo.theme-cataco.woocommerce-js>div#wrappe
 }
 
 div.entry-summary>p{
-    // overflow: hidden !important;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 80%;
@@ -39,7 +34,7 @@ div.entry-summary>p{
     -webkit-box-orient: vertical;
 }
 
-@media (max-width: 1000px) {
+@mixin search-large() {
     body.search.search-results.wp-custom-logo.theme-cataco.woocommerce-js>div#wrapper.hfeed>div#container.container>main>article {
         display: block;
         width: 90%;

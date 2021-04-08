@@ -6,7 +6,7 @@
     }
 }
 
-@media (min-width: 750px) {
+@mixin services-medium-view() {
     .service {
         display: flex;
         justify-content: space-around;
@@ -20,7 +20,7 @@
     }
 }
 
-@media (min-width:1000px) {
+@mixin services-large-view() {
     .service {
         p {
             width: 55ch;
