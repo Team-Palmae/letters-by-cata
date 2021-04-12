@@ -34,7 +34,7 @@ div.entry-summary>p{
     -webkit-box-orient: vertical;
 }
 
-@mixin search-large() {
+@mixin search-large {
     body.search.search-results.wp-custom-logo.theme-cataco.woocommerce-js>div#wrapper.hfeed>div#container.container>main>article {
         display: block;
         width: 90%;

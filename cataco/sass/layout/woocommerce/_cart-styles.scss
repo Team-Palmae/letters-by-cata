@@ -211,13 +211,13 @@ dl.variation {
     text-align: center;
 }
 
-@mixin variation-margin() {
+@mixin variation-margin {
     dl.variation {
         margin: 0;
     }
 }
 
-@mixin cart-grid-layout() {
+@mixin cart-grid-layout {
     .woocommerce-cart .entry-content {
         .inner-container {
             display: grid;
@@ -244,7 +244,7 @@ dl.variation {
     }
 }
 
-@mixin cart-container-width() {
+@mixin cart-container-width {
     .cart-container {
         width: 500px;
     }

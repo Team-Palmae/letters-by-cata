@@ -5,11 +5,12 @@
 		<div class="heading-background">
 			<h2 class="entry-title"><?php the_title(); ?></h2> <?php edit_post_link(); ?>
 		</div>
+		<!-- Incase any gallerys are made and don't use gallery.php as the template -->
+		<!-- The rest of this code can be edited in the future from functions.php as well as gallery.php and here -->
 		<?php if ( $gallery = get_post_gallery( get_the_ID(), false ) ) :
 		
 			$gallery_ids = $gallery['ids'];
 			$gallery_ids = explode(',', $gallery_ids);
-			// remove_shortcode('gallery', 'gallery_shortcode');
 		?>
 			<div class="gallery">
 				<?php foreach ( $gallery_ids as $id ) { 

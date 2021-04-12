@@ -377,6 +377,19 @@ function init_remove_support(){
     remove_post_type_support( $post_type, 'editor');
 }
 
+add_action('wp_head', 'add_googleanalytics');
+function add_googleanalytics() { ?>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DY59KGYYT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-2DY59KGYYT');
+    </script>
+<?php }
+
 /**
  * Customize product data tabs
  */

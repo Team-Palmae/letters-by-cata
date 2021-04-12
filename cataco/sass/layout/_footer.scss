@@ -43,17 +43,19 @@ footer {
     list-style-type: none;
     display: inline-flex;
     padding: 0;
-    &, #copyright {
-        text-decoration: none;
-        color: white;
-        margin: 1rem;
-    }
 }
 
-#menu-menu-1 a, #copyright {
+#menu-menu-1 a {
     text-decoration: none;
     color: white;
     margin: 1rem;
+}
+
+#copyright p {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    margin: 3rem auto;
 }
 
 #menu-main-menu{
@@ -101,7 +103,7 @@ footer ul a:active {
     }
 }
 
-@mixin horizontal-footer() {
+@mixin horizontal-footer {
     #menu-main-menu{
         display: inline-flex;
         flex-wrap: wrap;

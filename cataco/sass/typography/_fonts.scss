@@ -39,7 +39,6 @@ h3 {
 p,
 label,
 bdi {
-    font-size: 0.875rem;
     font-size: clamp(0.875rem, 2.25vw, 1.125rem);
     line-height: 1.5rem;
     margin-top: 1.5rem;
@@ -49,7 +48,13 @@ bdi {
 }
 
 @mixin h2-line-height() {
-    h2, h3 {
+    h2 {
+        line-height: 3rem; /*Adjusting the line height so that the baseline stays and fits with the fonts growth*/
+    }
+}
+
+@mixin h3-line-height {
+    h3 {
         line-height: 3rem; /*Adjusting the line height so that the baseline stays and fits with the fonts growth*/
     }
 }

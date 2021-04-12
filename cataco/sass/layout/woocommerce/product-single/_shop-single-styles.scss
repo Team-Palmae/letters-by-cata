@@ -100,12 +100,6 @@ img.emoji {
     padding: 0;
 }
 
-.shop-pricing {
-    p {
-        font-size: 1.25rem;
-    }
-}
-
 .sale-label {
     text-align: center;
 }
@@ -471,7 +465,7 @@ table.variations {
     margin-bottom: 0.5rem;
 }
 
-@mixin large-screen-product-display() {
+@mixin large-screen-product-display {
     div.product {
         display: grid;
         grid-template-columns: 2fr 1fr;
@@ -488,7 +482,7 @@ table.variations {
     }
 }
 
-@mixin larger-screen-product-display() {
+@mixin larger-screen-product-display {
     div.product {
         grid-template-columns: 1fr 1fr;
     }

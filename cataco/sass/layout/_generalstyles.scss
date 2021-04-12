@@ -112,21 +112,21 @@ textarea {
 
 .frame-circle {
     border-radius: 50%;
-    // border: 1px solid $dark-grey;
 }
 
 .frame-square {
-    // border: 1px solid $dark-grey;
     order: 1;
 }
 
 .thumbnail {
-    width: calc(150px + 0.2 * (100vw - 750px));
+    width: calc(150px + 0.2 * (100vw - 650px));
     max-width: 250px;
     min-width: 150px;
-    height: calc(150px + 0.2 * (100vw - 750px));
+    height: calc(150px + 0.2 * (100vw - 650px));
     max-height: 250px;
     min-height: 150px;
+    object-fit: cover;
+    margin: 0 auto;
 }
 
 .underline {
@@ -141,7 +141,15 @@ textarea {
     text-align: center;
 }
 
-@mixin container-para() {
+.shop-updates-page {
+    margin: 0 1.5rem;
+    h2 {
+        max-width: 750.8px;
+        margin: 0 auto;
+    }
+}
+
+@mixin container-para {
 
     .container p {
         width: 100%;

@@ -13,9 +13,6 @@
 
 .home-block {
     padding: 0 1.5rem;
-    .thumbnail {
-        margin: 0 auto;
-    }
 }
 
 .home-gallery-content {
@@ -29,7 +26,7 @@
     text-align: center;
 }
 
-@mixin home-medium-view() {
+@mixin home-medium-view {
     .home-block {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -61,13 +58,13 @@
     }
 }
 
-@mixin home-gallery-grid-layout() {
+@mixin home-gallery-grid-layout {
     .home-gallery-content {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
-@mixin home-large-view() {
+@mixin home-large-view {
     .home-about-content,
     .home-services-content,
     .home-shop-content {

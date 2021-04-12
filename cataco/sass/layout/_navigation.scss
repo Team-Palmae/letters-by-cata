@@ -122,7 +122,7 @@ header nav {
   font-weight: 700;
 }
 
-@mixin navbar-desktop() {
+@mixin navbar-desktop {
     header .inner-container {
         padding: 1rem 2rem;
     }

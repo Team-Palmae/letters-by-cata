@@ -67,6 +67,7 @@ ul.products {
     p {
         margin: 0.5rem 0 0 0;
         text-align: center;
+        font-size: 1.25rem;
     }
 }
 
@@ -106,7 +107,7 @@ span.onsale {
 .filter-flex {
     display: flex;
     align-items: center;
-    p {
+    p.filter-text {
         margin: 0 0 0 1rem;
     }
 }
@@ -166,6 +167,12 @@ span.onsale {
     margin: 0.5rem 0 0 0.5rem;
     overflow: hidden;
     transition: max-height 0.5s ease-in-out;
+    .side-area {
+        margin: 0 0 1.5rem 0;
+        h3 {
+            margin: 0 0 0.5rem 0;
+        }
+    }
 }
 
 .showfilters {
@@ -261,7 +268,7 @@ span.onsale {
     margin-left: -.5em;
 }
 
-@mixin shop-large-screen() {
+@mixin shop-large-screen {
     .filter-sidebar {
         padding: 0;
     }

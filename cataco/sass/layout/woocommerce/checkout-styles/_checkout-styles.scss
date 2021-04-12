@@ -54,7 +54,7 @@
     margin-top: 1.5rem;
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     max-width: 800px;
     margin: 1.5rem auto 0;
 }
@@ -372,7 +372,7 @@ abbr {
     margin-top: 1rem;
 }
 
-@mixin checkout-buttons() {
+@mixin checkout-buttons {
     button#wpmc-back-to-cart {
         margin: 0 auto 0 0;
         flex: 0 0 144px; /* flex-grow, flex-shrink, flex-basis */
@@ -383,7 +383,7 @@ abbr {
     }
 }
 
-@mixin fields-grid-layout() {
+@mixin fields-grid-layout {
    // Company Name
     #billing_company_field {
         grid-column: 1 / span 1;

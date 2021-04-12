@@ -9,24 +9,20 @@
     display: block;
 }
 
-#post-45>.entry-content {
-    display: none !important;
-}
-
 /* Masonry Layout */
 
 .gallery-image {
     margin-bottom: 1.5rem;
 }
 
-@mixin gallery-medium-view() {
+@mixin gallery-medium-view {
     .gallery {
         column-count: 2;
         column-gap: 4%;
     }
 }
 
-@mixin gallery-large-view() {
+@mixin gallery-large-view {
     .gallery {
         column-count: 3;
         column-gap: 3%;

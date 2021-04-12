@@ -6,23 +6,13 @@
 		<meta name="description" content="Calligraphy, Watercolor, Cricut. We have all your handmade designs covered. Find great handmade products right here!">
 		<meta name="keywords" content="Calligraphy Watercolor Cricut Edmonton Local Art Design Lettering">
 		<?php wp_head(); ?>
+		<!-- Load Merriweather -->
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
 		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" />
 		<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 		<noscript>
 			<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 		</noscript>
-
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<!-- Don't Edit -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DY59KGYYT"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-
-			gtag('config', 'G-2DY59KGYYT');
-		</script>
 	</head>
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
