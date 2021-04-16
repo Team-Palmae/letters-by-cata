@@ -50,15 +50,6 @@
     }
 }
 
-.woocommerce-billing-fields__field-wrapper {
-    margin-top: 1.5rem;
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: 1fr 1fr;
-    max-width: 800px;
-    margin: 1.5rem auto 0;
-}
-
 .woocommerce-input-wrapper .input-text {
     width: 100%;
 }
@@ -112,131 +103,8 @@ abbr {
     text-decoration: none;
 }
 
-.required {
-    color: #FF9494;
-}
-
 .optional {
     font-size: 0.875rem;
-}
-
-/* Checkout Input Fields */
-
-/* Billing */
-
-/* Company Name */
-#billing_company_field {
-    grid-column: 1 / -1;
-}
-
-/* Country/Region */
-#billing_country_field {
-    grid-column: 1 / -1;
-}
-
-/* Street Address Part 1 */
-#billing_address_1_field {
-    grid-column: 1 / -1;
-}
-
-/* Street Address Part 2 */
-#billing_address_2_field {
-    grid-column: 1 / -1;
-}
-
-/* Town/City */
-#billing_city_field {
-    grid-column: 1 / -1;
-}
-
-/* Province */
-#billing_state_field {
-    grid-column: 1 / -1;
-}
-
-/* Postal Code */
-#billing_postcode_field {
-    grid-column: 1 / -1;
-}
-
-/* Phone */
-#billing_phone_field {
-    grid-column: 1 / -1;
-}
-
-/* Email Address */
-#billing_email_field {
-    grid-column: 1 / -1;
-}
-
-/* Shipping Address */
-.woocommerce-shipping-fields {
-    max-width: 771.89px;
-    margin: 0 auto;
-    .woocommerce-shipping-fields__field-wrapper {
-        margin: 1.5rem 0 0 0;
-        display: grid;
-        gap: 1.5rem;
-        grid-template-columns: 1fr 1fr;
-    }
-    p {
-        margin: 0;
-    }
-}
-
-/* Shipping Address First Name */
-#shipping_first_name_field {
-    grid-column: 1 / -1;
-}
-
-/* Shipping Address Last Name */
-#shipping_last_name_field {
-    grid-column: 1 / -1;
-}
-
-/* Shipping Address Company Name */
-#shipping_company_field {
-    grid-column: 1 / -1;
-}
-
-/* Shipping Address Country Name */
-#shipping_country_field {
-    grid-column: 1 / -1;
-}
-
-/* Shipping Address Street Address One */
-#shipping_address_1_field {
-    grid-column: 1 / -1;
-}
-
-/* Shipping Address Street Address Two */
-#shipping_address_2_field {
-    grid-column: 1 / -1;
-}
-
-/* Shipping Address City Field */
-#shipping_city_field {
-    grid-column: 1 / -1;
-}
-
-/* Shipping Address State/Province */
-#shipping_state_field {
-    grid-column: 1 / -1;
-}
-
-/* Shipping Address PostCode */
-#shipping_postcode_field {
-    grid-column: 1 / -1;
-}
-
-/* Shipping Address Phone */
-#shipping_phone_field {
-    grid-column: 1 / -1;
-}
-
-/* Shipping Address Phone */
-#order_comments_field {
-    grid-column: 1 / -1;
 }
 
 .woocommerce-input-wrapper select {
@@ -258,68 +126,6 @@ abbr {
     outline: none;
     width: 100%;
     height: 14rem;
-}
-
-/* Order & Payment */
-// Order Cost and Items in Cart
-
-#order_review {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 0.5rem 1rem;
-    background-color: $soft-pink;
-}
-
-.woocommerce-checkout-review-order-table {
-    width: 100%;
-    color: $dark-grey;
-    .product-total {
-        text-align: right;
-    }
-
-    thead {
-        .product-total {
-            padding: 0 0.5rem 0.5rem 0.5rem;
-        }
-    }
-
-    .cart_item {
-        .product-total {
-            padding: 0.5rem;
-        }
-    }
-
-    .cart-subtotal {
-
-        td {
-            text-align: right;
-            padding: 0.5rem;
-        }
-    }
-
-    .tax-total,
-    .order-total {
-        td {
-            text-align: right;
-            padding: 0.5rem 0.5rem 0 0.5rem;  
-        }    
-    }
-    .order-total {
-        border-top: 1px solid $dark-grey;
-    }
-
-    .woocommerce-shipping-methods {
-        label {
-            text-align: right;
-            padding: 0.5rem 0.5rem 0 0.5rem;
-        }
-    }
-}
-
-#order_review_heading,
-#payment_heading {
-    max-width: 500px;
-    margin: 1.5rem auto;
 }
 
 // Terms and Conditions
@@ -350,15 +156,6 @@ abbr {
     }
 }
 
-// Stripe Payment
-
-.payment_method_stripe label {
-    display: inline;
-    #text {
-        padding-left: 100%;
-    }
-} 
-
 .woocommerce-privacy-policy-link {
     color: darken($dark-grey, 10);
 }
@@ -372,6 +169,10 @@ abbr {
     margin-top: 1rem;
 }
 
+.wc-credit-card-form p.form-row {
+    text-align: center;
+}
+
 @mixin checkout-buttons {
     button#wpmc-back-to-cart {
         margin: 0 auto 0 0;
@@ -380,120 +181,5 @@ abbr {
 
     #wpmc-next {
         margin-left: 0.3rem;
-    }
-}
-
-@mixin fields-grid-layout {
-   // Company Name
-    #billing_company_field {
-        grid-column: 1 / span 1;
-    }
-
-    // Country/Region
-    #billing_country_field {
-        grid-column: 2 / span 1;
-    }
-
-    // Street Address Part 1
-    #billing_address_1_field {
-        grid-column: 1 / span 1;
-        grid-row: 3 / span 1;
-    }
-
-    // Street Address Part 2
-    #billing_address_2_field {
-        grid-column: 1 / span 1;
-        grid-row: 4 / span 1;
-    }
-
-    // Town/City
-    #billing_city_field {
-        grid-column: span 1 / -1;
-        grid-row: 3 / span 1;
-    }
-
-    // Province
-    #billing_state_field {
-        grid-column: 1 / span 1;
-        grid-row: 5 / span 1;
-    }
-
-    // Postal Code
-    #billing_postcode_field {
-        grid-column: span 1 / -1;
-        grid-row: 5 / span 1;
-    }
-
-    // Phone
-    #billing_phone_field {
-        grid-column: 1 / span 1;
-        grid-row: 6 / span 1;
-    }
-
-    // Email Address
-    #billing_email_field {
-        grid-column: span 1 / -1;
-        grid-row: 6 / span 1;
-    }
-
-    // Shipping Address First Name
-    #shipping_first_name_field {
-        grid-column: 1 / span 1;
-    }
-
-    // Shipping Address Last Name
-    #shipping_last_name_field {
-        grid-column: span 1 / -1;
-    }
-
-    // Shipping Address Company Name
-    #shipping_company_field {
-        grid-column: 1 / span 1;
-    }
-
-    // Shipping Address Country Name
-    #shipping_country_field {
-        grid-column: span 1 / -1;
-    }
-
-    // Shipping Address Street Address One
-    #shipping_address_1_field {
-        grid-column: 1 / span 1;
-    }
-
-    // Shipping Address Street Address Two
-    #shipping_address_2_field {
-        grid-column: 1 / span 1;
-        grid-row: 4 / span 1;
-    }
-
-    // Shipping Address City Field
-    #shipping_city_field {
-        grid-column: span 1 / -1;
-        grid-row: 3 / span 1;
-    }
-
-    // Shipping Address State
-    #shipping_state_field {
-        grid-column: 1 / span 1;
-        grid-row: 5 / span 1;
-    }
-
-    // Shipping Address PostCode
-    #shipping_postcode_field {
-        grid-column: span 1 / -1;
-        grid-row: 5 / span 1;
-    }
-
-    // Shipping Address Phone
-    #shipping_phone_field {
-        grid-column: 1 / span 1;
-        grid-row: 6 / span 1;
-    }
-
-    // Shipping Address Phone
-    #order_comments_field {
-        grid-column: span 1 / -1;
-        grid-row: 6 / span 1;
     }
 }

@@ -1,8 +1,6 @@
 @media (min-width: 500px) {
     /* Font-sizing */
     @include h2-line-height;
-    /* Contact */
-    @include checkbox-inline;
     /* Cart */
     @include variation-margin;
 }
@@ -17,6 +15,8 @@
     @include banner-spacing-medium;
     /* General */
     @include container-para;
+    /* Shop */
+    @include shop-pricing;
 }
 
 @media (min-width: 700px) {
@@ -48,7 +48,8 @@
     /* Home */
     @include home-gallery-grid-layout;
     /* Checkout */
-    @include fields-grid-layout;
+    @include billing-grid-layout;
+    @include shipping-grid-layout;
 }
 
 @media (min-width: 900px) {
@@ -65,8 +66,6 @@
     @include gallery-large-view;
     /* Services */
     @include services-large-view;
-    /* Search */
-    @include search-large;
     /* Shop */
     @include shop-large-screen;
 }

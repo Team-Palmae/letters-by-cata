@@ -2,12 +2,11 @@
 
 <?php if(have_posts()) : ?>
     <!-- start the loop -->
-    <?php while(have_posts()) : the_post(); ?>
-    <!-- <section class="container"> -->
-    <?php the_content(); ?>
-    <!-- </section> -->
-    <?php endwhile; ?>
     <?php 
+        $call_to_action = get_field('call_to_action');
+        $call_text = $call_to_action['call_to_action_text'];
+        $call_button_link = $call_to_action['call_button_link'];
+
         $home_shop = get_field('home_shop'); 
         $shop_text = $home_shop['shop_text'];
         $shop_button_text = $home_shop['shop_button_label'];
@@ -20,6 +19,14 @@
         $about_text = $home_about['about_text'];
         $about_button_text = $home_about['about_button_label'];
     ?>
+    <?php if ($call_to_action) : ?>
+        <div class="home-opener">
+            <p class="call-to-action"><?php echo $call_text; ?></p>
+            <a class="btn" href="<?php echo esc_url( home_url( '/' ) ) ?>">
+                <?php print_r($call_button_link['title']); ?>
+            </a>
+        </div>
+    <?php endif; ?>
     <?php if ($home_shop) : ?>
         <div class="heading-background">
             <h2><?php echo $home_shop['shop_header_text']; ?></h2>
@@ -84,6 +91,10 @@
 <?php else : ?>
 
 <?php endif; ?>
+<?php while(have_posts()) : the_post(); ?>
+    <?php the_content(); ?>
+<?php endwhile; ?>
 </div>
+
 
 <?php get_footer();?>

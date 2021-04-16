@@ -25,7 +25,6 @@ function cataco_setup() {
 add_action( 'wp_enqueue_scripts', 'cataco_load_scripts' );
 
 function cataco_load_scripts() {
-	wp_enqueue_style( 'reset', get_template_directory_uri() . '/assets/css/reset.css', false, '1.0.0', 'all');
 	wp_enqueue_style( 'cataco-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), 1.1, true);
@@ -167,20 +166,6 @@ function register_widget_areash() {
     )); 
 }
   
-function register_widget_areast() {
-  
-    register_sidebar( array(
-      'name'          => 'Footer area top',
-      'id'            => 'footer_area_top',
-      'description'   => 'For the top of the footer ie: insta, facebook',
-      'before_widget' => '<section class="footer-area-top">',
-      'after_widget'  => '</section>',
-      'before_title'  => '<h4>',
-      'after_title'   => '</h4>',
-    ));
-    
-}
-  
 add_action( 'widgets_init', 'register_widget_areast' );
   
 function register_widget_areasb() {
@@ -213,7 +198,7 @@ function register_widget_areasS() {
   
 add_action( 'widgets_init', 'register_widget_areasb' );
   
-  // Prevent WP from adding <p> tags on pages
+// Prevent WP from adding <p> tags on pages
 function disable_wp_auto_p( $content ) {
     if ( is_singular( 'page' ) ) {
       remove_filter( 'the_content', 'wpautop' );
@@ -222,21 +207,12 @@ function disable_wp_auto_p( $content ) {
     return $content;
 }
 add_filter( 'the_content', 'disable_wp_auto_p', 0 );
-  
-  /*// Prevent WP from adding <p> tags on all post types
-  function disable_wp_auto_p( $content ) {
-    remove_filter( 'the_content', 'wpautop' );
-    remove_filter( 'the_excerpt', 'wpautop' );
-    return $content;
-  }
-  add_filter( 'the_content', 'disable_wp_auto_p', 0 );
-  If you want to prevent WP from adding <p> tags to any other post type, you can simply replace page in if ( is_singular( 'page' ) ) with your post type of choice.*/
 
-add_filter( 'woocommerce_add_to_cart_fragments', 'add_to_cart_fragment' );
+// Fragment for addinging the number to the cart when there is something in the bag - AJAX
 
 function add_to_cart_fragment( $fragments ) {
     global $woocommerce;
-
+    
     if ($woocommerce->cart->cart_contents_count == 0) {
         $fragments['.cart-count'] = '<span class="cart-count hidden">' . $woocommerce->cart->cart_contents_count . '</span>';
     } else {
@@ -245,7 +221,10 @@ function add_to_cart_fragment( $fragments ) {
     return $fragments;
 }
 
+add_filter( 'woocommerce_add_to_cart_fragments', 'add_to_cart_fragment' );
+
 /* Recieves the ID from the Gallery and Returns all the information for that ID - Src for the image src and Caption for the caption and alt tag */
+/* For the gallery */ 
 function get_post_from_id( $gallery_id ) {
 
     $post_meta = get_post( $gallery_id );
@@ -268,6 +247,7 @@ function shop_page() {
     }
 }
 
+// Checks if the page is a product page
 function product_page() {
     if (is_product()) {
         return true;
@@ -275,13 +255,6 @@ function product_page() {
         return false;
     }
 }
-
-// This would go on page.php
-// if ( $shop = shop_page() ) : 
-//     if ( is_active_sidebar( 'side_area' ) ) :
-//         dynamic_sidebar( 'side_area' );
-//     endif;
-// endif; 
 
 //Remove Gutenberg Block Library CSS from loading on the frontend
 function smartwp_remove_wp_block_library_css(){
@@ -294,17 +267,36 @@ add_filter('use_block_editor_for_post', '__return_false', 10);
 
 // Removes the admin bar from the live site
 add_filter('show_admin_bar', '__return_false');
-// Removes dashicons from the front page if Admin bar isn't going to show.
-add_action( 'wp_print_styles', 'deregister_dashicons', 100 );
-function deregister_dashicons()    { 
-   //wp_deregister_style( 'amethyst-dashicons-style' ); 
-   wp_deregister_style( 'dashicons' );
-}
 
-add_filter( 'jetpack_implode_frontend_css', '__return_false', 99 );
+add_action( 'wp_print_styles', 'deregister_styles', 100);
+function deregister_styles() {
+    // Styles added to the theme styles
+    wp_deregister_style( 'popup-maker-site' );
+    wp_deregister_style( 'contact-form-7' );
+    wp_deregister_style( 'dashicons' );
+    if ( !is_page('instagram') ) {
+        wp_deregister_style('sb_instagram_styles');
+    }
+}
 
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 add_filter( 'ppom_bootstrap_css', '__return_empty_array' );
+add_filter( 'jetpack_implode_frontend_css', '__return_false', 99 );
+
+add_action( 'wp_print_scripts', 'my_deregister_javascript', 100 );
+function my_deregister_javascript() {
+    if ( !is_page('contact') ) {
+        wp_deregister_script( 'contact-form-7' );
+    }
+    if( function_exists( 'is_woocommerce' ) ){
+		// Check if it's any of WooCommerce page
+		if(! is_woocommerce() && ! is_cart() && ! is_checkout() ) {
+			wp_dequeue_script('woocommerce'); 
+			wp_dequeue_script('wc-add-to-cart');
+ 
+		}
+	}
+}
 
 // Function for checking the prices of the Products and if they're on sale or not
 function product_prices() {
@@ -371,12 +363,7 @@ function product_prices() {
     }
 }
 
-add_action('init', 'init_remove_support',100);
-function init_remove_support(){
-    $post_type = 'product';
-    remove_post_type_support( $post_type, 'editor');
-}
-
+// Add google analytics to the head
 add_action('wp_head', 'add_googleanalytics');
 function add_googleanalytics() { ?>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -390,9 +377,42 @@ function add_googleanalytics() { ?>
     </script>
 <?php }
 
-/**
- * Customize product data tabs
- */
+// Remove Editor wysywig from Products
+add_action('init', 'init_remove_support',100);
+function init_remove_support(){
+    $post_type = 'product';
+    remove_post_type_support( $post_type, 'editor');
+}
+
+// Remove wysywig editor from set page templates
+function disable_wysywig() {
+    global $post;
+
+    if (! is_a($post, 'WP_Post')) {
+        return;
+    }
+
+    $current_page_template_slug = basename(get_page_template_slug($post_id));
+
+    $exclude_template_slugs = array(
+        'services.php'
+    );
+
+    if (in_array($current_page_template_slug, $exclude_template_slugs)) {
+        remove_post_type_support('page', 'editor');
+    }
+}
+add_action('admin_enqueue_scripts', 'disable_wysywig');
+
+// Remove Posts from admin panel
+function remove_default_post_type() {
+    remove_menu_page( 'edit.php' );
+}
+add_action( 'admin_menu', 'remove_default_post_type' );
+
+
+//Customize product data tabs
+
 add_filter( 'woocommerce_product_tabs', 'woo_custom_description_tab', 98 );
 function woo_custom_description_tab( $tabs ) {
 	$tabs['description']['callback'] = 'woo_custom_description_tab_content';	// Custom description callback
@@ -476,17 +496,9 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'product_prices', 10 );
 add_action( 'woocommerce_after_shop_loop_item', 'short_description', 8 );
 
 function short_description() {
-    // global $product;
     $short_description = get_field('short_description');
-    
-    // if ($product->get_short_description()) {
-    //     echo '<p class="short-description">' . $product->get_short_description() . '</p>';
-    // }
     if ($short_description != "") {
         echo '<div class="short-description">' . $short_description . '</div>';
-    } else {
-        $desc = get_field('product_description');
-        echo '<div class="short-description">' . $desc . '</div>';
     }
 }
 
@@ -500,14 +512,6 @@ function link_button() {
     global $product;
     echo '<a href="' . get_permalink( $product->get_id() ) . '" class="button">View Item</a>';
 }
-
-// Woocommerce Product Hooks
-
-// function h($price, $product) {
-//     global $product;
-//     return '<p>' . $product->get_price() . '</p>';
-// }
-// add_filter( 'woocommerce_product_variation_get_price', 'h', 10, 2);
 
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 add_action('woocommerce_before_single_product', 'product_name_new_position', 5);
@@ -559,52 +563,17 @@ function quantity_label() {
     echo '<p class="qty">Quantity: </p>';
 }
 
-// add_filter( 'woocommerce_get_image_size_gallery_thumbnail', function( $size ) {
-//     return array(
-//         'width' => 300,
-//         'height' => 300,
-//         'crop' => 1,
-//     );
-// } );
-
-// add_filter( 'woocommerce_get_image_size_single', function( $size ) {
-//     return array(
-//         'width' => 500,
-//         'height' => 500,
-//         'crop' => 1,
-//     );
-// } );
-
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
-
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
-
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 add_filter( 'woocommerce_single_product_summary', 'product_prices', 10 );
-
-/*
- Changes Related Products Maximum number of displayed Products
-*/
-// function related_products_limit( $args ) {
-//     // global $product;
-//     $args['posts_per_page'] = 3; // 4 related products
-//     return $args;
-// }
 
 function woo_related_products_limit() {
     global $product;
       
-      $args['posts_per_page'] = 6;
-      return $args;
-  }
-  add_filter( 'woocommerce_output_related_products_args', 'jk_related_products_args', 20 );
-    function jk_related_products_args( $args ) {
-      $args['posts_per_page'] = 4; // 4 related products
-      $args['columns'] = 2; // arranged in 2 columns
-      return $args;
-  }
-
-// add_fislter( 'woocommerce_output_related_products_args', 'related_products_limit' );
+    $args['posts_per_page'] = 6;
+    return $args;
+}
 
 // Cart
 
@@ -612,12 +581,6 @@ add_action( 'woocommerce_proceed_to_checkout', 'continue_shopping', 30 );
 
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 add_action( 'woocommerce_after_cart', 'woocommerce_cross_sell_display' );
-
-// add_filter( 'woocommerce_cross_sells_total', 'cross_sells_limit' );
-  
-// function cross_sells_limit( $columns ) {
-//     return 3;
-// }
 
 function sale_price_check($subtotal, $cart_item, $cart_item_key) {
     

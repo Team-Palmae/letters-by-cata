@@ -1,0 +1,132 @@
+/* Shipping Address */
+.woocommerce-shipping-fields {
+    max-width: 771.89px;
+    margin: 0 auto;
+    .woocommerce-shipping-fields__field-wrapper {
+        margin: 1.5rem 0 0 0;
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: 1fr 1fr;
+    }
+    p {
+        margin: 0;
+    }
+}
+
+/* Shipping Address First Name */
+#shipping_first_name_field {
+    grid-column: 1 / -1;
+}
+
+/* Shipping Address Last Name */
+#shipping_last_name_field {
+    grid-column: 1 / -1;
+}
+
+/* Shipping Address Company Name */
+#shipping_company_field {
+    grid-column: 1 / -1;
+}
+
+/* Shipping Address Country Name */
+#shipping_country_field {
+    grid-column: 1 / -1;
+}
+
+/* Shipping Address Street Address One */
+#shipping_address_1_field {
+    grid-column: 1 / -1;
+}
+
+/* Shipping Address Street Address Two */
+#shipping_address_2_field {
+    grid-column: 1 / -1;
+}
+
+/* Shipping Address City Field */
+#shipping_city_field {
+    grid-column: 1 / -1;
+}
+
+/* Shipping Address State/Province */
+#shipping_state_field {
+    grid-column: 1 / -1;
+}
+
+/* Shipping Address PostCode */
+#shipping_postcode_field {
+    grid-column: 1 / -1;
+}
+
+/* Shipping Address Phone */
+#shipping_phone_field {
+    grid-column: 1 / -1;
+}
+
+/* Shipping Address Phone */
+#order_comments_field {
+    grid-column: 1 / -1;
+}
+
+@mixin shipping-grid-layout {
+    // Shipping Address First Name
+    #shipping_first_name_field {
+        grid-column: 1 / span 1;
+    }
+
+    // Shipping Address Last Name
+    #shipping_last_name_field {
+        grid-column: span 1 / -1;
+    }
+
+    // Shipping Address Company Name
+    #shipping_company_field {
+        grid-column: 1 / span 1;
+    }
+
+    // Shipping Address Country Name
+    #shipping_country_field {
+        grid-column: span 1 / -1;
+    }
+
+    // Shipping Address Street Address One
+    #shipping_address_1_field {
+        grid-column: 1 / span 1;
+    }
+
+    // Shipping Address Street Address Two
+    #shipping_address_2_field {
+        grid-column: 1 / span 1;
+        grid-row: 4 / span 1;
+    }
+
+    // Shipping Address City Field
+    #shipping_city_field {
+        grid-column: span 1 / -1;
+        grid-row: 3 / span 1;
+    }
+
+    // Shipping Address State
+    #shipping_state_field {
+        grid-column: 1 / span 1;
+        grid-row: 5 / span 1;
+    }
+
+    // Shipping Address PostCode
+    #shipping_postcode_field {
+        grid-column: span 1 / -1;
+        grid-row: 5 / span 1;
+    }
+
+    // Shipping Address Phone
+    #shipping_phone_field {
+        grid-column: 1 / span 1;
+        grid-row: 6 / span 1;
+    }
+
+    // Shipping Address Phone
+    #order_comments_field {
+        grid-column: span 1 / -1;
+        grid-row: 6 / span 1;
+    }
+ }

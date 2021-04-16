@@ -15,10 +15,10 @@ get_header(); ?>
 		</div>
         <?php if ($pagename == 'about') : ?>
             <?php 
-                $block_one = get_field('block_one');
-                $top_text = get_field('top_text');
-                $main_image = get_field('main_image');
-                $bottom_text = get_field('bottom_text');
+				$about_page = get_field('about');
+                $top_text = $about_page['top_text'];
+                $main_image = $about_page['main_image'];
+                $bottom_text = $about_page['bottom_text'];
             ?>
             <div class="about_page">
                 <?php echo $top_text; ?>
@@ -32,12 +32,12 @@ get_header(); ?>
 			$gallery_ids = $gallery['ids'];
 			$gallery_ids = explode(',', $gallery_ids);
 		?>
-			<div class="gallery">
+			<div class="<?php if ($pagename == 'about') { echo 'about-gallery'; } else { echo 'gallery'; } ?>">
 				<?php foreach ( $gallery_ids as $id ) { 
 					$post_meta = get_post_from_id($id);
 				?>
 					<div class="gallery-image">
-						<img loading="lazy" src="<?php echo $post_meta['src'] ?>" alt=" <?php if ($post_meta['caption'] != "") { echo $post_meta['caption']; } else { ?> Gallery Image <?php } ?> ">
+						<img loading="lazy" src="<?php echo $post_meta['src'] ?>" alt=" <?php if ($post_meta['alt'] != "") { echo $post_meta['alt']; } else { ?> Gallery Image <?php } ?> ">
 						<?php if ($post_meta['caption'] != "") { ?>
 							<span class="caption"><?php echo $post_meta['caption'] ?></span>
 						<?php } ?>

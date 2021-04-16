@@ -1,0 +1,109 @@
+/* Billing */
+
+.woocommerce-billing-fields__field-wrapper {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    max-width: 800px;
+    margin: 1.5rem auto 0;
+}
+
+/* Company Name */
+#billing_company_field {
+    grid-column: 1 / -1;
+}
+
+/* Country/Region */
+#billing_country_field {
+    grid-column: 1 / -1;
+}
+
+/* Street Address Part 1 */
+#billing_address_1_field {
+    grid-column: 1 / -1;
+}
+
+/* Street Address Part 2 */
+#billing_address_2_field {
+    grid-column: 1 / -1;
+}
+
+/* Town/City */
+#billing_city_field {
+    grid-column: 1 / -1;
+}
+
+/* Province */
+#billing_state_field {
+    grid-column: 1 / -1;
+}
+
+/* Postal Code */
+#billing_postcode_field {
+    grid-column: 1 / -1;
+}
+
+/* Phone */
+#billing_phone_field {
+    grid-column: 1 / -1;
+}
+
+/* Email Address */
+#billing_email_field {
+    grid-column: 1 / -1;
+}
+
+@mixin billing-grid-layout {
+    // Company Name
+    #billing_company_field {
+        grid-column: 1 / span 1;
+    }
+
+    // Country/Region
+    #billing_country_field {
+        grid-column: 2 / span 1;
+    }
+
+    // Street Address Part 1
+    #billing_address_1_field {
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 1;
+    }
+
+    // Street Address Part 2
+    #billing_address_2_field {
+        grid-column: 1 / span 1;
+        grid-row: 4 / span 1;
+    }
+
+    // Town/City
+    #billing_city_field {
+        grid-column: span 1 / -1;
+        grid-row: 3 / span 1;
+    }
+
+    // Province
+    #billing_state_field {
+        grid-column: 1 / span 1;
+        grid-row: 5 / span 1;
+    }
+
+    // Postal Code
+    #billing_postcode_field {
+        grid-column: span 1 / -1;
+        grid-row: 5 / span 1;
+    }
+
+    // Phone
+    #billing_phone_field {
+        grid-column: 1 / span 1;
+        grid-row: 6 / span 1;
+    }
+
+    // Email Address
+    #billing_email_field {
+        grid-column: span 1 / -1;
+        grid-row: 6 / span 1;
+    }
+}

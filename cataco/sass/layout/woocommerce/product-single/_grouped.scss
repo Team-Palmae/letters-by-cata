@@ -1,0 +1,38 @@
+/* Styles for Grouped Products */
+
+.woocommerce-grouped-product-list {
+    padding: 0 0.5rem;
+    width: 100%;
+    max-width: 25rem;
+    margin: 1rem auto 0;
+    border-collapse: separate;
+    border-spacing: 0.5rem;
+    .woocommerce-grouped-product-list-item__quantity {
+        width: 60px;
+    }
+    tr {
+        line-height: 2rem;
+    }
+    .quantity input {
+        margin: 0;
+    }
+}
+
+.woocommerce-grouped-product-list-item__quantity {
+    p.qty {
+        display: none;
+    }
+}
+
+.woocommerce-grouped-product-list-item__price {
+    text-align: right;
+    del bdi {
+        color: $dark-grey;
+    }
+    ins bdi {
+        color: #21880C;
+    }
+    bdi {
+        color: $dark-grey;
+    }
+}

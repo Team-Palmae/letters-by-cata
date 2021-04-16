@@ -1,0 +1,70 @@
+/* Order & Payment */
+// Order Cost and Items in Cart
+
+#order_review {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    background-color: $soft-pink;
+}
+
+.woocommerce-checkout-review-order-table {
+    width: 100%;
+    color: $dark-grey;
+    .product-total {
+        text-align: right;
+    }
+
+    thead {
+        .product-total {
+            padding: 0 0.5rem 0.5rem 0.5rem;
+        }
+    }
+
+    .cart_item {
+        .product-total {
+            padding: 0.5rem;
+        }
+    }
+
+    .cart-subtotal {
+
+        td {
+            text-align: right;
+            padding: 0.5rem;
+        }
+    }
+
+    .tax-total,
+    .order-total {
+        td {
+            text-align: right;
+            padding: 0.5rem 0.5rem 0 0.5rem;  
+        }    
+    }
+    .order-total {
+        border-top: 1px solid $dark-grey;
+    }
+
+    .woocommerce-shipping-methods {
+        label {
+            text-align: right;
+            padding: 0.5rem 0.5rem 0 0.5rem;
+        }
+    }
+}
+
+#order_review_heading,
+#payment_heading {
+    max-width: 500px;
+    margin: 1.5rem auto;
+}
+
+// Stripe Payment
+
+.payment_method_stripe label {
+    display: inline;
+    #text {
+        padding-left: 100%;
+    }
+} 

@@ -8,7 +8,6 @@
 				<a class="btn popmake-258" href="<?php echo esc_url( home_url( '/' ) ); ?>newsletter-signup" id="signup">Sign Up Here</a>
 			</div>
 			<footer id="footer">
-				<?php //dynamic_sidebar( 'footer_area_top' ); ?>
 				<div class="footer-area-top">
 					<div class="social-links">
 						<a href="https://www.instagram.com/lettersbycataco/?hl=en">

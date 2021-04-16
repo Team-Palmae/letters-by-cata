@@ -48,7 +48,6 @@
 				); ?>
 			</nav>
 
-			<!-- <a class="cart" href="<?php echo esc_url( home_url( '/' ) ); ?>cart"> -->
 			<a class="cart" href="<?php echo wc_get_cart_url() ?>">
 				<svg class="cart-icon" aria-label="shopping cart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 483.1 483.1" style="enable-background:new 0 0 483.1 483.1;" xml:space="preserve">
 					<g>
@@ -68,7 +67,6 @@
 			</div>
 		</div> <!-- End of Inner-container -->
 		<span class="header-welcome">Welcome to</span>
-		<h1>Letters by Cata Co.</h1>
-		<!-- <h1>Welcome to Letters by Cata Co.</h1> -->
+		<h1>Letters by Cata Co</h1>
 	</header>
 <div class="container" id="container">
